@@ -1,0 +1,246 @@
+{
+  "knowledge_type": "functionality_patterns",
+  "purpose": "Observed recurring functionality implementation.",
+  "local_state": {
+    "pattern_name": "local_state",
+    "description": "Observed patterns in how local component state is declared and named.",
+    "implementation_observations": [
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\app\\listed-books\\page.tsx",
+        "state_name": "sortBy",
+        "setter_name": "setSortBy",
+        "type": "\"rating\" | \"pages\" | \"year\"",
+        "initial_value": "\"rating\"",
+        "line": 9,
+        "code": "const [sortBy, setSortBy] = useState<\"rating\" | \"pages\" | \"year\">(\"rating\")"
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\context\\BooksContext.tsx",
+        "state_name": "readBooks",
+        "setter_name": "setReadBooks",
+        "type": "IBook[]",
+        "initial_value": "[]",
+        "line": 21,
+        "code": "const [readBooks, setReadBooks] = useState<IBook[]>([])"
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\context\\BooksContext.tsx",
+        "state_name": "wishlist",
+        "setter_name": "setWishlist",
+        "type": "IBook[]",
+        "initial_value": "[]",
+        "line": 22,
+        "code": "const [wishlist, setWishlist] = useState<IBook[]>([])"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "src\\app\\profile\\page.tsx",
+        "state_name": "show",
+        "setter_name": "setShow",
+        "type": null,
+        "initial_value": "false",
+        "line": 14,
+        "code": "const [show, setShow] = useState(false)"
+      },
+      {
+        "project": "Dev-Stack",
+        "file": "src\\components\\Navbar\\Navbar.tsx",
+        "state_name": "activeMenu",
+        "setter_name": "setActiveMenu",
+        "type": null,
+        "initial_value": "\"Home\"",
+        "line": 6,
+        "code": "const [activeMenu, setActiveMenu] = useState(\"Home\")"
+      },
+      {
+        "project": "Dev-Stack",
+        "file": "src\\components\\TechnologySection\\TechnologySection.tsx",
+        "state_name": "selectedTechnologies",
+        "setter_name": "setSelectedTechnologies",
+        "type": "Tech[]",
+        "initial_value": "[]",
+        "line": 13,
+        "code": "const [selectedTechnologies, setSelectedTechnologies] = useState<Tech[]>([])"
+      },
+      {
+        "project": "Fitlog",
+        "file": "src\\app\\my-plan\\page.tsx",
+        "state_name": "activeTab",
+        "setter_name": "setActiveTab",
+        "type": null,
+        "initial_value": "tab === \"saved\" ? \"saved\" : \"plan\"",
+        "line": 14,
+        "code": "const [activeTab, setActiveTab] = useState(\n        tab === \"saved\" ? \"saved\" : \"plan\"\n    )"
+      },
+      {
+        "project": "Fitlog",
+        "file": "src\\app\\my-plan\\page.tsx",
+        "state_name": "sortBy",
+        "setter_name": "setSortBy",
+        "type": null,
+        "initial_value": "\"duration\"",
+        "line": 17,
+        "code": "const [sortBy, setSortBy] = useState(\"duration\")"
+      },
+      {
+        "project": "Fitlog",
+        "file": "src\\context\\WorkoutContext.tsx",
+        "state_name": "planWorkouts",
+        "setter_name": "setPlanWorkouts",
+        "type": "Workout[]",
+        "initial_value": "[]",
+        "line": 20,
+        "code": "const [planWorkouts, setPlanWorkouts] = useState<Workout[]>([])"
+      },
+      {
+        "project": "Fitlog",
+        "file": "src\\context\\WorkoutContext.tsx",
+        "state_name": "savedWorkouts",
+        "setter_name": "setSavedWorkouts",
+        "type": "Workout[]",
+        "initial_value": "[]",
+        "line": 21,
+        "code": "const [savedWorkouts, setSavedWorkouts] = useState<Workout[]>([])"
+      }
+    ],
+    "common_state_names": [
+      [
+        "sortBy",
+        2
+      ],
+      [
+        "readBooks",
+        1
+      ],
+      [
+        "wishlist",
+        1
+      ],
+      [
+        "show",
+        1
+      ],
+      [
+        "activeMenu",
+        1
+      ],
+      [
+        "selectedTechnologies",
+        1
+      ],
+      [
+        "activeTab",
+        1
+      ],
+      [
+        "planWorkouts",
+        1
+      ],
+      [
+        "savedWorkouts",
+        1
+      ]
+    ],
+    "common_initial_values": [
+      [
+        "[]",
+        5
+      ],
+      [
+        "\"rating\"",
+        1
+      ],
+      [
+        "false",
+        1
+      ],
+      [
+        "\"Home\"",
+        1
+      ],
+      [
+        "tab === \"saved\" ? \"saved\" : \"plan\"",
+        1
+      ],
+      [
+        "\"duration\"",
+        1
+      ]
+    ],
+    "projects_found": [
+      "Dev-Stack",
+      "Fitlog",
+      "b14-book-vibe",
+      "bangla-news-24"
+    ],
+    "occurrence_count": 10,
+    "frequency": 2.5,
+    "confidence": "high"
+  },
+  "array_methods": {
+    "method_frequency": {
+      "map": 23,
+      "filter": 5,
+      "sort": 4,
+      "find": 3,
+      "some": 3,
+      "reduce": 2
+    },
+    "project_usage": {
+      "b14-book-vibe": {
+        "map": 9,
+        "find": 2,
+        "sort": 3
+      },
+      "bangla-news-24": {
+        "map": 7,
+        "filter": 1
+      },
+      "Dev-Stack": {
+        "filter": 1,
+        "some": 1,
+        "map": 2
+      },
+      "Fitlog": {
+        "map": 5,
+        "reduce": 2,
+        "sort": 1,
+        "find": 1,
+        "filter": 3,
+        "some": 2
+      }
+    }
+  },
+  "storage": {
+    "overall": {
+      "localStorage_get": 0,
+      "localStorage_set": 0,
+      "localStorage_remove": 0
+    },
+    "project_usage": {
+      "b14-book-vibe": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "bangla-news-24": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "Dev-Stack": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "Fitlog": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      }
+    }
+  }
+}

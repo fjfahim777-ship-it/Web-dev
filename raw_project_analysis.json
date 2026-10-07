@@ -1,0 +1,7517 @@
+{
+  "b14-book-vibe": [
+    {
+      "file": "eslint.config.mjs",
+      "extension": ".mjs",
+      "imports": [
+        {
+          "imported": "{ defineConfig, globalIgnores }",
+          "source": "eslint/config",
+          "line": 1
+        },
+        {
+          "imported": "nextVitals",
+          "source": "eslint-config-next/core-web-vitals",
+          "line": 2
+        },
+        {
+          "imported": "nextTs",
+          "source": "eslint-config-next/typescript",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "next.config.ts",
+      "extension": ".ts",
+      "imports": [
+        {
+          "imported": "type { NextConfig }",
+          "source": "next",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "postcss.config.mjs",
+      "extension": ".mjs",
+      "imports": [],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\books\\[id]\\loading.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "BookDetailsLoading",
+          "line": 3,
+          "code": "const BookDetailsLoading = ("
+        },
+        {
+          "name": "BookDetailsLoading",
+          "line": 3,
+          "code": "const BookDetailsLoading = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "BookDetailsLoading",
+          "line": 3,
+          "code": "const BookDetailsLoading = ("
+        },
+        {
+          "name": "BookDetailsLoading",
+          "line": 3,
+          "code": "const BookDetailsLoading ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\books\\[id]\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "ReadButton",
+          "source": "@/components/bookDetails/ReadButton",
+          "line": 1
+        },
+        {
+          "imported": "WishListButton",
+          "source": "@/components/bookDetails/WishListButton",
+          "line": 2
+        },
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 3
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 4
+        },
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 5
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,",
+          "line": 15,
+          "code": "fetch(\n      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,\n    );\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error(\"Error fetching books data:\", error);\n    return [];\n  }\n};\n\nconst BookDetailsPage = async ({ params }: IBookDetailsPageProps) => {\n  const { id } = await params;\n  const booksData = await getBooks();\n  //   const book = booksData.find((book: IBook) => book.bookId === Number(id));\n  const book = booksData.find(\n    (book: IBook) => String(book.bookId) === String(id),\n  ) as IBook;\n\n  console.log(book, \"book\");\n  return (\n    <div className=\"container mx-auto px-4 py-10\">\n      <div className=\"card lg:card-side overflow-hidden border border-base-300 bg-base-100 shadow-xl\">\n        {/* Book Image */}\n        <figure className=\"relative bg-base-200 lg:w-2/5\">\n          <Image\n            src={book.image}\n            a"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "getBooks",
+          "line": 13,
+          "code": "const getBooks = async ("
+        },
+        {
+          "name": "BookDetailsPage",
+          "line": 26,
+          "code": "const BookDetailsPage = async ("
+        },
+        {
+          "name": "getBooks",
+          "line": 13,
+          "code": "const getBooks = async"
+        },
+        {
+          "name": "BookDetailsPage",
+          "line": 26,
+          "code": "const BookDetailsPage = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [
+        {
+          "name": "IBookDetailsPageProps",
+          "line": 7,
+          "code": "interface IBookDetailsPageProps {\n  params: Promise<{\n    id: string;\n  }"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "BookDetailsPage",
+          "line": 26,
+          "code": "const BookDetailsPage ="
+        }
+      ],
+      "array_methods": {
+        "map": 2,
+        "find": 2
+      },
+      "tailwind_classes": [
+        "container",
+        "mx-auto",
+        "px-4",
+        "py-10",
+        "card",
+        "lg:card-side",
+        "overflow-hidden",
+        "border",
+        "border-base-300",
+        "bg-base-100",
+        "shadow-xl",
+        "relative",
+        "bg-base-200",
+        "lg:w-2/5",
+        "h-full",
+        "min-h-[400px]",
+        "w-full",
+        "object-cover",
+        "lg:min-h-[550px]",
+        "card-body",
+        "justify-center",
+        "lg:w-3/5",
+        "lg:p-10",
+        "flex",
+        "flex-wrap",
+        "items-center",
+        "gap-2",
+        "badge",
+        "badge-primary",
+        "badge-outline",
+        "badge",
+        "badge-ghost",
+        "mt-3",
+        "text-3xl",
+        "font-extrabold",
+        "leading-tight",
+        "md:text-4xl",
+        "lg:text-5xl",
+        "text-lg",
+        "text-base-content/60",
+        "font-semibold",
+        "text-base-content",
+        "mt-2",
+        "flex",
+        "items-center",
+        "gap-3",
+        "rating",
+        "rating-sm",
+        "mask",
+        "mask-star-2",
+        "bg-orange-400",
+        "font-semibold",
+        "text-sm",
+        "text-base-content/50",
+        "mt-5",
+        "mb-2",
+        "text-lg",
+        "font-bold",
+        "leading-7",
+        "text-base-content/70",
+        "my-6",
+        "grid",
+        "grid-cols-2",
+        "gap-3",
+        "rounded-2xl",
+        "bg-base-200",
+        "p-4",
+        "sm:grid-cols-4",
+        "text-xs",
+        "text-base-content/50",
+        "mt-1",
+        "font-bold",
+        "text-xs",
+        "text-base-content/50",
+        "mt-1",
+        "font-bold",
+        "text-xs",
+        "text-base-content/50",
+        "mt-1",
+        "font-bold",
+        "text-xs",
+        "text-base-content/50",
+        "mt-1",
+        "font-bold",
+        "card-actions",
+        "mt-2"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\books\\loading.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "BooksLoading",
+          "line": 3,
+          "code": "const BooksLoading = ("
+        },
+        {
+          "name": "BooksLoading",
+          "line": 3,
+          "code": "const BooksLoading = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "BooksLoading",
+          "line": 3,
+          "code": "const BooksLoading = ("
+        },
+        {
+          "name": "BooksLoading",
+          "line": 3,
+          "code": "const BooksLoading ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\books\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "BookCard",
+          "source": "@/components/shared/BookCard",
+          "line": 1
+        },
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 2
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,",
+          "line": 7,
+          "code": "fetch(\n      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,\n    );\n    const data = await response.json();\n    return data;\n  }catch(error){\n    console.error(\"Error fetching books data:\", error);\n    return [];\n  }\n};\n\nconst Books = async () => {\n  const booksData = await getBooks();\n\n  return (\n    <section className=\"container mx-auto my-[70px] px-4\">\n      {/* Section Heading */}\n      <div className=\"mb-10 text-center\">\n        <p className=\"mb-2 text-sm font-semibold uppercase tracking-widest text-emerald-500\">\n          Our Collection\n        </p>\n\n        <h2 className=\"text-3xl font-bold text-slate-800 md:text-4xl\">\n          Explore All Books\n        </h2>\n\n        <p className=\"mx-auto mt-3 max-w-2xl text-slate-500\">\n          Discover amazing stories, timeless classics, and inspiring books from\n          talented authors.\n        </p>\n      </div>\n\n      {/* Boo"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "getBooks",
+          "line": 4,
+          "code": "const getBooks = async ("
+        },
+        {
+          "name": "Books",
+          "line": 18,
+          "code": "const Books = async ("
+        },
+        {
+          "name": "getBooks",
+          "line": 4,
+          "code": "const getBooks = async"
+        },
+        {
+          "name": "Books",
+          "line": 18,
+          "code": "const Books = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Books",
+          "line": 18,
+          "code": "const Books ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "container",
+        "mx-auto",
+        "my-[70px]",
+        "px-4",
+        "mb-10",
+        "text-center",
+        "mb-2",
+        "text-sm",
+        "font-semibold",
+        "uppercase",
+        "tracking-widest",
+        "text-emerald-500",
+        "text-3xl",
+        "font-bold",
+        "text-slate-800",
+        "md:text-4xl",
+        "mx-auto",
+        "mt-3",
+        "max-w-2xl",
+        "text-slate-500",
+        "grid",
+        "gap-6",
+        "sm:grid-cols-2",
+        "lg:grid-cols-3",
+        "xl:grid-cols-4"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\layout.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "type { Metadata }",
+          "source": "next",
+          "line": 1
+        },
+        {
+          "imported": "{ Geist, Geist_Mono }",
+          "source": "next/font/google",
+          "line": 2
+        },
+        {
+          "imported": "Navbar",
+          "source": "@/components/shared/Navbar",
+          "line": 4
+        },
+        {
+          "imported": "BooksProvider",
+          "source": "@/context/BooksContext",
+          "line": 5
+        },
+        {
+          "imported": "{ ToastContainer }",
+          "source": "react-toastify",
+          "line": 6
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 18
+        },
+        {
+          "type": "function",
+          "default": true,
+          "line": 23
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "RootLayout",
+          "line": 23,
+          "code": "function RootLayout("
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "RootLayout",
+          "line": 23,
+          "code": "export default function RootLayout("
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "min-h-full",
+        "flex",
+        "flex-col",
+        "font-bold",
+        "text-5xl",
+        "bg-yellow-500",
+        "py-7",
+        "text-center"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\listed-books\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "ListedBooksCard",
+          "source": "@/components/shared/ListedBooksCard",
+          "line": 2
+        },
+        {
+          "imported": "{ BooksContext }",
+          "source": "@/context/BooksContext",
+          "line": 3
+        },
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 4
+        },
+        {
+          "imported": "{ useContext, useState }",
+          "source": "react",
+          "line": 5
+        }
+      ],
+      "exports": [],
+      "use_state": [
+        {
+          "state_name": "sortBy",
+          "setter_name": "setSortBy",
+          "type": "\"rating\" | \"pages\" | \"year\"",
+          "initial_value": "\"rating\"",
+          "line": 9,
+          "code": "const [sortBy, setSortBy] = useState<\"rating\" | \"pages\" | \"year\">(\"rating\")"
+        }
+      ],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "BooksContext",
+          "line": 8,
+          "code": "useContext(BooksContext)"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "ListedBooks",
+          "line": 7,
+          "code": "const ListedBooks = ("
+        },
+        {
+          "name": "sortBooks",
+          "line": 14,
+          "code": "const sortBooks = ("
+        },
+        {
+          "name": "ListedBooks",
+          "line": 7,
+          "code": "const ListedBooks = () =>"
+        },
+        {
+          "name": "sortBooks",
+          "line": 14,
+          "code": "const sortBooks = (books: IBook[]) =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "ListedBooks",
+          "line": 7,
+          "code": "const ListedBooks = ("
+        },
+        {
+          "name": "ListedBooks",
+          "line": 7,
+          "code": "const ListedBooks ="
+        }
+      ],
+      "array_methods": {
+        "map": 2,
+        "sort": 3
+      },
+      "tailwind_classes": [
+        "container",
+        "mx-auto",
+        "py-[20px]",
+        "my-4",
+        "bg-amber-100",
+        "rounded-3xl",
+        "py-16",
+        "font-bold",
+        "text-4xl",
+        "text-center",
+        "text-center",
+        "select",
+        "select-success",
+        "tabs",
+        "tabs-lift",
+        "tab",
+        "tab-content",
+        "bg-base-100",
+        "border-base-300",
+        "p-6",
+        "space-y-[25px]",
+        "text-center",
+        "text-lg",
+        "font-semibold",
+        "tab",
+        "tab-content",
+        "bg-base-100",
+        "border-base-300",
+        "p-6",
+        "text-center",
+        "text-lg",
+        "font-semibold"
+      ],
+      "conditionals": 5,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\loading.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "GlobalLoading",
+          "line": 3,
+          "code": "const GlobalLoading = ("
+        },
+        {
+          "name": "GlobalLoading",
+          "line": 3,
+          "code": "const GlobalLoading = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "GlobalLoading",
+          "line": 3,
+          "code": "const GlobalLoading = ("
+        },
+        {
+          "name": "GlobalLoading",
+          "line": 3,
+          "code": "const GlobalLoading ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Banner",
+          "source": "@/components/homepage/Banner",
+          "line": 1
+        },
+        {
+          "imported": "Books",
+          "source": "@/components/homepage/Books",
+          "line": 2
+        },
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "page",
+          "line": 5,
+          "code": "const page = ("
+        },
+        {
+          "name": "page",
+          "line": 5,
+          "code": "const page = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\read-books\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ BooksContext }",
+          "source": "@/context/BooksContext",
+          "line": 3
+        },
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 4
+        },
+        {
+          "imported": "React, { useContext }",
+          "source": "react",
+          "line": 5
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "BooksContext",
+          "line": 60,
+          "code": "useContext(BooksContext)"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "getPath",
+          "line": 29,
+          "code": "const getPath = ("
+        },
+        {
+          "name": "TriangleBar",
+          "line": 36,
+          "code": "const TriangleBar = ("
+        },
+        {
+          "name": "CustomColorLabel",
+          "line": 54,
+          "code": "const CustomColorLabel = ("
+        },
+        {
+          "name": "ReadBooks",
+          "line": 59,
+          "code": "const ReadBooks = ("
+        },
+        {
+          "name": "getPath",
+          "line": 29,
+          "code": "const getPath = (x: number, y: number, width: number, height: number) =>"
+        },
+        {
+          "name": "TriangleBar",
+          "line": 36,
+          "code": "const TriangleBar = (props: BarShapeProps) =>"
+        },
+        {
+          "name": "CustomColorLabel",
+          "line": 54,
+          "code": "const CustomColorLabel = (props: LabelProps) =>"
+        },
+        {
+          "name": "ReadBooks",
+          "line": 59,
+          "code": "const ReadBooks = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "TriangleBar",
+          "line": 36,
+          "code": "const TriangleBar = ("
+        },
+        {
+          "name": "CustomColorLabel",
+          "line": 54,
+          "code": "const CustomColorLabel = ("
+        },
+        {
+          "name": "ReadBooks",
+          "line": 59,
+          "code": "const ReadBooks = ("
+        },
+        {
+          "name": "TriangleBar",
+          "line": 36,
+          "code": "const TriangleBar ="
+        },
+        {
+          "name": "CustomColorLabel",
+          "line": 54,
+          "code": "const CustomColorLabel ="
+        },
+        {
+          "name": "ReadBooks",
+          "line": 59,
+          "code": "const ReadBooks ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "container",
+        "mx-auto",
+        "my-5",
+        "font-bold",
+        "text-4xl",
+        "text-center"
+      ],
+      "conditionals": 3,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\bookDetails\\ReadButton.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ BooksContext }",
+          "source": "@/context/BooksContext",
+          "line": 2
+        },
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 3
+        },
+        {
+          "imported": "React, { useContext }",
+          "source": "react",
+          "line": 4
+        },
+        {
+          "imported": "{ toast }",
+          "source": "react-toastify",
+          "line": 5
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "BooksContext",
+          "line": 8,
+          "code": "useContext(BooksContext)"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [
+        {
+          "name": "handleReadBook",
+          "line": 10,
+          "code": "const handleReadBook ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "ReadButton",
+          "line": 7,
+          "code": "const ReadButton = ("
+        },
+        {
+          "name": "handleReadBook",
+          "line": 10,
+          "code": "const handleReadBook = ("
+        },
+        {
+          "name": "ReadButton",
+          "line": 7,
+          "code": "const ReadButton = ({ book }: { book: IBook }) =>"
+        },
+        {
+          "name": "handleReadBook",
+          "line": 10,
+          "code": "const handleReadBook = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "ReadButton",
+          "line": 7,
+          "code": "const ReadButton = ("
+        },
+        {
+          "name": "ReadButton",
+          "line": 7,
+          "code": "const ReadButton ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "btn",
+        "btn-primary",
+        "flex-1"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\bookDetails\\WishListButton.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ BooksContext }",
+          "source": "@/context/BooksContext",
+          "line": 2
+        },
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 3
+        },
+        {
+          "imported": "React, { useContext }",
+          "source": "react",
+          "line": 4
+        },
+        {
+          "imported": "{ toast }",
+          "source": "react-toastify",
+          "line": 5
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "BooksContext",
+          "line": 8,
+          "code": "useContext(BooksContext)"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [
+        {
+          "name": "handleAddToWishlist",
+          "line": 10,
+          "code": "const handleAddToWishlist ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "WishListButton",
+          "line": 7,
+          "code": "const WishListButton = ("
+        },
+        {
+          "name": "handleAddToWishlist",
+          "line": 10,
+          "code": "const handleAddToWishlist = ("
+        },
+        {
+          "name": "WishListButton",
+          "line": 7,
+          "code": "const WishListButton = ({ book }: { book: IBook }) =>"
+        },
+        {
+          "name": "handleAddToWishlist",
+          "line": 10,
+          "code": "const handleAddToWishlist = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "WishListButton",
+          "line": 7,
+          "code": "const WishListButton = ("
+        },
+        {
+          "name": "WishListButton",
+          "line": 7,
+          "code": "const WishListButton ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "btn",
+        "btn-primary",
+        "flex-1"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\homepage\\Banner.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 2
+        },
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 3
+        },
+        {
+          "imported": "bannerImg",
+          "source": "@/assets/hero_img.jpg",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Banner",
+          "line": 6,
+          "code": "const Banner = ("
+        },
+        {
+          "name": "Banner",
+          "line": 6,
+          "code": "const Banner = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Banner",
+          "line": 6,
+          "code": "const Banner = ("
+        },
+        {
+          "name": "Banner",
+          "line": 6,
+          "code": "const Banner ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "px-4",
+        "py-10",
+        "md:py-16",
+        "container",
+        "mx-auto",
+        "overflow-hidden",
+        "rounded-3xl",
+        "bg-gradient-to-br",
+        "from-slate-900",
+        "via-slate-800",
+        "to-slate-700",
+        "grid",
+        "items-center",
+        "gap-8",
+        "p-6",
+        "md:grid-cols-2",
+        "md:p-10",
+        "lg:p-14",
+        "space-y-6",
+        "text-center",
+        "md:text-left",
+        "inline-block",
+        "rounded-full",
+        "bg-white/10",
+        "px-4",
+        "py-2",
+        "text-sm",
+        "font-medium",
+        "text-white",
+        "backdrop-blur",
+        "text-4xl",
+        "font-extrabold",
+        "leading-tight",
+        "text-white",
+        "md:text-5xl",
+        "lg:text-6xl",
+        "block",
+        "text-emerald-400",
+        "max-w-lg",
+        "text-base",
+        "leading-7",
+        "text-slate-300",
+        "md:text-lg",
+        "flex",
+        "flex-col",
+        "gap-3",
+        "sm:flex-row",
+        "sm:justify-center",
+        "md:justify-start",
+        "btn",
+        "btn-success",
+        "rounded-full",
+        "px-7",
+        "text-white",
+        "btn",
+        "btn-outline",
+        "rounded-full",
+        "border-white/30",
+        "px-7",
+        "text-white",
+        "hover:border-white",
+        "hover:bg-white",
+        "hover:text-slate-900",
+        "relative",
+        "flex",
+        "justify-center",
+        "absolute",
+        "h-64",
+        "w-64",
+        "rounded-full",
+        "bg-emerald-400/20",
+        "blur-3xl",
+        "relative",
+        "overflow-hidden",
+        "rounded-2xl",
+        "shadow-2xl",
+        "h-auto",
+        "w-full",
+        "object-cover",
+        "transition",
+        "duration-500",
+        "hover:scale-105"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\homepage\\Books.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "BookCard",
+          "source": "../shared/BookCard",
+          "line": 1
+        },
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 2
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,",
+          "line": 7,
+          "code": "fetch(\n      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,\n    );\n    const data = await response.json();\n    return data;\n  }catch(error){\n    console.error(\"Error fetching books data:\", error);\n    return [];\n  }\n};\n\nconst Books = async () => {\n  const booksData = await getBooks();\n\n  return (\n    <section className=\"container mx-auto my-[70px] px-4\">\n      {/* Section Heading */}\n      <div className=\"mb-10 text-center\">\n        <p className=\"mb-2 text-sm font-semibold uppercase tracking-widest text-emerald-500\">\n          Our Collection\n        </p>\n\n        <h2 className=\"text-3xl font-bold text-slate-800 md:text-4xl\">\n          Explore Popular Books\n        </h2>\n\n        <p className=\"mx-auto mt-3 max-w-2xl text-slate-500\">\n          Discover amazing stories, timeless classics, and inspiring books from\n          talented authors.\n        </p>\n      </div>\n\n      {/*"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "getBooks",
+          "line": 4,
+          "code": "const getBooks = async ("
+        },
+        {
+          "name": "Books",
+          "line": 18,
+          "code": "const Books = async ("
+        },
+        {
+          "name": "getBooks",
+          "line": 4,
+          "code": "const getBooks = async"
+        },
+        {
+          "name": "Books",
+          "line": 18,
+          "code": "const Books = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Books",
+          "line": 18,
+          "code": "const Books ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "container",
+        "mx-auto",
+        "my-[70px]",
+        "px-4",
+        "mb-10",
+        "text-center",
+        "mb-2",
+        "text-sm",
+        "font-semibold",
+        "uppercase",
+        "tracking-widest",
+        "text-emerald-500",
+        "text-3xl",
+        "font-bold",
+        "text-slate-800",
+        "md:text-4xl",
+        "mx-auto",
+        "mt-3",
+        "max-w-2xl",
+        "text-slate-500",
+        "grid",
+        "gap-6",
+        "sm:grid-cols-2",
+        "lg:grid-cols-3"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\shared\\BookCard.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 1
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 2
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 3
+        },
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "BookCard",
+          "line": 10,
+          "code": "const BookCard = ("
+        },
+        {
+          "name": "BookCard",
+          "line": 10,
+          "code": "const BookCard = ({ book }: IBookCardProps) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "IBookCardProps",
+          "line": 6,
+          "code": "interface IBookCardProps {\n  book: IBook;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "BookCard",
+          "line": 10,
+          "code": "const BookCard = ("
+        },
+        {
+          "name": "BookCard",
+          "line": 10,
+          "code": "const BookCard ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "group",
+        "overflow-hidden",
+        "rounded-2xl",
+        "border",
+        "border-slate-200",
+        "bg-white",
+        "shadow-sm",
+        "transition-all",
+        "duration-300",
+        "hover:-translate-y-2",
+        "hover:shadow-xl",
+        "relative",
+        "h-72",
+        "overflow-hidden",
+        "bg-slate-100",
+        "h-full",
+        "w-full",
+        "object-cover",
+        "transition",
+        "duration-500",
+        "group-hover:scale-105",
+        "absolute",
+        "left-4",
+        "top-4",
+        "rounded-full",
+        "bg-white/90",
+        "px-3",
+        "py-1",
+        "text-xs",
+        "font-semibold",
+        "text-slate-700",
+        "shadow-sm",
+        "backdrop-blur",
+        "absolute",
+        "right-4",
+        "top-4",
+        "flex",
+        "items-center",
+        "gap-1",
+        "rounded-full",
+        "bg-slate-900/80",
+        "px-3",
+        "py-1",
+        "text-sm",
+        "font-medium",
+        "text-white",
+        "backdrop-blur",
+        "text-yellow-400",
+        "p-5",
+        "mb-3",
+        "flex",
+        "flex-wrap",
+        "gap-2",
+        "rounded-md",
+        "bg-emerald-50",
+        "px-2.5",
+        "py-1",
+        "text-xs",
+        "font-medium",
+        "text-emerald-600",
+        "line-clamp-1",
+        "text-xl",
+        "font-bold",
+        "text-slate-800",
+        "transition-colors",
+        "group-hover:text-emerald-600",
+        "mt-1",
+        "text-sm",
+        "text-slate-500",
+        "font-medium",
+        "text-slate-700",
+        "my-5",
+        "flex",
+        "items-center",
+        "justify-between",
+        "border-y",
+        "border-slate-100",
+        "py-3",
+        "text-sm",
+        "text-slate-500",
+        "text-xs",
+        "text-slate-400",
+        "font-semibold",
+        "text-slate-700",
+        "h-8",
+        "w-px",
+        "bg-slate-200",
+        "text-xs",
+        "text-slate-400",
+        "font-semibold",
+        "text-slate-700",
+        "h-8",
+        "w-px",
+        "bg-slate-200",
+        "text-xs",
+        "text-slate-400",
+        "max-w-[90px]",
+        "truncate",
+        "font-semibold",
+        "text-slate-700",
+        "btn",
+        "w-full",
+        "rounded-xl",
+        "border-0",
+        "bg-slate-900",
+        "text-white",
+        "transition-all",
+        "hover:bg-emerald-600"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\shared\\ListedBooksCard.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 1
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 2
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 3
+        },
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "ListedBooksCard",
+          "line": 10,
+          "code": "const ListedBooksCard = ("
+        },
+        {
+          "name": "ListedBooksCard",
+          "line": 10,
+          "code": "const ListedBooksCard = ({ book }: IListedBooksCardProps) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "IListedBooksCardProps",
+          "line": 6,
+          "code": "interface IListedBooksCardProps {\n  book: IBook;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "ListedBooksCard",
+          "line": 10,
+          "code": "const ListedBooksCard = ("
+        },
+        {
+          "name": "ListedBooksCard",
+          "line": 10,
+          "code": "const ListedBooksCard ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "group",
+        "flex",
+        "flex-col",
+        "items-center",
+        "overflow-hidden",
+        "rounded-2xl",
+        "border",
+        "border-base-300",
+        "bg-base-100",
+        "shadow-sm",
+        "transition-all",
+        "duration-300",
+        "hover:-translate-y-1",
+        "hover:shadow-xl",
+        "sm:flex-row",
+        "relative",
+        "h-72",
+        "w-full",
+        "shrink-0",
+        "overflow-hidden",
+        "bg-base-200",
+        "sm:h-auto",
+        "sm:w-[400px]",
+        "h-full",
+        "w-full",
+        "object-cover",
+        "transition",
+        "duration-500",
+        "group-hover:scale-105",
+        "absolute",
+        "left-4",
+        "top-4",
+        "rounded-full",
+        "bg-base-100/90",
+        "px-3",
+        "py-1",
+        "text-xs",
+        "font-semibold",
+        "shadow",
+        "backdrop-blur",
+        "flex",
+        "flex-1",
+        "flex-col",
+        "p-6",
+        "md:p-8",
+        "mb-3",
+        "flex",
+        "flex-wrap",
+        "gap-2",
+        "badge",
+        "badge-primary",
+        "badge-outline",
+        "text-2xl",
+        "font-bold",
+        "transition-colors",
+        "group-hover:text-primary",
+        "md:text-3xl",
+        "mt-1",
+        "text-sm",
+        "text-base-content/60",
+        "md:text-base",
+        "font-semibold",
+        "text-base-content",
+        "mt-4",
+        "flex",
+        "items-center",
+        "gap-2",
+        "text-lg",
+        "text-orange-400",
+        "font-semibold",
+        "text-sm",
+        "text-base-content/50",
+        "mt-4",
+        "line-clamp-3",
+        "max-w-3xl",
+        "text-sm",
+        "leading-6",
+        "text-base-content/65",
+        "md:text-base",
+        "mt-5",
+        "grid",
+        "grid-cols-2",
+        "gap-4",
+        "border-y",
+        "border-base-300",
+        "py-4",
+        "sm:grid-cols-4",
+        "text-xs",
+        "text-base-content/50",
+        "mt-1",
+        "font-bold",
+        "text-xs",
+        "text-base-content/50",
+        "mt-1",
+        "font-bold",
+        "text-xs",
+        "text-base-content/50",
+        "mt-1",
+        "truncate",
+        "font-bold",
+        "text-xs",
+        "text-base-content/50",
+        "mt-1",
+        "font-bold",
+        "mt-6",
+        "flex",
+        "flex-wrap",
+        "gap-3",
+        "btn",
+        "btn-primary",
+        "rounded-xl",
+        "px-6",
+        "btn",
+        "btn-primary",
+        "rounded-xl",
+        "px-6",
+        "btn",
+        "btn-outline",
+        "rounded-xl",
+        "px-6"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\shared\\Navbar.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 1
+        },
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 2
+        },
+        {
+          "imported": "logo",
+          "source": "@/assets/book.ico",
+          "line": 3
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Navbar",
+          "line": 6,
+          "code": "const Navbar = ("
+        },
+        {
+          "name": "Navbar",
+          "line": 6,
+          "code": "const Navbar = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Navbar",
+          "line": 6,
+          "code": "const Navbar = ("
+        },
+        {
+          "name": "Navbar",
+          "line": 6,
+          "code": "const Navbar ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "bg-base-100",
+        "shadow-sm",
+        "navbar",
+        "container",
+        "mx-auto",
+        "navbar-start",
+        "dropdown",
+        "btn",
+        "btn-ghost",
+        "lg:hidden",
+        "h-5",
+        "w-5",
+        "menu",
+        "menu-sm",
+        "dropdown-content",
+        "bg-base-100",
+        "rounded-box",
+        "z-1",
+        "mt-3",
+        "w-52",
+        "p-2",
+        "shadow",
+        "p-2",
+        "flex",
+        "gap-2",
+        "items-center",
+        "navbar-center",
+        "hidden",
+        "lg:flex",
+        "menu",
+        "menu-horizontal",
+        "px-1",
+        "navbar-end",
+        "gap-2",
+        "btn",
+        "btn-success",
+        "btn",
+        "btn-error"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\context\\BooksContext.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ IBook }",
+          "source": "@/types/books.type",
+          "line": 3
+        },
+        {
+          "imported": "React, { createContext, ReactNode, useState }",
+          "source": "react",
+          "line": 4
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 13
+        }
+      ],
+      "use_state": [
+        {
+          "state_name": "readBooks",
+          "setter_name": "setReadBooks",
+          "type": "IBook[]",
+          "initial_value": "[]",
+          "line": 21,
+          "code": "const [readBooks, setReadBooks] = useState<IBook[]>([])"
+        },
+        {
+          "state_name": "wishlist",
+          "setter_name": "setWishlist",
+          "type": "IBook[]",
+          "initial_value": "[]",
+          "line": 22,
+          "code": "const [wishlist, setWishlist] = useState<IBook[]>([])"
+        }
+      ],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "createContext",
+          "type": "IBooksContext",
+          "argument": "{\n  readBooks: [],\n  setReadBooks: (",
+          "line": 13,
+          "code": "createContext<IBooksContext>({\n  readBooks: [],\n  setReadBooks: ()"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "BooksProvider",
+          "line": 20,
+          "code": "const BooksProvider = ("
+        },
+        {
+          "name": "BooksProvider",
+          "line": 20,
+          "code": "const BooksProvider = ({ children }: { children: ReactNode }) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "IBooksContext",
+          "line": 6,
+          "code": "interface IBooksContext {\n  readBooks: IBook[];\n  setReadBooks: React.Dispatch<React.SetStateAction<IBook[]>>;\n  wishlist: IBook[];\n  setWishlist: React.Dispatch<React.SetStateAction<IBook[]>>;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "BooksProvider",
+          "line": 20,
+          "code": "const BooksProvider = ("
+        },
+        {
+          "name": "BooksContext",
+          "line": 13,
+          "code": "export const BooksContext ="
+        },
+        {
+          "name": "BooksProvider",
+          "line": 20,
+          "code": "const BooksProvider ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\types\\books.type.ts",
+      "extension": ".ts",
+      "imports": [],
+      "exports": [
+        {
+          "type": "interface",
+          "default": false,
+          "line": 3
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [
+        {
+          "name": "IBook",
+          "line": 3,
+          "code": "export interface IBook {\n    bookId: number,\n    bookName: string,\n    author: string,\n    image: string,\n    review: string,\n    totalPages: number,\n    rating: number,\n    category: string,\n    tags: string[],\n    publisher: string,\n    yearOfPublishing: number\n}"
+        }
+      ],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    }
+  ],
+  "bangla-news-24": [
+    {
+      "file": "eslint.config.mjs",
+      "extension": ".mjs",
+      "imports": [
+        {
+          "imported": "{ defineConfig, globalIgnores }",
+          "source": "eslint/config",
+          "line": 1
+        },
+        {
+          "imported": "nextVitals",
+          "source": "eslint-config-next/core-web-vitals",
+          "line": 2
+        },
+        {
+          "imported": "nextTs",
+          "source": "eslint-config-next/typescript",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "next.config.ts",
+      "extension": ".ts",
+      "imports": [
+        {
+          "imported": "type { NextConfig }",
+          "source": "next",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "postcss.config.mjs",
+      "extension": ".mjs",
+      "imports": [],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\api\\auth\\[...all]\\route.ts",
+      "extension": ".ts",
+      "imports": [
+        {
+          "imported": "{ auth }",
+          "source": "@/lib/auth",
+          "line": 1
+        },
+        {
+          "imported": "{ toNextJsHandler }",
+          "source": "better-auth/next-js",
+          "line": 2
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 4
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\category\\[categoryId]\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "NewsCard",
+          "source": "@/components/NewsCard",
+          "line": 1
+        },
+        {
+          "imported": "{ notFound }",
+          "source": "next/navigation",
+          "line": 2
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "`https://news-api-v2.vercel.app/api/category/${categoryId}`,",
+          "line": 16,
+          "code": "fetch(\n    `https://news-api-v2.vercel.app/api/category/${categoryId}`,\n  );\n\n  const data = await res.json();\n\n  const categoryNews: News[] = data.data;\n\n    if(!categoryNews) {\n        notFound()\n    }\n\n\n\n  return (\n    <div>\n      <h1 className=\"text-2xl font-bold border-b-2 border-red-700 mb-5\">\n        {data.title}\n      </h1>\n\n      <div className=\"grid grid-cols-3 gap-10\">\n        {categoryNews.map((news) => (\n          <NewsCard key={news.id} news={news} />\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default CategoryNews;"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "CategoryNews",
+          "line": 13,
+          "code": "const CategoryNews = async ("
+        },
+        {
+          "name": "CategoryNews",
+          "line": 13,
+          "code": "const CategoryNews = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [
+        {
+          "name": "News",
+          "line": 4,
+          "code": "interface News {\n  id: string;\n  title: string;\n  description: string;\n  category: string;\n  imageUrl: string;\n  imageAlt: string;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "CategoryNews",
+          "line": 13,
+          "code": "const CategoryNews ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "text-2xl",
+        "font-bold",
+        "border-b-2",
+        "border-red-700",
+        "mb-5",
+        "grid",
+        "grid-cols-3",
+        "gap-10"
+      ],
+      "conditionals": 1,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\layout.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "type { Metadata }",
+          "source": "next",
+          "line": 1
+        },
+        {
+          "imported": "{ Noto_Serif_Bengali }",
+          "source": "next/font/google",
+          "line": 2
+        },
+        {
+          "imported": "Header",
+          "source": "@/components/Header",
+          "line": 4
+        },
+        {
+          "imported": "Marquee",
+          "source": "@/components/Marquee",
+          "line": 5
+        },
+        {
+          "imported": "{ Toaster }",
+          "source": "react-hot-toast",
+          "line": 6
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 14
+        },
+        {
+          "type": "function",
+          "default": true,
+          "line": 19
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "RootLayout",
+          "line": 19,
+          "code": "function RootLayout("
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "RootLayout",
+          "line": 19,
+          "code": "export default function RootLayout("
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "min-h-full",
+        "max-w-7xl",
+        "mx-auto"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\loading.tsx",
+      "extension": ".tsx",
+      "imports": [],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "LoadingPage",
+          "line": 1,
+          "code": "const LoadingPage = ("
+        },
+        {
+          "name": "LoadingPage",
+          "line": 1,
+          "code": "const LoadingPage = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "LoadingPage",
+          "line": 1,
+          "code": "const LoadingPage = ("
+        },
+        {
+          "name": "LoadingPage",
+          "line": 1,
+          "code": "const LoadingPage ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "min-h-screen",
+        "flex",
+        "items-center",
+        "justify-center",
+        "bg-gradient-to-br",
+        "from-red-50",
+        "via-rose-100",
+        "to-red-200",
+        "px-4",
+        "text-center",
+        "max-w-lg",
+        "relative",
+        "w-24",
+        "h-24",
+        "mx-auto",
+        "mb-8",
+        "absolute",
+        "inset-0",
+        "rounded-full",
+        "border-4",
+        "border-red-200",
+        "absolute",
+        "inset-0",
+        "rounded-full",
+        "border-4",
+        "border-transparent",
+        "border-t-red-500",
+        "border-r-rose-600",
+        "animate-spin",
+        "absolute",
+        "inset-0",
+        "flex",
+        "items-center",
+        "justify-center",
+        "w-3",
+        "h-3",
+        "rounded-full",
+        "bg-red-500",
+        "animate-pulse",
+        "flex",
+        "items-center",
+        "justify-center",
+        "gap-3",
+        "my-4",
+        "h-px",
+        "w-16",
+        "bg-red-400",
+        "w-2",
+        "h-2",
+        "rounded-full",
+        "bg-red-500",
+        "animate-ping",
+        "h-px",
+        "w-16",
+        "bg-red-400",
+        "text-2xl",
+        "sm:text-3xl",
+        "font-bold",
+        "text-red-900",
+        "mb-3",
+        "text-red-700/80",
+        "leading-relaxed",
+        "flex",
+        "items-center",
+        "justify-center",
+        "gap-2",
+        "mt-6",
+        "w-2",
+        "h-2",
+        "rounded-full",
+        "bg-red-500",
+        "animate-bounce",
+        "[animation-delay:-0.3s]",
+        "w-2",
+        "h-2",
+        "rounded-full",
+        "bg-red-500",
+        "animate-bounce",
+        "[animation-delay:-0.15s]",
+        "w-2",
+        "h-2",
+        "rounded-full",
+        "bg-red-500",
+        "animate-bounce"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\news\\[newsId]\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ notFound }",
+          "source": "next/navigation",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "`https://news-api-v2.vercel.app/api/article/${newsId}`",
+          "line": 6,
+          "code": "fetch(`https://news-api-v2.vercel.app/api/article/${newsId}`)\n\n    const data = await res.json() \n\n    const news = data.data \n    if(!news) {\n        notFound()\n    }\n\n   \n    return (\n        <div>\n            <h1>{news.title}</h1>\n            {/* image */}\n\n\n            <p>{news.text}</p>\n        </div>\n    );\n};\n\nexport default NewsDetails;"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "NewsDetails",
+          "line": 3,
+          "code": "const NewsDetails = async("
+        },
+        {
+          "name": "NewsDetails",
+          "line": 3,
+          "code": "const NewsDetails = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "NewsDetails",
+          "line": 3,
+          "code": "const NewsDetails ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 1,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\not-found.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "NotFound",
+          "line": 3,
+          "code": "const NotFound = ("
+        },
+        {
+          "name": "NotFound",
+          "line": 3,
+          "code": "const NotFound = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "NotFound",
+          "line": 3,
+          "code": "const NotFound = ("
+        },
+        {
+          "name": "NotFound",
+          "line": 3,
+          "code": "const NotFound ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "min-h-screen",
+        "flex",
+        "items-center",
+        "justify-center",
+        "bg-gradient-to-br",
+        "from-red-50",
+        "via-rose-100",
+        "to-red-200",
+        "px-4",
+        "text-center",
+        "max-w-lg",
+        "text-[10rem]",
+        "sm:text-[12rem]",
+        "font-black",
+        "leading-none",
+        "bg-gradient-to-b",
+        "from-red-500",
+        "to-red-800",
+        "bg-clip-text",
+        "text-transparent",
+        "drop-shadow-[0_5px_15px_rgba(220,38,38,0.4)]",
+        "select-none",
+        "flex",
+        "items-center",
+        "justify-center",
+        "gap-3",
+        "my-4",
+        "h-px",
+        "w-16",
+        "bg-red-400",
+        "w-2",
+        "h-2",
+        "rounded-full",
+        "bg-red-500",
+        "h-px",
+        "w-16",
+        "bg-red-400",
+        "text-2xl",
+        "sm:text-3xl",
+        "font-bold",
+        "text-red-900",
+        "mb-3",
+        "text-red-700/80",
+        "mb-8",
+        "leading-relaxed",
+        "inline-block",
+        "px-8",
+        "py-3",
+        "rounded-full",
+        "font-semibold",
+        "text-white",
+        "bg-gradient-to-r",
+        "from-red-500",
+        "to-rose-600",
+        "shadow-lg",
+        "shadow-red-500/40",
+        "hover:from-red-600",
+        "hover:to-rose-700",
+        "hover:shadow-xl",
+        "hover:shadow-red-600/50",
+        "hover:-translate-y-0.5",
+        "active:translate-y-0",
+        "transition-all",
+        "duration-300",
+        "ease-out"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "MainNews",
+          "source": "@/components/MainNews",
+          "line": 1
+        },
+        {
+          "imported": "MostRead",
+          "source": "@/components/MostRead",
+          "line": 3
+        },
+        {
+          "imported": "NewsCard",
+          "source": "@/components/NewsCard",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "\"https://news-api-v2.vercel.app/api/news/sections\"",
+          "line": 20,
+          "code": "fetch(\"https://news-api-v2.vercel.app/api/news/sections\");\n  const data = await res.json();\n  const sections = data.data;\n  const mainNews = sections[0].articles;\n  const otherSections:IOtherSection[] = sections.slice(1);\n  // console.log(otherSections);\n\n  return (\n    <div>\n   \n\n      <div className=\"grid gap-5 grid-cols-3  mt-5\">\n        {/* news section */}\n        <div className=\" col-span-2 \">\n          <MainNews news={mainNews} />\n\n          <div className=\" grid gap-5 mt-5\">\n            {otherSections.map((os) => (\n              <div\n                className=\"\"\n                key={os.curationId}\n              >\n                <h1 className=\"font-bold border-b-2 pb-1  border-red-700\">{os.title}</h1>\n\n                <div className=\"grid mt-3 grid-cols-3 gap-2\">\n                  {os.articles.map((news) => (\n                  <NewsCard key={news.id} news={news} />"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "Home",
+          "line": 19,
+          "code": "async function Home"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Home",
+          "line": 19,
+          "code": "function Home("
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "IOtherSection",
+          "line": 6,
+          "code": "interface IOtherSection {\n  curationId: string;\n  title: string;\n  articles: {\n    id: string;\n    title: string;\n    description: string;\n    category: string;\n    imageUrl: string;\n    imageAlt: string;\n  }"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "Home",
+          "line": 19,
+          "code": "function Home("
+        }
+      ],
+      "array_methods": {
+        "map": 2
+      },
+      "tailwind_classes": [
+        "grid",
+        "gap-5",
+        "grid-cols-3",
+        "mt-5",
+        "col-span-2",
+        "grid",
+        "gap-5",
+        "mt-5",
+        "font-bold",
+        "border-b-2",
+        "pb-1",
+        "border-red-700",
+        "grid",
+        "mt-3",
+        "grid-cols-3",
+        "gap-2",
+        "col-span-1"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\profile\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ authClient }",
+          "source": "@/lib/auth-client",
+          "line": 3
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 4
+        },
+        {
+          "imported": "React, { useState }",
+          "source": "react",
+          "line": 6
+        }
+      ],
+      "exports": [],
+      "use_state": [
+        {
+          "state_name": "show",
+          "setter_name": "setShow",
+          "type": null,
+          "initial_value": "false",
+          "line": 14,
+          "code": "const [show, setShow] = useState(false)"
+        }
+      ],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [
+        {
+          "name": "handleUpdateProfile",
+          "line": 17,
+          "code": "const handleUpdateProfile = async ("
+        },
+        {
+          "name": "handleUpdateProfile",
+          "line": 17,
+          "code": "const handleUpdateProfile = async"
+        }
+      ],
+      "event_handlers": [
+        {
+          "name": "handleUpdateProfile",
+          "line": 17,
+          "code": "const handleUpdateProfile ="
+        },
+        {
+          "name": "handleShowForm",
+          "line": 29,
+          "code": "const handleShowForm ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "ProfilePage",
+          "line": 8,
+          "code": "const ProfilePage = ("
+        },
+        {
+          "name": "handleShowForm",
+          "line": 29,
+          "code": "const handleShowForm = ("
+        },
+        {
+          "name": "ProfilePage",
+          "line": 8,
+          "code": "const ProfilePage = () =>"
+        },
+        {
+          "name": "handleShowForm",
+          "line": 29,
+          "code": "const handleShowForm = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "ProfilePage",
+          "line": 8,
+          "code": "const ProfilePage = ("
+        },
+        {
+          "name": "ProfilePage",
+          "line": 8,
+          "code": "const ProfilePage ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "mt-5",
+        "flex",
+        "flex-col",
+        "items-center",
+        "gap-2",
+        "avatar",
+        "ring-primary",
+        "ring-offset-base-100",
+        "w-10",
+        "rounded-full",
+        "ring-2",
+        "ring-offset-2",
+        "btn",
+        "fieldset",
+        "rounded-box",
+        "w-md",
+        "label",
+        "input",
+        "w-md",
+        "label",
+        "input",
+        "w-md",
+        "btn",
+        "text-white",
+        "bg-red-700",
+        "mt-4"
+      ],
+      "conditionals": 1,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\signin\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ authClient }",
+          "source": "@/lib/auth-client",
+          "line": 3
+        },
+        {
+          "imported": "toast",
+          "source": "react-hot-toast",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [
+        {
+          "name": "onSubmit",
+          "line": 7,
+          "code": "const onSubmit = async ("
+        },
+        {
+          "name": "handleGoogleSignIn",
+          "line": 34,
+          "code": "const handleGoogleSignIn = async ("
+        },
+        {
+          "name": "handleGithubSignIn",
+          "line": 41,
+          "code": "const handleGithubSignIn = async ("
+        },
+        {
+          "name": "onSubmit",
+          "line": 7,
+          "code": "const onSubmit = async"
+        },
+        {
+          "name": "handleGoogleSignIn",
+          "line": 34,
+          "code": "const handleGoogleSignIn = async"
+        },
+        {
+          "name": "handleGithubSignIn",
+          "line": 41,
+          "code": "const handleGithubSignIn = async"
+        }
+      ],
+      "event_handlers": [
+        {
+          "name": "handleGoogleSignIn",
+          "line": 34,
+          "code": "const handleGoogleSignIn ="
+        },
+        {
+          "name": "handleGithubSignIn",
+          "line": 41,
+          "code": "const handleGithubSignIn ="
+        },
+        {
+          "name": "onSubmit",
+          "line": 7,
+          "code": "const onSubmit ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "SignInPage",
+          "line": 6,
+          "code": "const SignInPage = ("
+        },
+        {
+          "name": "SignInPage",
+          "line": 6,
+          "code": "const SignInPage = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "SignInPage",
+          "line": 6,
+          "code": "const SignInPage = ("
+        },
+        {
+          "name": "SignInPage",
+          "line": 6,
+          "code": "const SignInPage ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "flex",
+        "flex-col",
+        "items-center",
+        "justify-center",
+        "mt-5",
+        "text-2xl",
+        "font-bold",
+        "text-red-700",
+        "fieldset",
+        "rounded-box",
+        "w-md",
+        "label",
+        "input",
+        "w-md",
+        "label",
+        "input",
+        "w-md",
+        "btn",
+        "text-white",
+        "bg-red-700",
+        "mt-4",
+        "btn",
+        "btn"
+      ],
+      "conditionals": 2,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\signup\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ authClient }",
+          "source": "@/lib/auth-client",
+          "line": 3
+        },
+        {
+          "imported": "{ redirect }",
+          "source": "next/navigation",
+          "line": 4
+        },
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 5
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [
+        {
+          "name": "onSubmit",
+          "line": 8,
+          "code": "const onSubmit = async ("
+        },
+        {
+          "name": "handleGoogleSignIn",
+          "line": 30,
+          "code": "const handleGoogleSignIn = async ("
+        },
+        {
+          "name": "handleGithubSignIn",
+          "line": 36,
+          "code": "const handleGithubSignIn = async ("
+        },
+        {
+          "name": "onSubmit",
+          "line": 8,
+          "code": "const onSubmit = async"
+        },
+        {
+          "name": "handleGoogleSignIn",
+          "line": 30,
+          "code": "const handleGoogleSignIn = async"
+        },
+        {
+          "name": "handleGithubSignIn",
+          "line": 36,
+          "code": "const handleGithubSignIn = async"
+        }
+      ],
+      "event_handlers": [
+        {
+          "name": "handleGoogleSignIn",
+          "line": 30,
+          "code": "const handleGoogleSignIn ="
+        },
+        {
+          "name": "handleGithubSignIn",
+          "line": 36,
+          "code": "const handleGithubSignIn ="
+        },
+        {
+          "name": "onSubmit",
+          "line": 8,
+          "code": "const onSubmit ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "SignUpPage",
+          "line": 7,
+          "code": "const SignUpPage = ("
+        },
+        {
+          "name": "SignUpPage",
+          "line": 7,
+          "code": "const SignUpPage = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "SignUpPage",
+          "line": 7,
+          "code": "const SignUpPage = ("
+        },
+        {
+          "name": "SignUpPage",
+          "line": 7,
+          "code": "const SignUpPage ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "flex",
+        "flex-col",
+        "items-center",
+        "justify-center",
+        "mt-5",
+        "text-2xl",
+        "font-bold",
+        "text-red-700",
+        "fieldset",
+        "rounded-box",
+        "w-md",
+        "label",
+        "input",
+        "w-md",
+        "label",
+        "input",
+        "w-md",
+        "label",
+        "input",
+        "w-md",
+        "label",
+        "input",
+        "w-md",
+        "btn",
+        "text-white",
+        "bg-red-700",
+        "mt-4",
+        "btn",
+        "btn"
+      ],
+      "conditionals": 2,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "redirect"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\Header.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 1
+        },
+        {
+          "imported": "NavLinks",
+          "source": "./NavLinks",
+          "line": 2
+        },
+        {
+          "imported": "UserInfo",
+          "source": "./UserInfo",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Header",
+          "line": 6,
+          "code": "const Header = ("
+        },
+        {
+          "name": "Header",
+          "line": 6,
+          "code": "const Header = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Header",
+          "line": 6,
+          "code": "const Header = ("
+        },
+        {
+          "name": "Header",
+          "line": 6,
+          "code": "const Header ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "relative",
+        "mx-auto",
+        "max-w-7xl",
+        "px-4",
+        "py-4",
+        "flex",
+        "flex-col",
+        "items-center",
+        "justify-center",
+        "gap-1",
+        "sm:flex-row",
+        "sm:gap-2",
+        "flex",
+        "flex-col",
+        "items-center",
+        "sm:items-start",
+        "text-2xl",
+        "font-bold",
+        "text-red-700",
+        "text-xs",
+        "text-neutral-500"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\MainNews.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 1
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 2
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "MainNews",
+          "line": 15,
+          "code": "const MainNews = ("
+        },
+        {
+          "name": "MainNews",
+          "line": 15,
+          "code": "const MainNews = ({ news }: {news: News[]}) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "News",
+          "line": 4,
+          "code": "interface News {\n    id: string;\n    title: string;\n    description: string;\n    category: string;\n    imageUrl: string;\n    imageAlt: string\n\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "MainNews",
+          "line": 15,
+          "code": "const MainNews = ("
+        },
+        {
+          "name": "MainNews",
+          "line": 15,
+          "code": "const MainNews ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "flex",
+        "gap-2",
+        "card",
+        "bg-base-100",
+        "w-96",
+        "shadow-sm",
+        "card-body",
+        "text-red-600",
+        "font-semibold",
+        "card-title",
+        "grid",
+        "gap-2",
+        "card",
+        "bg-base-100",
+        "border",
+        "border-gray-300",
+        "p-5",
+        "text-red-600",
+        "font-semibold"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\Marquee.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 1
+        },
+        {
+          "imported": "MarqueeText",
+          "source": "react-marquee-text",
+          "line": 2
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "\"https://news-api-v2.vercel.app/api/news?limit=10\"",
+          "line": 11,
+          "code": "fetch(\"https://news-api-v2.vercel.app/api/news?limit=10\")\n    const data = await res.json() \n    const headlines:Headlines[] = data.data\n    return (\n        <div className=\"bg-red-700 text-white\">\n\n            <div className=\"flex max-w-7xl mx-auto\">\n                <div className=\"bg-red-800 py-1 px-5 font-bold\">সর্বশেষ</div>\n\n            <MarqueeText className=\"py-1\" direction=\"right\" duration={10}>\n            \n            {headlines.map(h => <Link className=\"hover:underline\" href={`/news/${h.id}`} key={h.id}>\n                <span>{h.title}</span>\n                <span className=\"mx-5\">•</span>\n            </Link>)}\n\n            </MarqueeText>\n            </div>\n        </div>\n    );\n};\n\nexport default Marquee;"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "Marquee",
+          "line": 10,
+          "code": "const Marquee = async ("
+        },
+        {
+          "name": "Marquee",
+          "line": 10,
+          "code": "const Marquee = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [
+        {
+          "name": "Headlines",
+          "line": 5,
+          "code": "interface Headlines {\n    id: string\n    title: string\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "Marquee",
+          "line": 10,
+          "code": "const Marquee ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "bg-red-700",
+        "text-white",
+        "flex",
+        "max-w-7xl",
+        "mx-auto",
+        "bg-red-800",
+        "py-1",
+        "px-5",
+        "font-bold",
+        "py-1",
+        "hover:underline",
+        "mx-5"
+      ],
+      "conditionals": 1,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\MostRead.tsx",
+      "extension": ".tsx",
+      "imports": [],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "\"https://news-api-v2.vercel.app/api/news/most-read\"",
+          "line": 7,
+          "code": "fetch(\"https://news-api-v2.vercel.app/api/news/most-read\");\n  const data = await res.json();\n\n  const news: MostReadNews[] = data.data;\n\n  return (\n    <div className=\"card p-2 bg-base-100 border border-gray-300\">\n      <h1 className=\"font-bold text-red-700 mb-3\">সর্বাধিক পঠিত</h1>\n\n      <div className=\"grid gap-3\">\n        {news.map((n, i) => (\n          <div className=\"flex gap-2 items-center\" key={n.id}>\n            <p className=\"text-2xl font-bold text-red-600\">{i + 1}</p>{\" \"}\n            <h2>{n.title}</h2>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default MostRead;"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "MostRead",
+          "line": 6,
+          "code": "const MostRead = async ("
+        },
+        {
+          "name": "MostRead",
+          "line": 6,
+          "code": "const MostRead = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [
+        {
+          "name": "MostReadNews",
+          "line": 1,
+          "code": "interface MostReadNews {\n  id: string;\n  title: string;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "MostRead",
+          "line": 6,
+          "code": "const MostRead ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "card",
+        "p-2",
+        "bg-base-100",
+        "border",
+        "border-gray-300",
+        "font-bold",
+        "text-red-700",
+        "mb-3",
+        "grid",
+        "gap-3",
+        "flex",
+        "gap-2",
+        "items-center",
+        "text-2xl",
+        "font-bold",
+        "text-red-600"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\NavLinks.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "\"https://news-api-v2.vercel.app/api/categories\"",
+          "line": 12,
+          "code": "fetch(\"https://news-api-v2.vercel.app/api/categories\");\n  const data = await res.json();\n  const navs:Navs[] = data.data;\n  const filteredNavs = navs.filter((n) => n.scrapable);\n  return (\n    <div className=\"flex gap-5 justify-center mt-5\">\n      <Link href={\"/\"}>হোম</Link>\n\n      {filteredNavs.map((n, i) => (\n        <Link key={i} href={`/category/${n.slug}`}>\n          {n.title}\n        </Link>\n      ))}\n    </div>\n  );\n};\n\nexport default NavLinks;"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "NavLinks",
+          "line": 11,
+          "code": "const NavLinks = async ("
+        },
+        {
+          "name": "NavLinks",
+          "line": 11,
+          "code": "const NavLinks = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [
+        {
+          "name": "Navs",
+          "line": 3,
+          "code": "interface Navs {\n    slug: string\n    title: string\n    topicId: string | null\n    url:string\n    scrapable: boolean\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "NavLinks",
+          "line": 11,
+          "code": "const NavLinks ="
+        }
+      ],
+      "array_methods": {
+        "map": 1,
+        "filter": 1
+      },
+      "tailwind_classes": [
+        "flex",
+        "gap-5",
+        "justify-center",
+        "mt-5"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\NewsCard.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 1
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 2
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "NewsCard",
+          "line": 13,
+          "code": "const NewsCard = ("
+        },
+        {
+          "name": "NewsCard",
+          "line": 13,
+          "code": "const NewsCard = ({news} : {news:News}) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "News",
+          "line": 4,
+          "code": "interface News {\n    id: string;\n    title: string;\n    description: string;\n    category: string;\n    imageUrl: string;\n    imageAlt: string\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "NewsCard",
+          "line": 13,
+          "code": "const NewsCard = ("
+        },
+        {
+          "name": "NewsCard",
+          "line": 13,
+          "code": "const NewsCard ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "card",
+        "bg-base-100",
+        "shadow-sm",
+        "card-body",
+        "text-red-600",
+        "font-semibold",
+        "card-title"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\UserInfo.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ authClient }",
+          "source": "@/lib/auth-client",
+          "line": 3
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [
+        {
+          "name": "handleSignout",
+          "line": 11,
+          "code": "const handleSignout = async ("
+        },
+        {
+          "name": "handleSignout",
+          "line": 11,
+          "code": "const handleSignout = async"
+        }
+      ],
+      "event_handlers": [
+        {
+          "name": "handleSignout",
+          "line": 11,
+          "code": "const handleSignout ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "UserInfo",
+          "line": 6,
+          "code": "const UserInfo = ("
+        },
+        {
+          "name": "UserInfo",
+          "line": 6,
+          "code": "const UserInfo = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "UserInfo",
+          "line": 6,
+          "code": "const UserInfo = ("
+        },
+        {
+          "name": "UserInfo",
+          "line": 6,
+          "code": "const UserInfo ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "absolute",
+        "right-4",
+        "top-4",
+        "flex",
+        "items-center",
+        "gap-3",
+        "text-sm",
+        "flex",
+        "flex-col",
+        "items-center",
+        "gap-2",
+        "avatar",
+        "ring-primary",
+        "ring-offset-base-100",
+        "w-10",
+        "rounded-full",
+        "ring-2",
+        "ring-offset-2",
+        "btn",
+        "btn-error",
+        "btn-xs",
+        "btn",
+        "btn-ghost",
+        "text-neutral-700",
+        "transition-colors",
+        "hover:text-red-700",
+        "btn",
+        "bg-red-700",
+        "px-3",
+        "py-1.5",
+        "font-semibold",
+        "text-white",
+        "transition-colors",
+        "hover:bg-red-800"
+      ],
+      "conditionals": 1,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\lib\\auth-client.ts",
+      "extension": ".ts",
+      "imports": [
+        {
+          "imported": "{ createAuthClient }",
+          "source": "better-auth/react",
+          "line": 1
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 2
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\lib\\auth.ts",
+      "extension": ".ts",
+      "imports": [
+        {
+          "imported": "{ betterAuth }",
+          "source": "better-auth",
+          "line": 1
+        },
+        {
+          "imported": "{ MongoClient }",
+          "source": "mongodb",
+          "line": 2
+        },
+        {
+          "imported": "{ mongodbAdapter }",
+          "source": "better-auth/adapters/mongodb",
+          "line": 3
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 8
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\proxy.ts",
+      "extension": ".ts",
+      "imports": [
+        {
+          "imported": "{ NextResponse }",
+          "source": "next/server",
+          "line": 1
+        },
+        {
+          "imported": "type { NextRequest }",
+          "source": "next/server",
+          "line": 2
+        },
+        {
+          "imported": "{ auth }",
+          "source": "./lib/auth",
+          "line": 3
+        },
+        {
+          "imported": "{ headers }",
+          "source": "next/headers",
+          "line": 4
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 21
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [
+        {
+          "name": "proxy",
+          "line": 7,
+          "code": "async function proxy"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "proxy",
+          "line": 7,
+          "code": "function proxy("
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 2,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "redirect"
+        ],
+        "path_based": false
+      }
+    }
+  ],
+  "Dev-Stack": [
+    {
+      "file": "src\\App.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Navbar",
+          "source": "./components/Navbar/Navbar",
+          "line": 3
+        },
+        {
+          "imported": "Hero",
+          "source": "./components/Hero/Hero",
+          "line": 4
+        },
+        {
+          "imported": "Footer",
+          "source": "./components/Footer/Footer",
+          "line": 5
+        },
+        {
+          "imported": "TechnologySection",
+          "source": "./components/TechnologySection/TechnologySection",
+          "line": 6
+        },
+        {
+          "imported": "{ ToastContainer }",
+          "source": "react-toastify",
+          "line": 7
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "App",
+          "line": 10,
+          "code": "function App("
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "App",
+          "line": 10,
+          "code": "function App("
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\brand.ts",
+      "extension": ".ts",
+      "imports": [],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 1
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\Footer\\Footer.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "logoText",
+          "source": "../../assets/logo-text.png",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Footer",
+          "line": 3,
+          "code": "function Footer("
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Footer",
+          "line": 3,
+          "code": "function Footer("
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "bg-white",
+        "border-t",
+        "border-gray-200",
+        "mt-15",
+        "max-w-7xl",
+        "mx-auto",
+        "px-6",
+        "py-10",
+        "flex",
+        "flex-col",
+        "md:flex-row",
+        "justify-between",
+        "gap-10",
+        "flex",
+        "justify-center",
+        "md:justify-start",
+        "w-32",
+        "h-auto",
+        "text-sm",
+        "text-gray-500",
+        "max-w-sm",
+        "text-center",
+        "md:text-left",
+        "mt-3",
+        "mx-auto",
+        "md:mx-0",
+        "flex",
+        "items-center",
+        "justify-center",
+        "md:justify-start",
+        "gap-3",
+        "mt-7",
+        "text-sm",
+        "link",
+        "link-hover",
+        "md:hidden",
+        "link",
+        "link-hover",
+        "md:hidden",
+        "link",
+        "link-hover",
+        "hidden",
+        "sm:grid",
+        "grid-cols-3",
+        "gap-50",
+        "font-semibold",
+        "mb-3",
+        "block",
+        "text-sm",
+        "text-gray-500",
+        "hover:text-gray-800",
+        "mb-2",
+        "block",
+        "text-sm",
+        "text-gray-500",
+        "hover:text-gray-800",
+        "mb-2",
+        "block",
+        "text-sm",
+        "text-gray-500",
+        "hover:text-gray-800",
+        "font-semibold",
+        "mb-3",
+        "block",
+        "text-sm",
+        "text-gray-500",
+        "hover:text-gray-800",
+        "mb-2",
+        "block",
+        "text-sm",
+        "text-gray-500",
+        "hover:text-gray-800",
+        "mb-2",
+        "block",
+        "text-sm",
+        "text-gray-500",
+        "hover:text-gray-800",
+        "font-semibold",
+        "mb-3",
+        "block",
+        "text-sm",
+        "text-gray-500",
+        "hover:text-gray-800",
+        "mb-2",
+        "block",
+        "text-sm",
+        "text-gray-500",
+        "hover:text-gray-800",
+        "max-w-7xl",
+        "mx-auto",
+        "px-6",
+        "border-t",
+        "border-gray-200",
+        "py-5",
+        "flex",
+        "items-center",
+        "justify-between",
+        "gap-3",
+        "text-sm",
+        "text-gray-400",
+        "sm:hidden",
+        "flex",
+        "gap-4",
+        "text-sm",
+        "text-gray-400",
+        "hover:text-gray-800",
+        "hover:text-gray-800"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\Hero\\Hero.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "HeroPicture",
+          "source": "../../assets/banner-stack.png",
+          "line": 1
+        },
+        {
+          "imported": "{ brandGradient }",
+          "source": "../../brand",
+          "line": 2
+        }
+      ],
+      "exports": [
+        {
+          "type": "function",
+          "default": true,
+          "line": 4
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Hero",
+          "line": 4,
+          "code": "function Hero("
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Hero",
+          "line": 4,
+          "code": "export default function Hero("
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "container",
+        "mx-auto",
+        "grid",
+        "md:grid-cols-2",
+        "items-center",
+        "gap-6",
+        "px-4",
+        "py-10",
+        "md:py-16",
+        "max-w-160",
+        "text-center",
+        "md:text-left",
+        "text-3xl",
+        "lg:text-6xl",
+        "font-extrabold",
+        "leading-tight",
+        "block",
+        "mt-1",
+        "mt-4",
+        "text-base",
+        "lg:text-lg",
+        "text-gray-600",
+        "mt-6",
+        "flex",
+        "justify-center",
+        "lg:justify-start",
+        "gap-4",
+        "rounded-[10px]",
+        "w-40",
+        "sm:w-50",
+        "h-12",
+        "text-sm",
+        "sm:text-base",
+        "text-white",
+        "shadow-md",
+        "rounded-[10px]",
+        "w-40",
+        "sm:w-50",
+        "h-12",
+        "text-sm",
+        "sm:text-base",
+        "border",
+        "border-gray-300",
+        "hover:border-gray-400",
+        "flex",
+        "justify-center",
+        "-mt-7",
+        "md:justify-end",
+        "md:my-0",
+        "w-full",
+        "scale-140",
+        "md:scale-100",
+        "md:max-w-130"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\Navbar\\Navbar.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "logoText",
+          "source": "../../assets/logo-text.png",
+          "line": 1
+        },
+        {
+          "imported": "hamburger",
+          "source": "../../assets/hamburger.png",
+          "line": 2
+        },
+        {
+          "imported": "{ useState }",
+          "source": "react",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [
+        {
+          "state_name": "activeMenu",
+          "setter_name": "setActiveMenu",
+          "type": null,
+          "initial_value": "\"Home\"",
+          "line": 6,
+          "code": "const [activeMenu, setActiveMenu] = useState(\"Home\")"
+        }
+      ],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Navbar",
+          "line": 5,
+          "code": "function Navbar("
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Navbar",
+          "line": 5,
+          "code": "function Navbar("
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "sticky",
+        "top-0",
+        "z-50",
+        "border-b",
+        "border-[#F1F5F9]",
+        "bg-white",
+        "container",
+        "mx-auto",
+        "grid",
+        "grid-cols-3",
+        "items-center",
+        "px-6",
+        "py-4",
+        "w-6",
+        "md:hidden",
+        "justify-self-start",
+        "w-28",
+        "sm:w-32",
+        "h-auto",
+        "justify-self-center",
+        "md:justify-self-start",
+        "hidden",
+        "md:flex",
+        "gap-4",
+        "lg:gap-6",
+        "items-center",
+        "justify-self-center",
+        "text-sm",
+        "lg:text-base",
+        "flex",
+        "gap-2",
+        "sm:gap-3",
+        "items-center",
+        "justify-self-end",
+        "text-xs",
+        "sm:text-sm",
+        "px-3",
+        "py-1.5",
+        "border",
+        "border-gray-300",
+        "sm:border-0",
+        "rounded-md",
+        "sm:rounded-none",
+        "hover:text-pink-500",
+        "hover:border-pink-300",
+        "hidden",
+        "sm:block",
+        "rounded-full",
+        "bg-pink-500",
+        "text-white",
+        "px-4",
+        "py-2",
+        "text-sm",
+        "hover:bg-pink-600"
+      ],
+      "conditionals": 5,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\TechnologySection\\StackItem.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "type { Dispatch, SetStateAction }",
+          "source": "react",
+          "line": 1
+        },
+        {
+          "imported": "type { Tech }",
+          "source": "../../types/Tech",
+          "line": 2
+        },
+        {
+          "imported": "{ toast }",
+          "source": "react-toastify",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [
+        {
+          "name": "handleRemoveTechnology",
+          "line": 16,
+          "code": "const handleRemoveTechnology ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "StackItem",
+          "line": 11,
+          "code": "function StackItem("
+        },
+        {
+          "name": "handleRemoveTechnology",
+          "line": 16,
+          "code": "const handleRemoveTechnology = ("
+        },
+        {
+          "name": "handleRemoveTechnology",
+          "line": 16,
+          "code": "const handleRemoveTechnology = () =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "StackItemProps",
+          "line": 5,
+          "code": "interface StackItemProps {\n    technology: Tech\n    selectedTechnologies: Tech[]\n    setSelectedTechnologies: Dispatch<SetStateAction<Tech[]>>\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "StackItem",
+          "line": 11,
+          "code": "function StackItem("
+        }
+      ],
+      "array_methods": {
+        "filter": 1
+      },
+      "tailwind_classes": [
+        "flex",
+        "items-center",
+        "justify-between",
+        "gap-3",
+        "p-3",
+        "rounded-md",
+        "border",
+        "border-gray-200",
+        "bg-white",
+        "flex",
+        "items-center",
+        "gap-3",
+        "w-10",
+        "h-10",
+        "rounded-md",
+        "bg-gray-50",
+        "flex",
+        "items-center",
+        "justify-center",
+        "w-6",
+        "h-6",
+        "text-sm",
+        "font-semibold",
+        "text-gray-800",
+        "text-xs",
+        "text-gray-400",
+        "w-8",
+        "h-8",
+        "rounded-full",
+        "border",
+        "border-gray-200",
+        "flex",
+        "items-center",
+        "justify-center",
+        "text-gray-400",
+        "hover:bg-blue-50"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\TechnologySection\\TechnologyCard.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ type Dispatch, type SetStateAction }",
+          "source": "react",
+          "line": 1
+        },
+        {
+          "imported": "type { Tech }",
+          "source": "../../types/Tech",
+          "line": 2
+        },
+        {
+          "imported": "{ toast }",
+          "source": "react-toastify",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [
+        {
+          "name": "handleSelectTechnology",
+          "line": 22,
+          "code": "const handleSelectTechnology ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "TechnologyCard",
+          "line": 12,
+          "code": "function TechnologyCard("
+        },
+        {
+          "name": "handleSelectTechnology",
+          "line": 22,
+          "code": "const handleSelectTechnology = ("
+        },
+        {
+          "name": "getBadgeColor",
+          "line": 28,
+          "code": "const getBadgeColor = ("
+        },
+        {
+          "name": "handleSelectTechnology",
+          "line": 22,
+          "code": "const handleSelectTechnology = () =>"
+        },
+        {
+          "name": "getBadgeColor",
+          "line": 28,
+          "code": "const getBadgeColor = () =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "TechnologyCardProps",
+          "line": 6,
+          "code": "interface TechnologyCardProps {\n    technology: Tech\n    selectedTechnologies: Tech[]\n    setSelectedTechnologies: Dispatch<SetStateAction<Tech[]>>\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "TechnologyCard",
+          "line": 12,
+          "code": "function TechnologyCard("
+        }
+      ],
+      "array_methods": {
+        "some": 1
+      },
+      "tailwind_classes": [
+        "bg-white",
+        "rounded-xl",
+        "p-5",
+        "shadow-sm",
+        "border",
+        "border-gray-100",
+        "h-full",
+        "flex",
+        "flex-col",
+        "relative",
+        "flex-1",
+        "flex",
+        "flex-col",
+        "font-semibold",
+        "text-lg",
+        "w-12",
+        "h-12",
+        "mt-4",
+        "text-sm",
+        "text-gray-500",
+        "mt-4",
+        "mt-auto",
+        "pt-6",
+        "flex",
+        "items-center",
+        "justify-between",
+        "text-xs",
+        "bg-gray-100",
+        "px-2",
+        "py-1",
+        "rounded",
+        "text-xs",
+        "text-gray-500",
+        "px-2",
+        "py-1",
+        "text-sm",
+        "mt-auto",
+        "pt-5"
+      ],
+      "conditionals": 3,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\TechnologySection\\TechnologyGrid.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "type { Tech }",
+          "source": "../../types/Tech",
+          "line": 5
+        },
+        {
+          "imported": "TechnologyCard",
+          "source": "./TechnologyCard",
+          "line": 6
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "TechnologyGrid",
+          "line": 14,
+          "code": "function TechnologyGrid("
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "TechnologyGridProps",
+          "line": 8,
+          "code": "interface TechnologyGridProps {\n    technologyPromise: Promise<Tech[]>\n    selectedTechnologies: Tech[]\n    setSelectedTechnologies: Dispatch<SetStateAction<Tech[]>>\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "TechnologyGrid",
+          "line": 14,
+          "code": "function TechnologyGrid("
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "py-2",
+        "grid",
+        "grid-cols-1",
+        "sm:grid-cols-2",
+        "lg:grid-cols-3",
+        "gap-6"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\TechnologySection\\TechnologySection.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "TechnologyGrid",
+          "source": "./TechnologyGrid",
+          "line": 1
+        },
+        {
+          "imported": "YourStack",
+          "source": "./YourStack",
+          "line": 2
+        },
+        {
+          "imported": "{ Suspense, useState }",
+          "source": "react",
+          "line": 3
+        },
+        {
+          "imported": "type { Tech }",
+          "source": "../../types/Tech",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [
+        {
+          "state_name": "selectedTechnologies",
+          "setter_name": "setSelectedTechnologies",
+          "type": "Tech[]",
+          "initial_value": "[]",
+          "line": 13,
+          "code": "const [selectedTechnologies, setSelectedTechnologies] = useState<Tech[]>([])"
+        }
+      ],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "\"/technologies.json\"",
+          "line": 7,
+          "code": "fetch(\"/technologies.json\");\n    const data = await res.json();\n    return data;\n};\n\nfunction TechnologySection() {\n    const [selectedTechnologies, setSelectedTechnologies] = useState<Tech[]>([])\n    console.log(selectedTechnologies)\n    const [technologyPromise] = useState(() => technologyFetch())\n    return (\n        <section className=\"-mt-10 md:py-5\">\n            <div className=\"container mx-auto px-6\">\n\n                <div className=\"mb-2 md:mb-8\">\n                    <h2 className=\"text-[25px] text-center md:text-4xl md:text-start font-extrabold\">Explore the <span className=\"text-pink-500\">Technologies</span>\n                    </h2>\n\n                    <p className=\"mt-3 text-[15px] md:text-[17px] text-center md:text-start text-gray-600\">\n                        Pick one technology per category to build your ideal stack.\n                    </p>\n                </div>"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "technologyFetch",
+          "line": 6,
+          "code": "const technologyFetch = async ("
+        },
+        {
+          "name": "technologyFetch",
+          "line": 6,
+          "code": "const technologyFetch = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "TechnologySection",
+          "line": 12,
+          "code": "function TechnologySection("
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "TechnologySection",
+          "line": 12,
+          "code": "function TechnologySection("
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "-mt-10",
+        "md:py-5",
+        "container",
+        "mx-auto",
+        "px-6",
+        "mb-2",
+        "md:mb-8",
+        "text-[25px]",
+        "text-center",
+        "md:text-4xl",
+        "md:text-start",
+        "font-extrabold",
+        "text-pink-500",
+        "mt-3",
+        "text-[15px]",
+        "md:text-[17px]",
+        "text-center",
+        "md:text-start",
+        "text-gray-600",
+        "flex",
+        "justify-center",
+        "py-8",
+        "btn",
+        "loading",
+        "loading-spinner",
+        "grid",
+        "grid-cols-1",
+        "lg:grid-cols-4",
+        "gap-8",
+        "lg:col-span-3",
+        "lg:col-span-1"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\TechnologySection\\YourStack.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "type { Dispatch, SetStateAction }",
+          "source": "react",
+          "line": 1
+        },
+        {
+          "imported": "type { Tech }",
+          "source": "../../types/Tech",
+          "line": 2
+        },
+        {
+          "imported": "StackItem",
+          "source": "./StackItem",
+          "line": 3
+        },
+        {
+          "imported": "{ toast }",
+          "source": "react-toastify",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [
+        {
+          "name": "handleRemoveAll",
+          "line": 16,
+          "code": "const handleRemoveAll ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "YourStack",
+          "line": 12,
+          "code": "function YourStack("
+        },
+        {
+          "name": "handleRemoveAll",
+          "line": 16,
+          "code": "const handleRemoveAll = ("
+        },
+        {
+          "name": "handleRemoveAll",
+          "line": 16,
+          "code": "const handleRemoveAll = () =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "YourStackProps",
+          "line": 7,
+          "code": "interface YourStackProps {\n    selectedTechnologies: Tech[]\n    setSelectedTechnologies: Dispatch<SetStateAction<Tech[]>>\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "YourStack",
+          "line": 12,
+          "code": "function YourStack("
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "bg-white",
+        "rounded-2xl",
+        "shadow-md",
+        "p-6",
+        "border",
+        "border-gray-100",
+        "mb-4",
+        "text-lg",
+        "font-semibold",
+        "text-gray-900",
+        "text-sm",
+        "text-gray-400",
+        "mt-1",
+        "mt-4",
+        "border-dashed",
+        "border-2",
+        "border-gray-200",
+        "rounded-lg",
+        "p-6",
+        "text-center",
+        "text-gray-400",
+        "bg-white",
+        "rounded-2xl",
+        "shadow-md",
+        "p-6",
+        "border",
+        "border-gray-100",
+        "flex",
+        "items-start",
+        "justify-between",
+        "font-semibold",
+        "text-lg",
+        "text-sm",
+        "text-gray-500",
+        "mt-1",
+        "mt-4",
+        "space-y-3",
+        "mt-4",
+        "w-full",
+        "py-2",
+        "px-4",
+        "rounded-md",
+        "border",
+        "border-red-200",
+        "text-red-600",
+        "font-medium",
+        "hover:bg-red-50"
+      ],
+      "conditionals": 1,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\main.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ StrictMode }",
+          "source": "react",
+          "line": 1
+        },
+        {
+          "imported": "{ createRoot }",
+          "source": "react-dom/client",
+          "line": 2
+        },
+        {
+          "imported": "App",
+          "source": "./App.tsx",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\types\\Tech.ts",
+      "extension": ".ts",
+      "imports": [],
+      "exports": [
+        {
+          "type": "type",
+          "default": false,
+          "line": 1
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [
+        {
+          "name": "Tech",
+          "line": 1,
+          "code": "export type Tech ="
+        }
+      ],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "vite.config.ts",
+      "extension": ".ts",
+      "imports": [
+        {
+          "imported": "react",
+          "source": "@vitejs/plugin-react",
+          "line": 1
+        },
+        {
+          "imported": "{ defineConfig }",
+          "source": "vite",
+          "line": 2
+        },
+        {
+          "imported": "tailwindcss",
+          "source": "@tailwindcss/vite",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    }
+  ],
+  "Fitlog": [
+    {
+      "file": "eslint.config.mjs",
+      "extension": ".mjs",
+      "imports": [
+        {
+          "imported": "{ defineConfig, globalIgnores }",
+          "source": "eslint/config",
+          "line": 1
+        },
+        {
+          "imported": "nextVitals",
+          "source": "eslint-config-next/core-web-vitals",
+          "line": 2
+        },
+        {
+          "imported": "nextTs",
+          "source": "eslint-config-next/typescript",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "next.config.ts",
+      "extension": ".ts",
+      "imports": [
+        {
+          "imported": "type { NextConfig }",
+          "source": "next",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "postcss.config.mjs",
+      "extension": ".mjs",
+      "imports": [],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\fonts.ts",
+      "extension": ".ts",
+      "imports": [
+        {
+          "imported": "{ Oswald }",
+          "source": "next/font/google",
+          "line": 1
+        },
+        {
+          "imported": "{ Inter }",
+          "source": "next/font/google",
+          "line": 2
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 4
+        },
+        {
+          "type": "const",
+          "default": false,
+          "line": 8
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\layout.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "type { Metadata }",
+          "source": "next",
+          "line": 1
+        },
+        {
+          "imported": "{ Geist, Geist_Mono }",
+          "source": "next/font/google",
+          "line": 2
+        },
+        {
+          "imported": "Navbar",
+          "source": "@/components/shared/Navbar",
+          "line": 4
+        },
+        {
+          "imported": "Footer",
+          "source": "@/components/shared/Footer",
+          "line": 5
+        },
+        {
+          "imported": "WorkoutProvider",
+          "source": "@/context/WorkoutContext",
+          "line": 6
+        },
+        {
+          "imported": "{ ToastContainer }",
+          "source": "react-toastify",
+          "line": 7
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 19
+        },
+        {
+          "type": "function",
+          "default": true,
+          "line": 24
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "RootLayout",
+          "line": 24,
+          "code": "function RootLayout("
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "RootLayout",
+          "line": 24,
+          "code": "export default function RootLayout("
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "min-h-full",
+        "flex",
+        "flex-col",
+        "flex-1"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\loading.tsx",
+      "extension": ".tsx",
+      "imports": [],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Loading",
+          "line": 1,
+          "code": "const Loading = ("
+        },
+        {
+          "name": "Loading",
+          "line": 1,
+          "code": "const Loading = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Loading",
+          "line": 1,
+          "code": "const Loading = ("
+        },
+        {
+          "name": "Loading",
+          "line": 1,
+          "code": "const Loading ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "bg-black",
+        "min-h-screen",
+        "flex",
+        "items-center",
+        "justify-center",
+        "btn",
+        "bg-zinc-900",
+        "text-white",
+        "border-zinc-800",
+        "loading",
+        "loading-spinner"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\my-plan\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 2
+        },
+        {
+          "imported": "Button",
+          "source": "@/components/shared/Button-1",
+          "line": 3
+        },
+        {
+          "imported": "{ useContext, useState }",
+          "source": "react",
+          "line": 4
+        },
+        {
+          "imported": "{ WorkoutContext }",
+          "source": "@/context/WorkoutContext",
+          "line": 5
+        },
+        {
+          "imported": "PlanWorkoutCard",
+          "source": "@/components/myPlan/PlanWorkoutCard",
+          "line": 6
+        },
+        {
+          "imported": "{ useSearchParams }",
+          "source": "next/navigation",
+          "line": 7
+        }
+      ],
+      "exports": [],
+      "use_state": [
+        {
+          "state_name": "activeTab",
+          "setter_name": "setActiveTab",
+          "type": null,
+          "initial_value": "tab === \"saved\" ? \"saved\" : \"plan\"",
+          "line": 14,
+          "code": "const [activeTab, setActiveTab] = useState(\n        tab === \"saved\" ? \"saved\" : \"plan\"\n    )"
+        },
+        {
+          "state_name": "sortBy",
+          "setter_name": "setSortBy",
+          "type": null,
+          "initial_value": "\"duration\"",
+          "line": 17,
+          "code": "const [sortBy, setSortBy] = useState(\"duration\")"
+        }
+      ],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "WorkoutContext",
+          "line": 12,
+          "code": "useContext(WorkoutContext)"
+        },
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "WorkoutContext",
+          "line": 13,
+          "code": "useContext(WorkoutContext)"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "MyPlan",
+          "line": 9,
+          "code": "const MyPlan = ("
+        },
+        {
+          "name": "MyPlan",
+          "line": 9,
+          "code": "const MyPlan = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "MyPlan",
+          "line": 9,
+          "code": "const MyPlan = ("
+        },
+        {
+          "name": "MyPlan",
+          "line": 9,
+          "code": "const MyPlan ="
+        }
+      ],
+      "array_methods": {
+        "map": 1,
+        "reduce": 2,
+        "sort": 1
+      },
+      "tailwind_classes": [
+        "px-5",
+        "pt-11",
+        "pb-8",
+        "border",
+        "border-zinc-800",
+        "rounded-2xl",
+        "p-5",
+        "bg-[#12141c]",
+        "flex",
+        "flex-col",
+        "sm:flex-row",
+        "w-full",
+        "sm:w-1/3",
+        "px-4",
+        "py-4",
+        "-mt-4",
+        "sm:mt-0",
+        "text-zinc-400",
+        "text-sm",
+        "text-[#a3e635]",
+        "text-3xl",
+        "font-bold",
+        "mt-2",
+        "hidden",
+        "sm:block",
+        "w-px",
+        "bg-zinc-800",
+        "w-full",
+        "sm:w-1/3",
+        "px-4",
+        "sm:px-7",
+        "py-4",
+        "border-t",
+        "border-zinc-800",
+        "sm:border-t-0",
+        "text-zinc-400",
+        "text-sm",
+        "text-white",
+        "text-3xl",
+        "font-bold",
+        "mt-2",
+        "hidden",
+        "sm:block",
+        "w-px",
+        "bg-zinc-800",
+        "w-full",
+        "sm:w-1/3",
+        "px-4",
+        "sm:px-7",
+        "py-4",
+        "-mb-4",
+        "sm:mb-0",
+        "border-t",
+        "border-zinc-800",
+        "sm:border-t-0",
+        "text-zinc-400",
+        "text-sm",
+        "text-white",
+        "text-3xl",
+        "font-bold",
+        "mt-2",
+        "flex",
+        "flex-col",
+        "sm:flex-row",
+        "sm:items-center",
+        "sm:justify-between",
+        "gap-4",
+        "mt-8",
+        "bg-[#12141c]",
+        "p-1.5",
+        "rounded-xl",
+        "flex",
+        "items-center",
+        "border",
+        "border-zinc-800",
+        "w-fit",
+        "flex",
+        "items-center",
+        "gap-3",
+        "text-zinc-400",
+        "text-sm",
+        "bg-zinc-900",
+        "border",
+        "border-zinc-800",
+        "text-white",
+        "rounded-lg",
+        "px-3",
+        "py-2",
+        "pr-1",
+        "text-sm",
+        "text-xs",
+        "sm:text-sm",
+        "text-xs",
+        "sm:text-sm",
+        "text-xs",
+        "sm:text-sm",
+        "border",
+        "border-zinc-800",
+        "border-dashed",
+        "rounded-2xl",
+        "p-16",
+        "text-center",
+        "mt-6",
+        "bg-zinc-950",
+        "text-white",
+        "text-2xl",
+        "font-bold",
+        "text-zinc-400",
+        "mt-2",
+        "flex",
+        "justify-center",
+        "mt-6",
+        "-mt-1"
+      ],
+      "conditionals": 7,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "useSearchParams",
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\not-found.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 1
+        },
+        {
+          "imported": "Button",
+          "source": "@/components/shared/Button-1",
+          "line": 2
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "NotFound",
+          "line": 4,
+          "code": "const NotFound = ("
+        },
+        {
+          "name": "NotFound",
+          "line": 4,
+          "code": "const NotFound = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "NotFound",
+          "line": 4,
+          "code": "const NotFound = ("
+        },
+        {
+          "name": "NotFound",
+          "line": 4,
+          "code": "const NotFound ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "bg-black",
+        "min-h-screen",
+        "flex",
+        "flex-col",
+        "items-center",
+        "justify-center",
+        "text-center",
+        "px-5",
+        "text-lime-400",
+        "text-lg",
+        "font-bold",
+        "tracking-widest",
+        "text-white",
+        "text-4xl",
+        "font-bold",
+        "mt-3",
+        "text-zinc-400",
+        "mt-3",
+        "mb-4"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Hero",
+          "source": "@/components/home/Hero",
+          "line": 1
+        },
+        {
+          "imported": "WorkoutLibrary",
+          "source": "@/components/home/WorkoutLibrary",
+          "line": 2
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Home",
+          "line": 3,
+          "code": "const Home = ("
+        },
+        {
+          "name": "Home",
+          "line": 3,
+          "code": "const Home = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Home",
+          "line": 3,
+          "code": "const Home = ("
+        },
+        {
+          "name": "Home",
+          "line": 3,
+          "code": "const Home ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\app\\workout\\[id]\\page.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ Workout }",
+          "source": "@/types/Workout",
+          "line": 1
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 2
+        },
+        {
+          "imported": "{ notFound }",
+          "source": "next/navigation",
+          "line": 3
+        },
+        {
+          "imported": "Badge",
+          "source": "@/components/shared/Badge",
+          "line": 4
+        },
+        {
+          "imported": "AddToPlanButton",
+          "source": "@/components/workoutDetails/AddToPlanButton",
+          "line": 5
+        },
+        {
+          "imported": "SaveButton",
+          "source": "@/components/workoutDetails/SaveButton",
+          "line": 6
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "\"https://api.api-store.workers.dev/api/fitlog\"",
+          "line": 16,
+          "code": "fetch(\n            \"https://api.api-store.workers.dev/api/fitlog\"\n        );\n\n        const data: Workout[] = await response.json();\n\n        return data;\n    } catch (error) {\n        console.error(\"Error fetching workouts data:\", error);\n\n        return [];\n    }\n};\n\nconst WorkoutDetails = async ({ params }: WorkoutDetailsProps) => {\n    const { id } = await params;\n\n    const workoutsData = await getWorkouts();\n\n    const workout = workoutsData.find(\n        (workout: Workout) => String(workout.id) === String(id)\n    ) as Workout;\n\n    if (!workout) {\n        notFound();\n    }\n\n    return (\n        <main className=\"bg-black min-h-screen px-5 py-16\">\n            <div className=\"max-w-350 mx-auto\">\n                <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-15\">\n\n                    <div className=\"overflow-hidden rounded-2xl\">\n                        <Image"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "getWorkouts",
+          "line": 14,
+          "code": "const getWorkouts = async ("
+        },
+        {
+          "name": "WorkoutDetails",
+          "line": 30,
+          "code": "const WorkoutDetails = async ("
+        },
+        {
+          "name": "getWorkouts",
+          "line": 14,
+          "code": "const getWorkouts = async"
+        },
+        {
+          "name": "WorkoutDetails",
+          "line": 30,
+          "code": "const WorkoutDetails = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [
+        {
+          "name": "WorkoutDetailsProps",
+          "line": 8,
+          "code": "interface WorkoutDetailsProps {\n    params: Promise<{\n        id: string;\n    }"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "WorkoutDetails",
+          "line": 30,
+          "code": "const WorkoutDetails ="
+        }
+      ],
+      "array_methods": {
+        "map": 2,
+        "find": 1
+      },
+      "tailwind_classes": [
+        "bg-black",
+        "min-h-screen",
+        "px-5",
+        "py-16",
+        "max-w-350",
+        "mx-auto",
+        "grid",
+        "grid-cols-1",
+        "lg:grid-cols-2",
+        "gap-15",
+        "overflow-hidden",
+        "rounded-2xl",
+        "h-full",
+        "w-full",
+        "object-cover",
+        "text-white",
+        "text-5xl",
+        "font-bold",
+        "text-zinc-400",
+        "mt-5",
+        "leading-relaxed",
+        "flex",
+        "flex-wrap",
+        "gap-2",
+        "mt-5",
+        "mt-6",
+        "rounded-2xl",
+        "border",
+        "border-zinc-800",
+        "bg-[#12141c]",
+        "py-2",
+        "flex",
+        "justify-between",
+        "px-5",
+        "py-3",
+        "border-b",
+        "border-zinc-800",
+        "text-zinc-500",
+        "font-bold",
+        "text-white",
+        "flex",
+        "justify-between",
+        "px-5",
+        "py-3",
+        "border-b",
+        "border-zinc-800",
+        "text-zinc-500",
+        "font-bold",
+        "text-white",
+        "flex",
+        "justify-between",
+        "px-5",
+        "py-3",
+        "border-b",
+        "border-zinc-800",
+        "text-zinc-500",
+        "font-bold",
+        "text-white",
+        "flex",
+        "justify-between",
+        "px-5",
+        "py-3",
+        "border-b",
+        "border-zinc-800",
+        "text-zinc-500",
+        "font-bold",
+        "text-white",
+        "flex",
+        "justify-between",
+        "px-5",
+        "py-3",
+        "border-b",
+        "border-zinc-800",
+        "text-zinc-500",
+        "font-bold",
+        "text-white",
+        "flex",
+        "justify-between",
+        "px-5",
+        "py-3",
+        "border-b",
+        "border-zinc-800",
+        "text-zinc-500",
+        "font-bold",
+        "text-white",
+        "flex",
+        "justify-between",
+        "px-5",
+        "py-3",
+        "text-zinc-500",
+        "font-bold",
+        "text-white",
+        "mt-8",
+        "text-white",
+        "text-2xl",
+        "font-bold",
+        "mt-4",
+        "space-y-4",
+        "text-zinc-400",
+        "mr-2",
+        "flex",
+        "flex-col",
+        "lg:flex-row",
+        "justify-center",
+        "lg:justify-start",
+        "gap-3",
+        "mt-10",
+        "w-full",
+        "sm:w-auto",
+        "w-full",
+        "sm:w-auto"
+      ],
+      "conditionals": 1,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\home\\Hero.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 1
+        },
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 2
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 3
+        },
+        {
+          "imported": "logo",
+          "source": "@/assets/banner.png",
+          "line": 4
+        },
+        {
+          "imported": "{ oswald, inter }",
+          "source": "@/app/fonts",
+          "line": 5
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Hero",
+          "line": 7,
+          "code": "const Hero = ("
+        },
+        {
+          "name": "Hero",
+          "line": 7,
+          "code": "const Hero = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Hero",
+          "line": 7,
+          "code": "const Hero = ("
+        },
+        {
+          "name": "Hero",
+          "line": 7,
+          "code": "const Hero ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "bg-black",
+        "w-full",
+        "px-5",
+        "py-6",
+        "w-full",
+        "border",
+        "border-zinc-800",
+        "rounded-3xl",
+        "p-10",
+        "md:p-16",
+        "flex",
+        "flex-col",
+        "lg:flex-row",
+        "items-center",
+        "justify-between",
+        "gap-8",
+        "flex",
+        "flex-col",
+        "items-start",
+        "max-w-xl",
+        "bg-lime-400",
+        "text-black",
+        "font-bold",
+        "px-3",
+        "py-3",
+        "sm:px-3",
+        "sm:py-4",
+        "rounded-xl",
+        "text-xs",
+        "sm:text-sm",
+        "flex",
+        "items-center",
+        "justify-center",
+        "gap-2",
+        "mx-auto",
+        "sm:mx-0",
+        "w-4",
+        "h-4",
+        "w-full",
+        "lg:w-auto",
+        "flex",
+        "justify-center"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\home\\WorkoutCard.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ Workout }",
+          "source": "@/types/Workout",
+          "line": 1
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 2
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 3
+        },
+        {
+          "imported": "Badge",
+          "source": "@/components/shared/Badge",
+          "line": 4
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "WorkoutCard",
+          "line": 10,
+          "code": "const WorkoutCard = ("
+        },
+        {
+          "name": "WorkoutCard",
+          "line": 10,
+          "code": "const WorkoutCard = ({ workout }: IWorkoutCardProps) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "IWorkoutCardProps",
+          "line": 6,
+          "code": "interface IWorkoutCardProps {\n    workout: Workout;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "WorkoutCard",
+          "line": 10,
+          "code": "const WorkoutCard = ("
+        },
+        {
+          "name": "WorkoutCard",
+          "line": 10,
+          "code": "const WorkoutCard ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "group",
+        "overflow-hidden",
+        "rounded-3xl",
+        "border",
+        "border-zinc-800",
+        "bg-zinc-900",
+        "relative",
+        "h-64",
+        "overflow-hidden",
+        "rounded-2xl",
+        "h-full",
+        "w-full",
+        "object-cover",
+        "object-[center_20%]",
+        "p-7",
+        "flex",
+        "flex-wrap",
+        "gap-2",
+        "my-3",
+        "text-white",
+        "text-xl",
+        "font-extrabold",
+        "uppercase",
+        "text-zinc-400",
+        "text-sm",
+        "mt-1",
+        "border-t",
+        "border-zinc-800",
+        "my-4",
+        "flex",
+        "items-center",
+        "justify-start",
+        "gap-4",
+        "mb-2.5",
+        "text-sm",
+        "text-zinc-400"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\home\\WorkoutLibrary.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "WorkoutCard",
+          "source": "./WorkoutCard",
+          "line": 1
+        },
+        {
+          "imported": "{ Workout }",
+          "source": "@/types/Workout",
+          "line": 2
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [
+        {
+          "url_expression": "\"https://api.api-store.workers.dev/api/fitlog\"",
+          "line": 6,
+          "code": "fetch(\n        \"https://api.api-store.workers.dev/api/fitlog\"\n    );\n\n    const workouts: Workout[] = await response.json();\n\n    return (\n        <section id=\"library\" className=\"bg-black px-5 py-16\">\n            <h2 className=\"text-white text-4xl font-bold\">\n                THE LIBRARY\n            </h2>\n\n            <p className=\"text-zinc-400 mt-2\">\n                Twelve lifts covering every major muscle group.\n            </p>\n\n            <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8\">\n                {workouts.map((workout) => (\n                    <WorkoutCard key={workout.id} workout={workout} />\n                ))}\n            </div>\n        </section>\n    );\n};\n\nexport default WorkoutLibrary;"
+        }
+      ],
+      "async_functions": [
+        {
+          "name": "WorkoutLibrary",
+          "line": 5,
+          "code": "const WorkoutLibrary = async ("
+        },
+        {
+          "name": "WorkoutLibrary",
+          "line": 5,
+          "code": "const WorkoutLibrary = async"
+        }
+      ],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "WorkoutLibrary",
+          "line": 5,
+          "code": "const WorkoutLibrary ="
+        }
+      ],
+      "array_methods": {
+        "map": 1
+      },
+      "tailwind_classes": [
+        "bg-black",
+        "px-5",
+        "py-16",
+        "text-white",
+        "text-4xl",
+        "font-bold",
+        "text-zinc-400",
+        "mt-2",
+        "grid",
+        "grid-cols-1",
+        "md:grid-cols-2",
+        "lg:grid-cols-3",
+        "gap-6",
+        "mt-8"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\myPlan\\PlanWorkoutCard.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ useContext }",
+          "source": "react",
+          "line": 2
+        },
+        {
+          "imported": "{ WorkoutContext }",
+          "source": "@/context/WorkoutContext",
+          "line": 3
+        },
+        {
+          "imported": "{ Workout }",
+          "source": "@/types/Workout",
+          "line": 4
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 5
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 6
+        },
+        {
+          "imported": "Button1",
+          "source": "@/components/shared/Button-1",
+          "line": 7
+        },
+        {
+          "imported": "Button2",
+          "source": "@/components/shared/Button-2",
+          "line": 8
+        },
+        {
+          "imported": "{ toast }",
+          "source": "react-toastify",
+          "line": 9
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "WorkoutContext",
+          "line": 22,
+          "code": "useContext(WorkoutContext)"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [
+        {
+          "name": "handleMarkAsDone",
+          "line": 24,
+          "code": "const handleMarkAsDone ="
+        },
+        {
+          "name": "handleRemove",
+          "line": 31,
+          "code": "const handleRemove ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "PlanWorkoutCard",
+          "line": 16,
+          "code": "const PlanWorkoutCard = ("
+        },
+        {
+          "name": "handleMarkAsDone",
+          "line": 24,
+          "code": "const handleMarkAsDone = ("
+        },
+        {
+          "name": "handleRemove",
+          "line": 31,
+          "code": "const handleRemove = ("
+        },
+        {
+          "name": "PlanWorkoutCard",
+          "line": 16,
+          "code": "const PlanWorkoutCard = ({ workout, isSaved }: PlanWorkoutCardProps) =>"
+        },
+        {
+          "name": "handleMarkAsDone",
+          "line": 24,
+          "code": "const handleMarkAsDone = () =>"
+        },
+        {
+          "name": "handleRemove",
+          "line": 31,
+          "code": "const handleRemove = () =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "PlanWorkoutCardProps",
+          "line": 11,
+          "code": "interface PlanWorkoutCardProps {\n    workout: Workout;\n    isSaved: boolean;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "PlanWorkoutCard",
+          "line": 16,
+          "code": "const PlanWorkoutCard = ("
+        },
+        {
+          "name": "PlanWorkoutCard",
+          "line": 16,
+          "code": "const PlanWorkoutCard ="
+        }
+      ],
+      "array_methods": {
+        "filter": 3
+      },
+      "tailwind_classes": [
+        "border",
+        "border-zinc-800",
+        "rounded-2xl",
+        "p-5",
+        "mt-6",
+        "bg-[#12141c]",
+        "flex",
+        "flex-wrap",
+        "gap-4",
+        "relative",
+        "w-full",
+        "h-64",
+        "sm:w-32",
+        "sm:h-24",
+        "shrink-0",
+        "overflow-hidden",
+        "rounded-xl",
+        "object-cover",
+        "text-white",
+        "text-lg",
+        "font-bold",
+        "text-zinc-400",
+        "text-sm",
+        "mt-1",
+        "flex",
+        "gap-4",
+        "mt-3",
+        "text-zinc-400",
+        "text-sm",
+        "flex",
+        "items-center",
+        "gap-3",
+        "ml-auto",
+        "max-sm:ml-0",
+        "max-sm:mt-2",
+        "max-sm:w-full",
+        "max-sm:justify-center",
+        "md:ml-0",
+        "md:w-full",
+        "md:justify-center",
+        "lg:ml-auto",
+        "lg:w-auto",
+        "lg:justify-start",
+        "px-6",
+        "py-4",
+        "text-sm",
+        "max-sm:px-3.5",
+        "max-sm:py-2.5",
+        "max-sm:text-xs",
+        "px-6",
+        "py-4",
+        "text-sm",
+        "max-sm:px-3.5",
+        "max-sm:py-2.5",
+        "max-sm:text-xs",
+        "border",
+        "border-zinc-700",
+        "text-white",
+        "px-5",
+        "py-3",
+        "rounded-2xl",
+        "font-medium",
+        "hover:bg-red-500",
+        "transition",
+        "max-sm:w-90",
+        "w-8",
+        "h-8",
+        "text-zinc-500",
+        "flex",
+        "items-center",
+        "justify-center",
+        "hover:text-white",
+        "text-xl",
+        "cursor-pointer",
+        "max-sm:w-6",
+        "max-sm:h-6",
+        "max-sm:text-lg"
+      ],
+      "conditionals": 2,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\shared\\Badge.tsx",
+      "extension": ".tsx",
+      "imports": [],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Badge",
+          "line": 5,
+          "code": "const Badge = ("
+        },
+        {
+          "name": "Badge",
+          "line": 5,
+          "code": "const Badge = ({ children }: BadgeProps) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "BadgeProps",
+          "line": 1,
+          "code": "interface BadgeProps {\n    children: React.ReactNode;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "Badge",
+          "line": 5,
+          "code": "const Badge = ("
+        },
+        {
+          "name": "Badge",
+          "line": 5,
+          "code": "const Badge ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "bg-lime-400",
+        "text-black",
+        "font-bold",
+        "uppercase",
+        "px-4",
+        "py-1.5",
+        "rounded-full",
+        "text-xs"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\shared\\Button-1.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Button",
+          "line": 10,
+          "code": "const Button = ("
+        },
+        {
+          "name": "Button",
+          "line": 10,
+          "code": "const Button = ({ children, onClick, className, disabled = false }: ButtonProps,) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "ButtonProps",
+          "line": 3,
+          "code": "interface ButtonProps {\n    children: React.ReactNode;\n    onClick?: () => void;\n    className?: string;\n    disabled?: boolean;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "Button",
+          "line": 10,
+          "code": "const Button = ("
+        },
+        {
+          "name": "Button",
+          "line": 10,
+          "code": "const Button ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\shared\\Button-2.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 1
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Button2",
+          "line": 9,
+          "code": "const Button2 = ("
+        },
+        {
+          "name": "Button2",
+          "line": 9,
+          "code": "const Button2 = ({ children, onClick, className }: ButtonProps) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "ButtonProps",
+          "line": 3,
+          "code": "interface ButtonProps {\n    children: React.ReactNode;\n    onClick?: () => void;\n    className?: string;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "Button2",
+          "line": 9,
+          "code": "const Button2 = ("
+        },
+        {
+          "name": "Button2",
+          "line": 9,
+          "code": "const Button2 ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\shared\\Footer.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 1
+        },
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 2
+        },
+        {
+          "imported": "logo",
+          "source": "@/assets/logo.png",
+          "line": 3
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Footer",
+          "line": 5,
+          "code": "const Footer = ("
+        },
+        {
+          "name": "Footer",
+          "line": 5,
+          "code": "const Footer = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Footer",
+          "line": 5,
+          "code": "const Footer = ("
+        },
+        {
+          "name": "Footer",
+          "line": 5,
+          "code": "const Footer ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "bg-black",
+        "text-white",
+        "border-t",
+        "border-zinc-800",
+        "px-6",
+        "py-6",
+        "flex",
+        "flex-col",
+        "sm:flex-row",
+        "items-center",
+        "justify-between",
+        "gap-2",
+        "md:gap-4",
+        "flex",
+        "items-center",
+        "gap-3",
+        "w-4",
+        "md:w-6",
+        "font-bold",
+        "tracking-wider",
+        "text-sm",
+        "md:text-base",
+        "text-zinc-500",
+        "text-xs",
+        "md:text-sm"
+      ],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "Link"
+        ],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\shared\\Navbar.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "Link",
+          "source": "next/link",
+          "line": 2
+        },
+        {
+          "imported": "React",
+          "source": "react",
+          "line": 3
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 4
+        },
+        {
+          "imported": "logo",
+          "source": "@/assets/logo.png",
+          "line": 5
+        },
+        {
+          "imported": "{ useContext }",
+          "source": "react",
+          "line": 6
+        },
+        {
+          "imported": "{ WorkoutContext }",
+          "source": "@/context/WorkoutContext",
+          "line": 7
+        },
+        {
+          "imported": "{ usePathname }",
+          "source": "next/navigation",
+          "line": 8
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "WorkoutContext",
+          "line": 19,
+          "code": "useContext(WorkoutContext)"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "Navbar",
+          "line": 11,
+          "code": "const Navbar = ("
+        },
+        {
+          "name": "Navbar",
+          "line": 11,
+          "code": "const Navbar = () =>"
+        }
+      ],
+      "interfaces": [],
+      "types": [],
+      "components": [
+        {
+          "name": "Navbar",
+          "line": 11,
+          "code": "const Navbar = ("
+        },
+        {
+          "name": "Navbar",
+          "line": 11,
+          "code": "const Navbar ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [
+        "navbar",
+        "relative",
+        "bg-black",
+        "text-white",
+        "px-3",
+        "md:px-6",
+        "shadow-sm",
+        "border-b",
+        "border-zinc-800",
+        "navbar-start",
+        "gap-1.5",
+        "dropdown",
+        "btn",
+        "btn-ghost",
+        "md:hidden",
+        "text-lime-400",
+        "hover:bg-zinc-800",
+        "px-2",
+        "py-2",
+        "h-5",
+        "w-5",
+        "menu",
+        "menu-sm",
+        "dropdown-content",
+        "bg-zinc-900",
+        "text-white",
+        "rounded-box",
+        "z-1",
+        "mt-3",
+        "w-30",
+        "p-2",
+        "shadow",
+        "border",
+        "border-zinc-800",
+        "flex",
+        "items-center",
+        "gap-2",
+        "w-4",
+        "md:w-6",
+        "font-bold",
+        "tracking-wider",
+        "text-sm",
+        "md:text-base",
+        "navbar-center",
+        "hidden",
+        "md:flex",
+        "menu",
+        "menu-horizontal",
+        "px-1",
+        "gap-4",
+        "navbar-end",
+        "flex",
+        "items-center",
+        "space-x-2",
+        "md:space-x-6",
+        "text-sm",
+        "flex",
+        "items-center",
+        "space-x-2",
+        "text-zinc-300",
+        "bg-lime-400",
+        "text-black",
+        "font-bold",
+        "w-5",
+        "md:w-6",
+        "h-5",
+        "md:h-6",
+        "rounded-full",
+        "flex",
+        "items-center",
+        "justify-center",
+        "text-xs",
+        "flex",
+        "items-center",
+        "space-x-2",
+        "text-zinc-300",
+        "border",
+        "border-zinc-700",
+        "text-zinc-300",
+        "font-bold",
+        "w-5",
+        "md:w-6",
+        "h-5",
+        "md:h-6",
+        "rounded-full",
+        "flex",
+        "items-center",
+        "justify-center",
+        "text-xs"
+      ],
+      "conditionals": 7,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [
+          "usePathname",
+          "Link"
+        ],
+        "path_based": true
+      }
+    },
+    {
+      "file": "src\\components\\workoutDetails\\AddToPlanButton.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ Workout }",
+          "source": "@/types/Workout",
+          "line": 2
+        },
+        {
+          "imported": "{ useContext }",
+          "source": "react",
+          "line": 3
+        },
+        {
+          "imported": "{ WorkoutContext }",
+          "source": "@/context/WorkoutContext",
+          "line": 4
+        },
+        {
+          "imported": "Button",
+          "source": "@/components/shared/Button-1",
+          "line": 5
+        },
+        {
+          "imported": "{ toast }",
+          "source": "react-toastify",
+          "line": 6
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 7
+        },
+        {
+          "imported": "addicon",
+          "source": "@/assets/add-icon.png",
+          "line": 8
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "WorkoutContext",
+          "line": 15,
+          "code": "useContext(WorkoutContext)"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [
+        {
+          "name": "handleAddToPlan",
+          "line": 16,
+          "code": "const handleAddToPlan ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "AddToPlanButton",
+          "line": 14,
+          "code": "const AddToPlanButton = ("
+        },
+        {
+          "name": "handleAddToPlan",
+          "line": 16,
+          "code": "const handleAddToPlan = ("
+        },
+        {
+          "name": "AddToPlanButton",
+          "line": 14,
+          "code": "const AddToPlanButton = ({ workout }: AddToPlanButtonProps) =>"
+        },
+        {
+          "name": "handleAddToPlan",
+          "line": 16,
+          "code": "const handleAddToPlan = () =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "AddToPlanButtonProps",
+          "line": 10,
+          "code": "interface AddToPlanButtonProps {\n    workout: Workout;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "AddToPlanButton",
+          "line": 14,
+          "code": "const AddToPlanButton = ("
+        },
+        {
+          "name": "AddToPlanButton",
+          "line": 14,
+          "code": "const AddToPlanButton ="
+        }
+      ],
+      "array_methods": {
+        "some": 1
+      },
+      "tailwind_classes": [
+        "mx-auto",
+        "lg:mx-0"
+      ],
+      "conditionals": 1,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\components\\workoutDetails\\SaveButton.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ Workout }",
+          "source": "@/types/Workout",
+          "line": 2
+        },
+        {
+          "imported": "{ useContext }",
+          "source": "react",
+          "line": 3
+        },
+        {
+          "imported": "{ WorkoutContext }",
+          "source": "@/context/WorkoutContext",
+          "line": 4
+        },
+        {
+          "imported": "Button2",
+          "source": "@/components/shared/Button-2",
+          "line": 5
+        },
+        {
+          "imported": "SaveIcon",
+          "source": "@/assets/save-icon.png",
+          "line": 6
+        },
+        {
+          "imported": "Image",
+          "source": "next/image",
+          "line": 7
+        },
+        {
+          "imported": "{ toast }",
+          "source": "react-toastify",
+          "line": 8
+        }
+      ],
+      "exports": [],
+      "use_state": [],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "useContext",
+          "type": null,
+          "argument": "WorkoutContext",
+          "line": 15,
+          "code": "useContext(WorkoutContext)"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [
+        {
+          "name": "handleSave",
+          "line": 16,
+          "code": "const handleSave ="
+        }
+      ],
+      "functions": [
+        {
+          "name": "SaveButton",
+          "line": 14,
+          "code": "const SaveButton = ("
+        },
+        {
+          "name": "handleSave",
+          "line": 16,
+          "code": "const handleSave = ("
+        },
+        {
+          "name": "SaveButton",
+          "line": 14,
+          "code": "const SaveButton = ({ workout }: SaveButtonProps) =>"
+        },
+        {
+          "name": "handleSave",
+          "line": 16,
+          "code": "const handleSave = () =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "SaveButtonProps",
+          "line": 10,
+          "code": "interface SaveButtonProps {\n    workout: Workout;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "SaveButton",
+          "line": 14,
+          "code": "const SaveButton = ("
+        },
+        {
+          "name": "SaveButton",
+          "line": 14,
+          "code": "const SaveButton ="
+        }
+      ],
+      "array_methods": {
+        "some": 1
+      },
+      "tailwind_classes": [
+        "w-52",
+        "mx-auto",
+        "lg:mx-0",
+        "brightness-0",
+        "invert"
+      ],
+      "conditionals": 1,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\context\\WorkoutContext.tsx",
+      "extension": ".tsx",
+      "imports": [
+        {
+          "imported": "{ Workout }",
+          "source": "@/types/Workout",
+          "line": 2
+        },
+        {
+          "imported": "React, { createContext, ReactNode, useState }",
+          "source": "react",
+          "line": 3
+        }
+      ],
+      "exports": [
+        {
+          "type": "const",
+          "default": false,
+          "line": 12
+        }
+      ],
+      "use_state": [
+        {
+          "state_name": "planWorkouts",
+          "setter_name": "setPlanWorkouts",
+          "type": "Workout[]",
+          "initial_value": "[]",
+          "line": 20,
+          "code": "const [planWorkouts, setPlanWorkouts] = useState<Workout[]>([])"
+        },
+        {
+          "state_name": "savedWorkouts",
+          "setter_name": "setSavedWorkouts",
+          "type": "Workout[]",
+          "initial_value": "[]",
+          "line": 21,
+          "code": "const [savedWorkouts, setSavedWorkouts] = useState<Workout[]>([])"
+        }
+      ],
+      "use_effect": [],
+      "context": [
+        {
+          "method": "createContext",
+          "type": "IWorkoutContext",
+          "argument": "{\n    planWorkouts: [],\n    setPlanWorkouts: (",
+          "line": 12,
+          "code": "createContext<IWorkoutContext>({\n    planWorkouts: [],\n    setPlanWorkouts: ()"
+        }
+      ],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [
+        {
+          "name": "WorkoutProvider",
+          "line": 19,
+          "code": "const WorkoutProvider = ("
+        },
+        {
+          "name": "WorkoutProvider",
+          "line": 19,
+          "code": "const WorkoutProvider = ({ children }: { children: ReactNode }) =>"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "IWorkoutContext",
+          "line": 5,
+          "code": "interface IWorkoutContext {\n    planWorkouts: Workout[];\n    setPlanWorkouts: React.Dispatch<React.SetStateAction<Workout[]>>;\n    savedWorkouts: Workout[];\n    setSavedWorkouts: React.Dispatch<React.SetStateAction<Workout[]>>;\n}"
+        }
+      ],
+      "types": [],
+      "components": [
+        {
+          "name": "WorkoutProvider",
+          "line": 19,
+          "code": "const WorkoutProvider = ("
+        },
+        {
+          "name": "WorkoutContext",
+          "line": 12,
+          "code": "export const WorkoutContext ="
+        },
+        {
+          "name": "WorkoutProvider",
+          "line": 19,
+          "code": "const WorkoutProvider ="
+        }
+      ],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    },
+    {
+      "file": "src\\types\\Workout.ts",
+      "extension": ".ts",
+      "imports": [],
+      "exports": [
+        {
+          "type": "interface",
+          "default": false,
+          "line": 1
+        }
+      ],
+      "use_state": [],
+      "use_effect": [],
+      "context": [],
+      "fetch": [],
+      "async_functions": [],
+      "event_handlers": [],
+      "functions": [],
+      "interfaces": [
+        {
+          "name": "Workout",
+          "line": 1,
+          "code": "export interface Workout {\n    id: number;\n    name: string;\n    image: string;\n    muscleGroups: string[];\n    equipment: string;\n    difficulty: string;\n    duration: number;\n    caloriesBurned: number;\n    sets: number;\n    reps: number;\n    rating: number;\n    description: string;\n    instructions: string[];\n}"
+        }
+      ],
+      "types": [],
+      "components": [],
+      "array_methods": {},
+      "tailwind_classes": [],
+      "conditionals": 0,
+      "storage": {
+        "localStorage_get": 0,
+        "localStorage_set": 0,
+        "localStorage_remove": 0
+      },
+      "routing": {
+        "dynamic_route": true,
+        "next_navigation": [],
+        "path_based": false
+      }
+    }
+  ]
+}

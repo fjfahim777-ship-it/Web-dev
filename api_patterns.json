@@ -1,0 +1,103 @@
+{
+  "knowledge_type": "api_patterns",
+  "purpose": "Observed API and data-fetching implementation.",
+  "data_fetching": {
+    "pattern_name": "data_fetching",
+    "description": "Observed patterns in fetch-based data retrieval.",
+    "implementation_observations": [
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\app\\books\\[id]\\page.tsx",
+        "url_expression": "`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,",
+        "line": 15,
+        "code": "fetch(\n      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,\n    );\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error(\"Error fetching books data:\", error);\n    return [];\n  }\n};\n\nconst BookDetailsPage = async ({ params }: IBookDetailsPageProps) => {\n  const { id } = await params;\n  const booksData = await getBooks();\n  //   const book = booksData.find((book: IBook) => book.bookId === Number(id));\n  const book = booksData.find(\n    (book: IBook) => String(book.bookId) === String(id),\n  ) as IBook;\n\n  console.log(book, \"book\");\n  return (\n    <div className=\"container mx-auto px-4 py-10\">\n      <div className=\"card lg:card-side overflow-hidden border border-base-300 bg-base-100 shadow-xl\">\n        {/* Book Image */}\n        <figure className=\"relative bg-base-200 lg:w-2/5\">\n          <Image\n            src={book.image}\n            a"
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\app\\books\\page.tsx",
+        "url_expression": "`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,",
+        "line": 7,
+        "code": "fetch(\n      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,\n    );\n    const data = await response.json();\n    return data;\n  }catch(error){\n    console.error(\"Error fetching books data:\", error);\n    return [];\n  }\n};\n\nconst Books = async () => {\n  const booksData = await getBooks();\n\n  return (\n    <section className=\"container mx-auto my-[70px] px-4\">\n      {/* Section Heading */}\n      <div className=\"mb-10 text-center\">\n        <p className=\"mb-2 text-sm font-semibold uppercase tracking-widest text-emerald-500\">\n          Our Collection\n        </p>\n\n        <h2 className=\"text-3xl font-bold text-slate-800 md:text-4xl\">\n          Explore All Books\n        </h2>\n\n        <p className=\"mx-auto mt-3 max-w-2xl text-slate-500\">\n          Discover amazing stories, timeless classics, and inspiring books from\n          talented authors.\n        </p>\n      </div>\n\n      {/* Boo"
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\components\\homepage\\Books.tsx",
+        "url_expression": "`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,",
+        "line": 7,
+        "code": "fetch(\n      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,\n    );\n    const data = await response.json();\n    return data;\n  }catch(error){\n    console.error(\"Error fetching books data:\", error);\n    return [];\n  }\n};\n\nconst Books = async () => {\n  const booksData = await getBooks();\n\n  return (\n    <section className=\"container mx-auto my-[70px] px-4\">\n      {/* Section Heading */}\n      <div className=\"mb-10 text-center\">\n        <p className=\"mb-2 text-sm font-semibold uppercase tracking-widest text-emerald-500\">\n          Our Collection\n        </p>\n\n        <h2 className=\"text-3xl font-bold text-slate-800 md:text-4xl\">\n          Explore Popular Books\n        </h2>\n\n        <p className=\"mx-auto mt-3 max-w-2xl text-slate-500\">\n          Discover amazing stories, timeless classics, and inspiring books from\n          talented authors.\n        </p>\n      </div>\n\n      {/*"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "src\\app\\category\\[categoryId]\\page.tsx",
+        "url_expression": "`https://news-api-v2.vercel.app/api/category/${categoryId}`,",
+        "line": 16,
+        "code": "fetch(\n    `https://news-api-v2.vercel.app/api/category/${categoryId}`,\n  );\n\n  const data = await res.json();\n\n  const categoryNews: News[] = data.data;\n\n    if(!categoryNews) {\n        notFound()\n    }\n\n\n\n  return (\n    <div>\n      <h1 className=\"text-2xl font-bold border-b-2 border-red-700 mb-5\">\n        {data.title}\n      </h1>\n\n      <div className=\"grid grid-cols-3 gap-10\">\n        {categoryNews.map((news) => (\n          <NewsCard key={news.id} news={news} />\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default CategoryNews;"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "src\\app\\news\\[newsId]\\page.tsx",
+        "url_expression": "`https://news-api-v2.vercel.app/api/article/${newsId}`",
+        "line": 6,
+        "code": "fetch(`https://news-api-v2.vercel.app/api/article/${newsId}`)\n\n    const data = await res.json() \n\n    const news = data.data \n    if(!news) {\n        notFound()\n    }\n\n   \n    return (\n        <div>\n            <h1>{news.title}</h1>\n            {/* image */}\n\n\n            <p>{news.text}</p>\n        </div>\n    );\n};\n\nexport default NewsDetails;"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "src\\app\\page.tsx",
+        "url_expression": "\"https://news-api-v2.vercel.app/api/news/sections\"",
+        "line": 20,
+        "code": "fetch(\"https://news-api-v2.vercel.app/api/news/sections\");\n  const data = await res.json();\n  const sections = data.data;\n  const mainNews = sections[0].articles;\n  const otherSections:IOtherSection[] = sections.slice(1);\n  // console.log(otherSections);\n\n  return (\n    <div>\n   \n\n      <div className=\"grid gap-5 grid-cols-3  mt-5\">\n        {/* news section */}\n        <div className=\" col-span-2 \">\n          <MainNews news={mainNews} />\n\n          <div className=\" grid gap-5 mt-5\">\n            {otherSections.map((os) => (\n              <div\n                className=\"\"\n                key={os.curationId}\n              >\n                <h1 className=\"font-bold border-b-2 pb-1  border-red-700\">{os.title}</h1>\n\n                <div className=\"grid mt-3 grid-cols-3 gap-2\">\n                  {os.articles.map((news) => (\n                  <NewsCard key={news.id} news={news} />"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "src\\components\\Marquee.tsx",
+        "url_expression": "\"https://news-api-v2.vercel.app/api/news?limit=10\"",
+        "line": 11,
+        "code": "fetch(\"https://news-api-v2.vercel.app/api/news?limit=10\")\n    const data = await res.json() \n    const headlines:Headlines[] = data.data\n    return (\n        <div className=\"bg-red-700 text-white\">\n\n            <div className=\"flex max-w-7xl mx-auto\">\n                <div className=\"bg-red-800 py-1 px-5 font-bold\">সর্বশেষ</div>\n\n            <MarqueeText className=\"py-1\" direction=\"right\" duration={10}>\n            \n            {headlines.map(h => <Link className=\"hover:underline\" href={`/news/${h.id}`} key={h.id}>\n                <span>{h.title}</span>\n                <span className=\"mx-5\">•</span>\n            </Link>)}\n\n            </MarqueeText>\n            </div>\n        </div>\n    );\n};\n\nexport default Marquee;"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "src\\components\\MostRead.tsx",
+        "url_expression": "\"https://news-api-v2.vercel.app/api/news/most-read\"",
+        "line": 7,
+        "code": "fetch(\"https://news-api-v2.vercel.app/api/news/most-read\");\n  const data = await res.json();\n\n  const news: MostReadNews[] = data.data;\n\n  return (\n    <div className=\"card p-2 bg-base-100 border border-gray-300\">\n      <h1 className=\"font-bold text-red-700 mb-3\">সর্বাধিক পঠিত</h1>\n\n      <div className=\"grid gap-3\">\n        {news.map((n, i) => (\n          <div className=\"flex gap-2 items-center\" key={n.id}>\n            <p className=\"text-2xl font-bold text-red-600\">{i + 1}</p>{\" \"}\n            <h2>{n.title}</h2>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default MostRead;"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "src\\components\\NavLinks.tsx",
+        "url_expression": "\"https://news-api-v2.vercel.app/api/categories\"",
+        "line": 12,
+        "code": "fetch(\"https://news-api-v2.vercel.app/api/categories\");\n  const data = await res.json();\n  const navs:Navs[] = data.data;\n  const filteredNavs = navs.filter((n) => n.scrapable);\n  return (\n    <div className=\"flex gap-5 justify-center mt-5\">\n      <Link href={\"/\"}>হোম</Link>\n\n      {filteredNavs.map((n, i) => (\n        <Link key={i} href={`/category/${n.slug}`}>\n          {n.title}\n        </Link>\n      ))}\n    </div>\n  );\n};\n\nexport default NavLinks;"
+      },
+      {
+        "project": "Dev-Stack",
+        "file": "src\\components\\TechnologySection\\TechnologySection.tsx",
+        "url_expression": "\"/technologies.json\"",
+        "line": 7,
+        "code": "fetch(\"/technologies.json\");\n    const data = await res.json();\n    return data;\n};\n\nfunction TechnologySection() {\n    const [selectedTechnologies, setSelectedTechnologies] = useState<Tech[]>([])\n    console.log(selectedTechnologies)\n    const [technologyPromise] = useState(() => technologyFetch())\n    return (\n        <section className=\"-mt-10 md:py-5\">\n            <div className=\"container mx-auto px-6\">\n\n                <div className=\"mb-2 md:mb-8\">\n                    <h2 className=\"text-[25px] text-center md:text-4xl md:text-start font-extrabold\">Explore the <span className=\"text-pink-500\">Technologies</span>\n                    </h2>\n\n                    <p className=\"mt-3 text-[15px] md:text-[17px] text-center md:text-start text-gray-600\">\n                        Pick one technology per category to build your ideal stack.\n                    </p>\n                </div>"
+      },
+      {
+        "project": "Fitlog",
+        "file": "src\\app\\workout\\[id]\\page.tsx",
+        "url_expression": "\"https://api.api-store.workers.dev/api/fitlog\"",
+        "line": 16,
+        "code": "fetch(\n            \"https://api.api-store.workers.dev/api/fitlog\"\n        );\n\n        const data: Workout[] = await response.json();\n\n        return data;\n    } catch (error) {\n        console.error(\"Error fetching workouts data:\", error);\n\n        return [];\n    }\n};\n\nconst WorkoutDetails = async ({ params }: WorkoutDetailsProps) => {\n    const { id } = await params;\n\n    const workoutsData = await getWorkouts();\n\n    const workout = workoutsData.find(\n        (workout: Workout) => String(workout.id) === String(id)\n    ) as Workout;\n\n    if (!workout) {\n        notFound();\n    }\n\n    return (\n        <main className=\"bg-black min-h-screen px-5 py-16\">\n            <div className=\"max-w-350 mx-auto\">\n                <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-15\">\n\n                    <div className=\"overflow-hidden rounded-2xl\">\n                        <Image"
+      },
+      {
+        "project": "Fitlog",
+        "file": "src\\components\\home\\WorkoutLibrary.tsx",
+        "url_expression": "\"https://api.api-store.workers.dev/api/fitlog\"",
+        "line": 6,
+        "code": "fetch(\n        \"https://api.api-store.workers.dev/api/fitlog\"\n    );\n\n    const workouts: Workout[] = await response.json();\n\n    return (\n        <section id=\"library\" className=\"bg-black px-5 py-16\">\n            <h2 className=\"text-white text-4xl font-bold\">\n                THE LIBRARY\n            </h2>\n\n            <p className=\"text-zinc-400 mt-2\">\n                Twelve lifts covering every major muscle group.\n            </p>\n\n            <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8\">\n                {workouts.map((workout) => (\n                    <WorkoutCard key={workout.id} workout={workout} />\n                ))}\n            </div>\n        </section>\n    );\n};\n\nexport default WorkoutLibrary;"
+      }
+    ],
+    "projects_found": [
+      "Dev-Stack",
+      "Fitlog",
+      "b14-book-vibe",
+      "bangla-news-24"
+    ],
+    "occurrence_count": 12,
+    "frequency": 3.0,
+    "confidence": "high"
+  }
+}

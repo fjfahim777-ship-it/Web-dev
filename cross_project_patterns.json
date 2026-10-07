@@ -1,0 +1,155 @@
+{
+  "knowledge_type": "cross_project_analysis",
+  "purpose": "Comparison of implementation patterns across all reference projects.",
+  "project_summary": {
+    "b14-book-vibe": {
+      "file_count": 21,
+      "useState": 3,
+      "useEffect": 0,
+      "Context": 5,
+      "fetch": 3,
+      "components": 33,
+      "functions": 39,
+      "interfaces": 5,
+      "types": 0,
+      "conditional_rendering": 8,
+      "localStorage": 0
+    },
+    "bangla-news-24": {
+      "file_count": 23,
+      "useState": 1,
+      "useEffect": 0,
+      "Context": 0,
+      "fetch": 6,
+      "components": 25,
+      "functions": 23,
+      "interfaces": 7,
+      "types": 0,
+      "conditional_rendering": 11,
+      "localStorage": 0
+    },
+    "Dev-Stack": {
+      "file_count": 13,
+      "useState": 2,
+      "useEffect": 0,
+      "Context": 0,
+      "fetch": 1,
+      "components": 9,
+      "functions": 17,
+      "interfaces": 4,
+      "types": 1,
+      "conditional_rendering": 9,
+      "localStorage": 0
+    },
+    "Fitlog": {
+      "file_count": 23,
+      "useState": 4,
+      "useEffect": 0,
+      "Context": 7,
+      "fetch": 2,
+      "components": 34,
+      "functions": 39,
+      "interfaces": 10,
+      "types": 0,
+      "conditional_rendering": 19,
+      "localStorage": 0
+    }
+  },
+  "recurring_patterns": {
+    "useState": {
+      "projects_found": [
+        "b14-book-vibe",
+        "bangla-news-24",
+        "Dev-Stack",
+        "Fitlog"
+      ],
+      "project_count": 4,
+      "coverage": 1.0,
+      "classification": "common"
+    },
+    "useEffect": {
+      "projects_found": [],
+      "project_count": 0,
+      "coverage": 0.0,
+      "classification": "limited"
+    },
+    "Context": {
+      "projects_found": [
+        "b14-book-vibe",
+        "Fitlog"
+      ],
+      "project_count": 2,
+      "coverage": 0.5,
+      "classification": "limited"
+    },
+    "fetch": {
+      "projects_found": [
+        "b14-book-vibe",
+        "bangla-news-24",
+        "Dev-Stack",
+        "Fitlog"
+      ],
+      "project_count": 4,
+      "coverage": 1.0,
+      "classification": "common"
+    },
+    "components": {
+      "projects_found": [
+        "b14-book-vibe",
+        "bangla-news-24",
+        "Dev-Stack",
+        "Fitlog"
+      ],
+      "project_count": 4,
+      "coverage": 1.0,
+      "classification": "common"
+    },
+    "functions": {
+      "projects_found": [
+        "b14-book-vibe",
+        "bangla-news-24",
+        "Dev-Stack",
+        "Fitlog"
+      ],
+      "project_count": 4,
+      "coverage": 1.0,
+      "classification": "common"
+    },
+    "interfaces": {
+      "projects_found": [
+        "b14-book-vibe",
+        "bangla-news-24",
+        "Dev-Stack",
+        "Fitlog"
+      ],
+      "project_count": 4,
+      "coverage": 1.0,
+      "classification": "common"
+    },
+    "types": {
+      "projects_found": [
+        "Dev-Stack"
+      ],
+      "project_count": 1,
+      "coverage": 0.25,
+      "classification": "limited"
+    },
+    "conditional_rendering": {
+      "projects_found": [
+        "b14-book-vibe",
+        "bangla-news-24",
+        "Dev-Stack",
+        "Fitlog"
+      ],
+      "project_count": 4,
+      "coverage": 1.0,
+      "classification": "common"
+    },
+    "localStorage": {
+      "projects_found": [],
+      "project_count": 0,
+      "coverage": 0.0,
+      "classification": "limited"
+    }
+  }
+}
