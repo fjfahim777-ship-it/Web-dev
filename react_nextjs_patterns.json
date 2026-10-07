@@ -1,1390 +1,1176 @@
 {
-  "knowledge_type": "react_nextjs_patterns",
-  "purpose": "Observed React and Next.js implementation patterns.",
-  "local_state": {
-    "pattern_name": "local_state",
-    "description": "Observed patterns in how local component state is declared and named.",
-    "implementation_observations": [
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\listed-books\\page.tsx",
-        "state_name": "sortBy",
-        "setter_name": "setSortBy",
-        "type": "\"rating\" | \"pages\" | \"year\"",
-        "initial_value": "\"rating\"",
-        "line": 9,
-        "code": "const [sortBy, setSortBy] = useState<\"rating\" | \"pages\" | \"year\">(\"rating\")"
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\context\\BooksContext.tsx",
-        "state_name": "readBooks",
-        "setter_name": "setReadBooks",
-        "type": "IBook[]",
-        "initial_value": "[]",
-        "line": 21,
-        "code": "const [readBooks, setReadBooks] = useState<IBook[]>([])"
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\context\\BooksContext.tsx",
-        "state_name": "wishlist",
-        "setter_name": "setWishlist",
-        "type": "IBook[]",
-        "initial_value": "[]",
-        "line": 22,
-        "code": "const [wishlist, setWishlist] = useState<IBook[]>([])"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\profile\\page.tsx",
-        "state_name": "show",
-        "setter_name": "setShow",
-        "type": null,
-        "initial_value": "false",
-        "line": 14,
-        "code": "const [show, setShow] = useState(false)"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\Navbar\\Navbar.tsx",
-        "state_name": "activeMenu",
-        "setter_name": "setActiveMenu",
-        "type": null,
-        "initial_value": "\"Home\"",
-        "line": 6,
-        "code": "const [activeMenu, setActiveMenu] = useState(\"Home\")"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\TechnologySection.tsx",
-        "state_name": "selectedTechnologies",
-        "setter_name": "setSelectedTechnologies",
-        "type": "Tech[]",
-        "initial_value": "[]",
-        "line": 13,
-        "code": "const [selectedTechnologies, setSelectedTechnologies] = useState<Tech[]>([])"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\my-plan\\page.tsx",
-        "state_name": "activeTab",
-        "setter_name": "setActiveTab",
-        "type": null,
-        "initial_value": "tab === \"saved\" ? \"saved\" : \"plan\"",
-        "line": 14,
-        "code": "const [activeTab, setActiveTab] = useState(\n        tab === \"saved\" ? \"saved\" : \"plan\"\n    )"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\my-plan\\page.tsx",
-        "state_name": "sortBy",
-        "setter_name": "setSortBy",
-        "type": null,
-        "initial_value": "\"duration\"",
-        "line": 17,
-        "code": "const [sortBy, setSortBy] = useState(\"duration\")"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\context\\WorkoutContext.tsx",
-        "state_name": "planWorkouts",
-        "setter_name": "setPlanWorkouts",
-        "type": "Workout[]",
-        "initial_value": "[]",
-        "line": 20,
-        "code": "const [planWorkouts, setPlanWorkouts] = useState<Workout[]>([])"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\context\\WorkoutContext.tsx",
-        "state_name": "savedWorkouts",
-        "setter_name": "setSavedWorkouts",
-        "type": "Workout[]",
-        "initial_value": "[]",
-        "line": 21,
-        "code": "const [savedWorkouts, setSavedWorkouts] = useState<Workout[]>([])"
-      }
-    ],
-    "common_state_names": [
-      [
-        "sortBy",
-        2
-      ],
-      [
-        "readBooks",
-        1
-      ],
-      [
-        "wishlist",
-        1
-      ],
-      [
-        "show",
-        1
-      ],
-      [
-        "activeMenu",
-        1
-      ],
-      [
-        "selectedTechnologies",
-        1
-      ],
-      [
-        "activeTab",
-        1
-      ],
-      [
-        "planWorkouts",
-        1
-      ],
-      [
-        "savedWorkouts",
-        1
-      ]
-    ],
-    "common_initial_values": [
-      [
-        "[]",
-        5
-      ],
-      [
-        "\"rating\"",
-        1
-      ],
-      [
-        "false",
-        1
-      ],
-      [
-        "\"Home\"",
-        1
-      ],
-      [
-        "tab === \"saved\" ? \"saved\" : \"plan\"",
-        1
-      ],
-      [
-        "\"duration\"",
-        1
-      ]
-    ],
+  "state": {
+    "occurrence_count": 10,
     "projects_found": [
       "Dev-Stack",
       "Fitlog",
       "b14-book-vibe",
       "bangla-news-24"
     ],
-    "occurrence_count": 10,
-    "frequency": 2.5,
-    "confidence": "high"
-  },
-  "context": {
-    "pattern_name": "context_usage",
-    "description": "Observed patterns in Context creation and consumption.",
-    "implementation_observations": [
+    "project_count": 4,
+    "confidence": "high",
+    "examples": [
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\listed-books\\page.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "BooksContext",
-        "line": 8,
-        "code": "useContext(BooksContext)"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+        "evidence": {
+          "state": "sortBy",
+          "setter": "setSortBy",
+          "type": "\"rating\" | \"pages\" | \"year\"",
+          "initial_value": "\"rating\""
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\read-books\\page.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "BooksContext",
-        "line": 60,
-        "code": "useContext(BooksContext)"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
+        "evidence": {
+          "state": "readBooks",
+          "setter": "setReadBooks",
+          "type": "IBook[]",
+          "initial_value": "[]"
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\components\\bookDetails\\ReadButton.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "BooksContext",
-        "line": 8,
-        "code": "useContext(BooksContext)"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
+        "evidence": {
+          "state": "wishlist",
+          "setter": "setWishlist",
+          "type": "IBook[]",
+          "initial_value": "[]"
+        }
       },
       {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\bookDetails\\WishListButton.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "BooksContext",
-        "line": 8,
-        "code": "useContext(BooksContext)"
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/profile/page.tsx",
+        "evidence": {
+          "state": "show",
+          "setter": "setShow",
+          "type": null,
+          "initial_value": "false"
+        }
       },
       {
-        "project": "b14-book-vibe",
-        "file": "src\\context\\BooksContext.tsx",
-        "method": "createContext",
-        "type": "IBooksContext",
-        "argument": "{\n  readBooks: [],\n  setReadBooks: (",
-        "line": 13,
-        "code": "createContext<IBooksContext>({\n  readBooks: [],\n  setReadBooks: ()"
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/Navbar/Navbar.tsx",
+        "evidence": {
+          "state": "activeMenu",
+          "setter": "setActiveMenu",
+          "type": null,
+          "initial_value": "\"Home\""
+        }
       },
       {
-        "project": "Fitlog",
-        "file": "src\\app\\my-plan\\page.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "WorkoutContext",
-        "line": 12,
-        "code": "useContext(WorkoutContext)"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\my-plan\\page.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "WorkoutContext",
-        "line": 13,
-        "code": "useContext(WorkoutContext)"
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologySection.tsx",
+        "evidence": {
+          "state": "selectedTechnologies",
+          "setter": "setSelectedTechnologies",
+          "type": "Tech[]",
+          "initial_value": "[]"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\components\\myPlan\\PlanWorkoutCard.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "WorkoutContext",
-        "line": 22,
-        "code": "useContext(WorkoutContext)"
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
+        "evidence": {
+          "state": "activeTab",
+          "setter": "setActiveTab",
+          "type": null,
+          "initial_value": "tab === \"saved\" ? \"saved\" : \"plan\""
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\components\\shared\\Navbar.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "WorkoutContext",
-        "line": 19,
-        "code": "useContext(WorkoutContext)"
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
+        "evidence": {
+          "state": "sortBy",
+          "setter": "setSortBy",
+          "type": null,
+          "initial_value": "\"duration\""
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\components\\workoutDetails\\AddToPlanButton.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "WorkoutContext",
-        "line": 15,
-        "code": "useContext(WorkoutContext)"
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx",
+        "evidence": {
+          "state": "planWorkouts",
+          "setter": "setPlanWorkouts",
+          "type": "Workout[]",
+          "initial_value": "[]"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\components\\workoutDetails\\SaveButton.tsx",
-        "method": "useContext",
-        "type": null,
-        "argument": "WorkoutContext",
-        "line": 15,
-        "code": "useContext(WorkoutContext)"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\context\\WorkoutContext.tsx",
-        "method": "createContext",
-        "type": "IWorkoutContext",
-        "argument": "{\n    planWorkouts: [],\n    setPlanWorkouts: (",
-        "line": 12,
-        "code": "createContext<IWorkoutContext>({\n    planWorkouts: [],\n    setPlanWorkouts: ()"
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx",
+        "evidence": {
+          "state": "savedWorkouts",
+          "setter": "setSavedWorkouts",
+          "type": "Workout[]",
+          "initial_value": "[]"
+        }
       }
-    ],
+    ]
+  },
+  "effects": {},
+  "context": {
+    "occurrence_count": 16,
     "projects_found": [
       "Fitlog",
       "b14-book-vibe"
     ],
-    "occurrence_count": 12,
-    "frequency": 6.0,
-    "confidence": "medium"
-  },
-  "components": {
-    "pattern_name": "component_naming_and_structure",
-    "description": "Observed component naming and declaration patterns.",
-    "implementation_observations": [
+    "project_count": 2,
+    "confidence": "medium",
+    "examples": [
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\[id]\\loading.tsx",
-        "name": "BookDetailsLoading",
-        "line": 3,
-        "code": "const BookDetailsLoading = ("
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "BooksContext"
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\[id]\\loading.tsx",
-        "name": "BookDetailsLoading",
-        "line": 3,
-        "code": "const BookDetailsLoading ="
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "BooksContext"
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\[id]\\page.tsx",
-        "name": "BookDetailsPage",
-        "line": 26,
-        "code": "const BookDetailsPage ="
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "BooksContext"
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\loading.tsx",
-        "name": "BooksLoading",
-        "line": 3,
-        "code": "const BooksLoading = ("
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "BooksContext"
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\loading.tsx",
-        "name": "BooksLoading",
-        "line": 3,
-        "code": "const BooksLoading ="
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "context"
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\page.tsx",
-        "name": "Books",
-        "line": 18,
-        "code": "const Books ="
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
+        "evidence": {
+          "kind": "provider",
+          "context": "BooksContext"
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\layout.tsx",
-        "name": "RootLayout",
-        "line": 23,
-        "code": "export default function RootLayout("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\listed-books\\page.tsx",
-        "name": "ListedBooks",
-        "line": 7,
-        "code": "const ListedBooks = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\listed-books\\page.tsx",
-        "name": "ListedBooks",
-        "line": 7,
-        "code": "const ListedBooks ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\loading.tsx",
-        "name": "GlobalLoading",
-        "line": 3,
-        "code": "const GlobalLoading = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\loading.tsx",
-        "name": "GlobalLoading",
-        "line": 3,
-        "code": "const GlobalLoading ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\read-books\\page.tsx",
-        "name": "TriangleBar",
-        "line": 36,
-        "code": "const TriangleBar = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\read-books\\page.tsx",
-        "name": "CustomColorLabel",
-        "line": 54,
-        "code": "const CustomColorLabel = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\read-books\\page.tsx",
-        "name": "ReadBooks",
-        "line": 59,
-        "code": "const ReadBooks = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\read-books\\page.tsx",
-        "name": "TriangleBar",
-        "line": 36,
-        "code": "const TriangleBar ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\read-books\\page.tsx",
-        "name": "CustomColorLabel",
-        "line": 54,
-        "code": "const CustomColorLabel ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\app\\read-books\\page.tsx",
-        "name": "ReadBooks",
-        "line": 59,
-        "code": "const ReadBooks ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\bookDetails\\ReadButton.tsx",
-        "name": "ReadButton",
-        "line": 7,
-        "code": "const ReadButton = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\bookDetails\\ReadButton.tsx",
-        "name": "ReadButton",
-        "line": 7,
-        "code": "const ReadButton ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\bookDetails\\WishListButton.tsx",
-        "name": "WishListButton",
-        "line": 7,
-        "code": "const WishListButton = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\bookDetails\\WishListButton.tsx",
-        "name": "WishListButton",
-        "line": 7,
-        "code": "const WishListButton ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\homepage\\Banner.tsx",
-        "name": "Banner",
-        "line": 6,
-        "code": "const Banner = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\homepage\\Banner.tsx",
-        "name": "Banner",
-        "line": 6,
-        "code": "const Banner ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\homepage\\Books.tsx",
-        "name": "Books",
-        "line": 18,
-        "code": "const Books ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\shared\\BookCard.tsx",
-        "name": "BookCard",
-        "line": 10,
-        "code": "const BookCard = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\shared\\BookCard.tsx",
-        "name": "BookCard",
-        "line": 10,
-        "code": "const BookCard ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\shared\\ListedBooksCard.tsx",
-        "name": "ListedBooksCard",
-        "line": 10,
-        "code": "const ListedBooksCard = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\shared\\ListedBooksCard.tsx",
-        "name": "ListedBooksCard",
-        "line": 10,
-        "code": "const ListedBooksCard ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\shared\\Navbar.tsx",
-        "name": "Navbar",
-        "line": 6,
-        "code": "const Navbar = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\shared\\Navbar.tsx",
-        "name": "Navbar",
-        "line": 6,
-        "code": "const Navbar ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\context\\BooksContext.tsx",
-        "name": "BooksProvider",
-        "line": 20,
-        "code": "const BooksProvider = ("
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\context\\BooksContext.tsx",
-        "name": "BooksContext",
-        "line": 13,
-        "code": "export const BooksContext ="
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\context\\BooksContext.tsx",
-        "name": "BooksProvider",
-        "line": 20,
-        "code": "const BooksProvider ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\category\\[categoryId]\\page.tsx",
-        "name": "CategoryNews",
-        "line": 13,
-        "code": "const CategoryNews ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\layout.tsx",
-        "name": "RootLayout",
-        "line": 19,
-        "code": "export default function RootLayout("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\loading.tsx",
-        "name": "LoadingPage",
-        "line": 1,
-        "code": "const LoadingPage = ("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\loading.tsx",
-        "name": "LoadingPage",
-        "line": 1,
-        "code": "const LoadingPage ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\news\\[newsId]\\page.tsx",
-        "name": "NewsDetails",
-        "line": 3,
-        "code": "const NewsDetails ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\not-found.tsx",
-        "name": "NotFound",
-        "line": 3,
-        "code": "const NotFound = ("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\not-found.tsx",
-        "name": "NotFound",
-        "line": 3,
-        "code": "const NotFound ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\page.tsx",
-        "name": "Home",
-        "line": 19,
-        "code": "function Home("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\profile\\page.tsx",
-        "name": "ProfilePage",
-        "line": 8,
-        "code": "const ProfilePage = ("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\profile\\page.tsx",
-        "name": "ProfilePage",
-        "line": 8,
-        "code": "const ProfilePage ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\signin\\page.tsx",
-        "name": "SignInPage",
-        "line": 6,
-        "code": "const SignInPage = ("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\signin\\page.tsx",
-        "name": "SignInPage",
-        "line": 6,
-        "code": "const SignInPage ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\signup\\page.tsx",
-        "name": "SignUpPage",
-        "line": 7,
-        "code": "const SignUpPage = ("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\signup\\page.tsx",
-        "name": "SignUpPage",
-        "line": 7,
-        "code": "const SignUpPage ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\Header.tsx",
-        "name": "Header",
-        "line": 6,
-        "code": "const Header = ("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\Header.tsx",
-        "name": "Header",
-        "line": 6,
-        "code": "const Header ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\MainNews.tsx",
-        "name": "MainNews",
-        "line": 15,
-        "code": "const MainNews = ("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\MainNews.tsx",
-        "name": "MainNews",
-        "line": 15,
-        "code": "const MainNews ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\Marquee.tsx",
-        "name": "Marquee",
-        "line": 10,
-        "code": "const Marquee ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\MostRead.tsx",
-        "name": "MostRead",
-        "line": 6,
-        "code": "const MostRead ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\NavLinks.tsx",
-        "name": "NavLinks",
-        "line": 11,
-        "code": "const NavLinks ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\NewsCard.tsx",
-        "name": "NewsCard",
-        "line": 13,
-        "code": "const NewsCard = ("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\NewsCard.tsx",
-        "name": "NewsCard",
-        "line": 13,
-        "code": "const NewsCard ="
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\UserInfo.tsx",
-        "name": "UserInfo",
-        "line": 6,
-        "code": "const UserInfo = ("
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\UserInfo.tsx",
-        "name": "UserInfo",
-        "line": 6,
-        "code": "const UserInfo ="
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\App.tsx",
-        "name": "App",
-        "line": 10,
-        "code": "function App("
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\Footer\\Footer.tsx",
-        "name": "Footer",
-        "line": 3,
-        "code": "function Footer("
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\Hero\\Hero.tsx",
-        "name": "Hero",
-        "line": 4,
-        "code": "export default function Hero("
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\Navbar\\Navbar.tsx",
-        "name": "Navbar",
-        "line": 5,
-        "code": "function Navbar("
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\StackItem.tsx",
-        "name": "StackItem",
-        "line": 11,
-        "code": "function StackItem("
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\TechnologyCard.tsx",
-        "name": "TechnologyCard",
-        "line": 12,
-        "code": "function TechnologyCard("
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\TechnologyGrid.tsx",
-        "name": "TechnologyGrid",
-        "line": 14,
-        "code": "function TechnologyGrid("
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\TechnologySection.tsx",
-        "name": "TechnologySection",
-        "line": 12,
-        "code": "function TechnologySection("
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\YourStack.tsx",
-        "name": "YourStack",
-        "line": 12,
-        "code": "function YourStack("
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
+        "evidence": {
+          "kind": "provider",
+          "context": "BooksContext"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\app\\layout.tsx",
-        "name": "RootLayout",
-        "line": 24,
-        "code": "export default function RootLayout("
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "WorkoutContext"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\app\\loading.tsx",
-        "name": "Loading",
-        "line": 1,
-        "code": "const Loading = ("
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "WorkoutContext"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\app\\loading.tsx",
-        "name": "Loading",
-        "line": 1,
-        "code": "const Loading ="
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/myPlan/PlanWorkoutCard.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "WorkoutContext"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\app\\my-plan\\page.tsx",
-        "name": "MyPlan",
-        "line": 9,
-        "code": "const MyPlan = ("
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Navbar.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "WorkoutContext"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\app\\my-plan\\page.tsx",
-        "name": "MyPlan",
-        "line": 9,
-        "code": "const MyPlan ="
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/workoutDetails/AddToPlanButton.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "WorkoutContext"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\app\\not-found.tsx",
-        "name": "NotFound",
-        "line": 4,
-        "code": "const NotFound = ("
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/workoutDetails/SaveButton.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "WorkoutContext"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\app\\not-found.tsx",
-        "name": "NotFound",
-        "line": 4,
-        "code": "const NotFound ="
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx",
+        "evidence": {
+          "kind": "context_usage",
+          "value": "context"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\app\\page.tsx",
-        "name": "Home",
-        "line": 3,
-        "code": "const Home = ("
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx",
+        "evidence": {
+          "kind": "provider",
+          "context": "WorkoutContext"
+        }
       },
       {
         "project": "Fitlog",
-        "file": "src\\app\\page.tsx",
-        "name": "Home",
-        "line": 3,
-        "code": "const Home ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\workout\\[id]\\page.tsx",
-        "name": "WorkoutDetails",
-        "line": 30,
-        "code": "const WorkoutDetails ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\home\\Hero.tsx",
-        "name": "Hero",
-        "line": 7,
-        "code": "const Hero = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\home\\Hero.tsx",
-        "name": "Hero",
-        "line": 7,
-        "code": "const Hero ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\home\\WorkoutCard.tsx",
-        "name": "WorkoutCard",
-        "line": 10,
-        "code": "const WorkoutCard = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\home\\WorkoutCard.tsx",
-        "name": "WorkoutCard",
-        "line": 10,
-        "code": "const WorkoutCard ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\home\\WorkoutLibrary.tsx",
-        "name": "WorkoutLibrary",
-        "line": 5,
-        "code": "const WorkoutLibrary ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\myPlan\\PlanWorkoutCard.tsx",
-        "name": "PlanWorkoutCard",
-        "line": 16,
-        "code": "const PlanWorkoutCard = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\myPlan\\PlanWorkoutCard.tsx",
-        "name": "PlanWorkoutCard",
-        "line": 16,
-        "code": "const PlanWorkoutCard ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Badge.tsx",
-        "name": "Badge",
-        "line": 5,
-        "code": "const Badge = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Badge.tsx",
-        "name": "Badge",
-        "line": 5,
-        "code": "const Badge ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Button-1.tsx",
-        "name": "Button",
-        "line": 10,
-        "code": "const Button = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Button-1.tsx",
-        "name": "Button",
-        "line": 10,
-        "code": "const Button ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Button-2.tsx",
-        "name": "Button2",
-        "line": 9,
-        "code": "const Button2 = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Button-2.tsx",
-        "name": "Button2",
-        "line": 9,
-        "code": "const Button2 ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Footer.tsx",
-        "name": "Footer",
-        "line": 5,
-        "code": "const Footer = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Footer.tsx",
-        "name": "Footer",
-        "line": 5,
-        "code": "const Footer ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Navbar.tsx",
-        "name": "Navbar",
-        "line": 11,
-        "code": "const Navbar = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Navbar.tsx",
-        "name": "Navbar",
-        "line": 11,
-        "code": "const Navbar ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\workoutDetails\\AddToPlanButton.tsx",
-        "name": "AddToPlanButton",
-        "line": 14,
-        "code": "const AddToPlanButton = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\workoutDetails\\AddToPlanButton.tsx",
-        "name": "AddToPlanButton",
-        "line": 14,
-        "code": "const AddToPlanButton ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\workoutDetails\\SaveButton.tsx",
-        "name": "SaveButton",
-        "line": 14,
-        "code": "const SaveButton = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\workoutDetails\\SaveButton.tsx",
-        "name": "SaveButton",
-        "line": 14,
-        "code": "const SaveButton ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\context\\WorkoutContext.tsx",
-        "name": "WorkoutProvider",
-        "line": 19,
-        "code": "const WorkoutProvider = ("
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\context\\WorkoutContext.tsx",
-        "name": "WorkoutContext",
-        "line": 12,
-        "code": "export const WorkoutContext ="
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\context\\WorkoutContext.tsx",
-        "name": "WorkoutProvider",
-        "line": 19,
-        "code": "const WorkoutProvider ="
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx",
+        "evidence": {
+          "kind": "provider",
+          "context": "WorkoutContext"
+        }
       }
-    ],
+    ]
+  },
+  "routing": {
+    "occurrence_count": 57,
     "projects_found": [
       "Dev-Stack",
       "Fitlog",
       "b14-book-vibe",
       "bangla-news-24"
     ],
-    "occurrence_count": 101,
-    "frequency": 25.25,
-    "confidence": "high"
-  },
-  "routing": {
-    "dynamic_route_files": [
+    "project_count": 4,
+    "confidence": "high",
+    "examples": [
       {
         "project": "b14-book-vibe",
-        "file": "eslint.config.mjs"
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "next.config.ts"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/eslint.config.mjs",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 1
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "postcss.config.mjs"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/next.config.ts",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 1
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\[id]\\loading.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/page.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 3
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\[id]\\page.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/page.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 1
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\loading.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/layout.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 2
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\books\\page.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 4
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\layout.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 3
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\listed-books\\page.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 2
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\loading.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 2
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\page.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Books.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 1
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\app\\read-books\\page.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/BookCard.tsx",
+        "evidence": {
+          "pattern": "Link",
+          "count": 1
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\components\\bookDetails\\ReadButton.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/BookCard.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 1
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\components\\bookDetails\\WishListButton.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/ListedBooksCard.tsx",
+        "evidence": {
+          "pattern": "Link",
+          "count": 1
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\components\\homepage\\Banner.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/ListedBooksCard.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 1
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\components\\homepage\\Books.tsx"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/Navbar.tsx",
+        "evidence": {
+          "pattern": "Link",
+          "count": 3
+        }
       },
       {
         "project": "b14-book-vibe",
-        "file": "src\\components\\shared\\BookCard.tsx"
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\shared\\ListedBooksCard.tsx"
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\components\\shared\\Navbar.tsx"
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\context\\BooksContext.tsx"
-      },
-      {
-        "project": "b14-book-vibe",
-        "file": "src\\types\\books.type.ts"
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 2
+        }
       },
       {
         "project": "bangla-news-24",
-        "file": "eslint.config.mjs"
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/eslint.config.mjs",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 1
+        }
       },
       {
         "project": "bangla-news-24",
-        "file": "next.config.ts"
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/next.config.ts",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 1
+        }
       },
       {
         "project": "bangla-news-24",
-        "file": "postcss.config.mjs"
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/layout.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 1
+        }
       },
       {
         "project": "bangla-news-24",
-        "file": "src\\app\\api\\auth\\[...all]\\route.ts"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\category\\[categoryId]\\page.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\layout.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\loading.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\news\\[newsId]\\page.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\not-found.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\page.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\profile\\page.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\signin\\page.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\app\\signup\\page.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\Header.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\MainNews.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\Marquee.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\MostRead.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\NavLinks.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\NewsCard.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\components\\UserInfo.tsx"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\lib\\auth-client.ts"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\lib\\auth.ts"
-      },
-      {
-        "project": "bangla-news-24",
-        "file": "src\\proxy.ts"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\App.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\brand.ts"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\Footer\\Footer.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\Hero\\Hero.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\Navbar\\Navbar.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\StackItem.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\TechnologyCard.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\TechnologyGrid.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\TechnologySection.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\components\\TechnologySection\\YourStack.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\main.tsx"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "src\\types\\Tech.ts"
-      },
-      {
-        "project": "Dev-Stack",
-        "file": "vite.config.ts"
-      },
-      {
-        "project": "Fitlog",
-        "file": "eslint.config.mjs"
-      },
-      {
-        "project": "Fitlog",
-        "file": "next.config.ts"
-      },
-      {
-        "project": "Fitlog",
-        "file": "postcss.config.mjs"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\fonts.ts"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\layout.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\loading.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\my-plan\\page.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\not-found.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\page.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\app\\workout\\[id]\\page.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\home\\Hero.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\home\\WorkoutCard.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\home\\WorkoutLibrary.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\myPlan\\PlanWorkoutCard.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Badge.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Button-1.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Button-2.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Footer.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\shared\\Navbar.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\workoutDetails\\AddToPlanButton.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\components\\workoutDetails\\SaveButton.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\context\\WorkoutContext.tsx"
-      },
-      {
-        "project": "Fitlog",
-        "file": "src\\types\\Workout.ts"
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/loading.tsx",
+        "evidence": {
+          "pattern": "dynamic_route",
+          "count": 2
+        }
       }
+    ]
+  },
+  "components": {
+    "occurrence_count": 51,
+    "projects_found": [
+      "Dev-Stack",
+      "Fitlog",
+      "b14-book-vibe",
+      "bangla-news-24"
     ],
-    "navigation_usage": {
-      "Link": 19,
-      "redirect": 2,
-      "useSearchParams": 1,
-      "usePathname": 1
-    }
+    "project_count": 4,
+    "confidence": "high",
+    "examples": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/loading.tsx",
+        "evidence": {
+          "name": "BookDetailsLoading",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/loading.tsx",
+        "evidence": {
+          "name": "BooksLoading",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/layout.tsx",
+        "evidence": {
+          "name": "RootLayout",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+        "evidence": {
+          "name": "ListedBooks",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/loading.tsx",
+        "evidence": {
+          "name": "GlobalLoading",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+        "evidence": {
+          "name": "TriangleBar",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+        "evidence": {
+          "name": "CustomColorLabel",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+        "evidence": {
+          "name": "ReadBooks",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
+        "evidence": {
+          "name": "ReadButton",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
+        "evidence": {
+          "name": "WishListButton",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Banner.tsx",
+        "evidence": {
+          "name": "Banner",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/BookCard.tsx",
+        "evidence": {
+          "name": "BookCard",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/ListedBooksCard.tsx",
+        "evidence": {
+          "name": "ListedBooksCard",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/Navbar.tsx",
+        "evidence": {
+          "name": "Navbar",
+          "type": "component"
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
+        "evidence": {
+          "name": "BooksProvider",
+          "type": "component"
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/layout.tsx",
+        "evidence": {
+          "name": "RootLayout",
+          "type": "component"
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/loading.tsx",
+        "evidence": {
+          "name": "LoadingPage",
+          "type": "component"
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/not-found.tsx",
+        "evidence": {
+          "name": "NotFound",
+          "type": "component"
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/page.tsx",
+        "evidence": {
+          "name": "Home",
+          "type": "component"
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/profile/page.tsx",
+        "evidence": {
+          "name": "ProfilePage",
+          "type": "component"
+        }
+      }
+    ]
   },
   "array_methods": {
-    "method_frequency": {
-      "map": 23,
-      "filter": 5,
-      "sort": 4,
-      "find": 3,
-      "some": 3,
-      "reduce": 2
-    },
-    "project_usage": {
-      "b14-book-vibe": {
-        "map": 9,
-        "find": 2,
-        "sort": 3
+    "occurrence_count": 30,
+    "projects_found": [
+      "Dev-Stack",
+      "Fitlog",
+      "b14-book-vibe",
+      "bangla-news-24"
+    ],
+    "project_count": 4,
+    "confidence": "high",
+    "examples": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/page.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 2
+        }
       },
-      "bangla-news-24": {
-        "map": 7,
-        "filter": 1
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/page.tsx",
+        "evidence": {
+          "method": "find",
+          "count": 2
+        }
       },
-      "Dev-Stack": {
-        "filter": 1,
-        "some": 1,
-        "map": 2
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/page.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
       },
-      "Fitlog": {
-        "map": 5,
-        "reduce": 2,
-        "sort": 1,
-        "find": 1,
-        "filter": 3,
-        "some": 2
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 2
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+        "evidence": {
+          "method": "sort",
+          "count": 3
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Books.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/BookCard.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/ListedBooksCard.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/category/[categoryId]/page.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/page.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 2
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/MainNews.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/Marquee.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/MostRead.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/NavLinks.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/NavLinks.tsx",
+        "evidence": {
+          "method": "filter",
+          "count": 1
+        }
+      },
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/StackItem.tsx",
+        "evidence": {
+          "method": "filter",
+          "count": 1
+        }
+      },
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologyCard.tsx",
+        "evidence": {
+          "method": "some",
+          "count": 1
+        }
+      },
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologyGrid.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
+      },
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/YourStack.tsx",
+        "evidence": {
+          "method": "map",
+          "count": 1
+        }
       }
+    ]
+  },
+  "client_server_evidence": [
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/eslint.config.mjs",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/next.config.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/postcss.config.mjs",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/loading.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/page.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/loading.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/page.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/layout.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/loading.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/page.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Banner.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Books.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/BookCard.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/ListedBooksCard.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/Navbar.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/types/books.type.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/eslint.config.mjs",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/next.config.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/postcss.config.mjs",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/api/auth/[...all]/route.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/category/[categoryId]/page.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/layout.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/loading.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/news/[newsId]/page.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/not-found.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/page.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/profile/page.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/signin/page.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/signup/page.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/Header.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/MainNews.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/Marquee.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/MostRead.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/NavLinks.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/NewsCard.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/UserInfo.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/lib/auth-client.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/lib/auth.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/proxy.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/App.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/brand.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/Footer/Footer.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/Hero/Hero.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/Navbar/Navbar.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/StackItem.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologyCard.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologyGrid.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologySection.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/YourStack.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/main.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/types/Tech.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Dev-Stack",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/vite.config.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/eslint.config.mjs",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/next.config.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/postcss.config.mjs",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/fonts.ts",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/layout.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/loading.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/not-found.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/page.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/workout/[id]/page.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/home/Hero.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/home/WorkoutCard.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/home/WorkoutLibrary.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/myPlan/PlanWorkoutCard.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Badge.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Button-1.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Button-2.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Footer.tsx",
+      "type": "no_use_client_directive_detected"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Navbar.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/workoutDetails/AddToPlanButton.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/workoutDetails/SaveButton.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx",
+      "type": "client_component"
+    },
+    {
+      "project": "Fitlog",
+      "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/types/Workout.ts",
+      "type": "no_use_client_directive_detected"
     }
-  }
+  ]
 }

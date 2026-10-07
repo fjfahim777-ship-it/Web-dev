@@ -1,0 +1,302 @@
+{
+  "components": {
+    "BookDetailsLoading": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/loading.tsx"
+      }
+    ],
+    "BooksLoading": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/loading.tsx"
+      }
+    ],
+    "RootLayout": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/layout.tsx"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/layout.tsx"
+      },
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/layout.tsx"
+      }
+    ],
+    "ListedBooks": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx"
+      }
+    ],
+    "GlobalLoading": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/loading.tsx"
+      }
+    ],
+    "TriangleBar": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx"
+      }
+    ],
+    "CustomColorLabel": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx"
+      }
+    ],
+    "ReadBooks": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx"
+      }
+    ],
+    "ReadButton": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx"
+      }
+    ],
+    "WishListButton": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx"
+      }
+    ],
+    "Banner": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Banner.tsx"
+      }
+    ],
+    "BookCard": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/BookCard.tsx"
+      }
+    ],
+    "ListedBooksCard": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/ListedBooksCard.tsx"
+      }
+    ],
+    "Navbar": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/Navbar.tsx"
+      },
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/Navbar/Navbar.tsx"
+      },
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Navbar.tsx"
+      }
+    ],
+    "BooksProvider": [
+      {
+        "project": "b14-book-vibe",
+        "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx"
+      }
+    ],
+    "LoadingPage": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/loading.tsx"
+      }
+    ],
+    "NotFound": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/not-found.tsx"
+      },
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/not-found.tsx"
+      }
+    ],
+    "Home": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/page.tsx"
+      },
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/page.tsx"
+      }
+    ],
+    "ProfilePage": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/profile/page.tsx"
+      }
+    ],
+    "SignInPage": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/signin/page.tsx"
+      }
+    ],
+    "SignUpPage": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/signup/page.tsx"
+      }
+    ],
+    "Header": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/Header.tsx"
+      }
+    ],
+    "MainNews": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/MainNews.tsx"
+      }
+    ],
+    "NewsCard": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/NewsCard.tsx"
+      }
+    ],
+    "UserInfo": [
+      {
+        "project": "bangla-news-24",
+        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/UserInfo.tsx"
+      }
+    ],
+    "App": [
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/App.tsx"
+      }
+    ],
+    "Footer": [
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/Footer/Footer.tsx"
+      },
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Footer.tsx"
+      }
+    ],
+    "Hero": [
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/Hero/Hero.tsx"
+      },
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/home/Hero.tsx"
+      }
+    ],
+    "StackItem": [
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/StackItem.tsx"
+      }
+    ],
+    "TechnologyCard": [
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologyCard.tsx"
+      }
+    ],
+    "TechnologyGrid": [
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologyGrid.tsx"
+      }
+    ],
+    "TechnologySection": [
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologySection.tsx"
+      }
+    ],
+    "YourStack": [
+      {
+        "project": "Dev-Stack",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/YourStack.tsx"
+      }
+    ],
+    "Loading": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/loading.tsx"
+      }
+    ],
+    "MyPlan": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx"
+      }
+    ],
+    "WorkoutCard": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/home/WorkoutCard.tsx"
+      }
+    ],
+    "PlanWorkoutCard": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/myPlan/PlanWorkoutCard.tsx"
+      }
+    ],
+    "Badge": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Badge.tsx"
+      }
+    ],
+    "Button": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Button-1.tsx"
+      }
+    ],
+    "Button2": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Button-2.tsx"
+      }
+    ],
+    "AddToPlanButton": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/workoutDetails/AddToPlanButton.tsx"
+      }
+    ],
+    "SaveButton": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/workoutDetails/SaveButton.tsx"
+      }
+    ],
+    "WorkoutProvider": [
+      {
+        "project": "Fitlog",
+        "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx"
+      }
+    ]
+  },
+  "recurring_component_names": [
+    "RootLayout",
+    "Navbar",
+    "NotFound",
+    "Home",
+    "Footer",
+    "Hero"
+  ]
+}

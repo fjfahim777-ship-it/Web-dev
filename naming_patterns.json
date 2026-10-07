@@ -1,0 +1,371 @@
+{
+  "naming_evidence": {
+    "variables": {},
+    "functions": {
+      "occurrence_count": 84,
+      "projects_found": [
+        "Dev-Stack",
+        "Fitlog",
+        "b14-book-vibe",
+        "bangla-news-24"
+      ],
+      "project_count": 4,
+      "confidence": "high",
+      "examples": [
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/loading.tsx",
+          "evidence": {
+            "name": "BookDetailsLoading",
+            "parameters": "",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/page.tsx",
+          "evidence": {
+            "name": "getBooks",
+            "parameters": "",
+            "async": true
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/page.tsx",
+          "evidence": {
+            "name": "BookDetailsPage",
+            "parameters": "{ params }: IBookDetailsPageProps",
+            "async": true
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/loading.tsx",
+          "evidence": {
+            "name": "BooksLoading",
+            "parameters": "",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/page.tsx",
+          "evidence": {
+            "name": "getBooks",
+            "parameters": "",
+            "async": true
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/page.tsx",
+          "evidence": {
+            "name": "Books",
+            "parameters": "",
+            "async": true
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/layout.tsx",
+          "evidence": {
+            "name": "RootLayout",
+            "parameters": "{ children }: LayoutProps<\"/\">",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+          "evidence": {
+            "name": "ListedBooks",
+            "parameters": "",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+          "evidence": {
+            "name": "sortBooks",
+            "parameters": "books: IBook[]",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/loading.tsx",
+          "evidence": {
+            "name": "GlobalLoading",
+            "parameters": "",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/page.tsx",
+          "evidence": {
+            "name": "page",
+            "parameters": "",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+          "evidence": {
+            "name": "getPath",
+            "parameters": "x: number, y: number, width: number, height: number",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+          "evidence": {
+            "name": "TriangleBar",
+            "parameters": "props: BarShapeProps",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+          "evidence": {
+            "name": "CustomColorLabel",
+            "parameters": "props: LabelProps",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+          "evidence": {
+            "name": "ReadBooks",
+            "parameters": "",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
+          "evidence": {
+            "name": "ReadButton",
+            "parameters": "{ book }: { book: IBook }",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
+          "evidence": {
+            "name": "handleReadBook",
+            "parameters": "",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
+          "evidence": {
+            "name": "WishListButton",
+            "parameters": "{ book }: { book: IBook }",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
+          "evidence": {
+            "name": "handleAddToWishlist",
+            "parameters": "",
+            "async": false
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Banner.tsx",
+          "evidence": {
+            "name": "Banner",
+            "parameters": "",
+            "async": false
+          }
+        }
+      ]
+    },
+    "components": {
+      "occurrence_count": 51,
+      "projects_found": [
+        "Dev-Stack",
+        "Fitlog",
+        "b14-book-vibe",
+        "bangla-news-24"
+      ],
+      "project_count": 4,
+      "confidence": "high",
+      "examples": [
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/loading.tsx",
+          "evidence": {
+            "name": "BookDetailsLoading",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/loading.tsx",
+          "evidence": {
+            "name": "BooksLoading",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/layout.tsx",
+          "evidence": {
+            "name": "RootLayout",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
+          "evidence": {
+            "name": "ListedBooks",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/loading.tsx",
+          "evidence": {
+            "name": "GlobalLoading",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+          "evidence": {
+            "name": "TriangleBar",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+          "evidence": {
+            "name": "CustomColorLabel",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
+          "evidence": {
+            "name": "ReadBooks",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
+          "evidence": {
+            "name": "ReadButton",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
+          "evidence": {
+            "name": "WishListButton",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Banner.tsx",
+          "evidence": {
+            "name": "Banner",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/BookCard.tsx",
+          "evidence": {
+            "name": "BookCard",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/ListedBooksCard.tsx",
+          "evidence": {
+            "name": "ListedBooksCard",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/Navbar.tsx",
+          "evidence": {
+            "name": "Navbar",
+            "type": "component"
+          }
+        },
+        {
+          "project": "b14-book-vibe",
+          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
+          "evidence": {
+            "name": "BooksProvider",
+            "type": "component"
+          }
+        },
+        {
+          "project": "bangla-news-24",
+          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/layout.tsx",
+          "evidence": {
+            "name": "RootLayout",
+            "type": "component"
+          }
+        },
+        {
+          "project": "bangla-news-24",
+          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/loading.tsx",
+          "evidence": {
+            "name": "LoadingPage",
+            "type": "component"
+          }
+        },
+        {
+          "project": "bangla-news-24",
+          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/not-found.tsx",
+          "evidence": {
+            "name": "NotFound",
+            "type": "component"
+          }
+        },
+        {
+          "project": "bangla-news-24",
+          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/page.tsx",
+          "evidence": {
+            "name": "Home",
+            "type": "component"
+          }
+        },
+        {
+          "project": "bangla-news-24",
+          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/profile/page.tsx",
+          "evidence": {
+            "name": "ProfilePage",
+            "type": "component"
+          }
+        }
+      ]
+    }
+  }
+}
