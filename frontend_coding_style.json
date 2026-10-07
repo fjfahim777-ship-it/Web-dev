@@ -358,8 +358,7 @@
             "min-h-full",
             "py-7",
             "text-5xl",
-            "text-center",
-            "{"
+            "text-center"
           ],
           "categories": {
             "spacing": [
@@ -1287,8 +1286,7 @@
           "classes": [
             "max-w-7xl",
             "min-h-full",
-            "mx-auto",
-            "{"
+            "mx-auto"
           ],
           "categories": {
             "spacing": [
@@ -1409,12 +1407,15 @@
         },
         {
           "classes": [
+            "active:translate-y-0",
             "bg-clip-text",
             "bg-gradient-to-b",
             "bg-gradient-to-br",
+            "bg-gradient-to-r",
             "bg-red-400",
             "bg-red-500",
-            "drop-shadow-[0_5px_15px_rgba(220,38,38,0.4)]",
+            "duration-300",
+            "ease-out",
             "flex",
             "font-black",
             "font-bold",
@@ -1424,6 +1425,11 @@
             "gap-3",
             "h-2",
             "h-px",
+            "hover:-translate-y-0.5",
+            "hover:from-red-600",
+            "hover:shadow-red-600/50",
+            "hover:shadow-xl",
+            "hover:to-rose-700",
             "inline-block",
             "items-center",
             "justify-center",
@@ -1439,6 +1445,8 @@
             "py-3",
             "rounded-full",
             "select-none",
+            "shadow-lg",
+            "shadow-red-500/40",
             "sm:text-3xl",
             "sm:text-[12rem]",
             "text-2xl",
@@ -1450,6 +1458,8 @@
             "text-white",
             "to-red-200",
             "to-red-800",
+            "to-rose-600",
+            "transition-all",
             "via-rose-100",
             "w-16",
             "w-2"
@@ -1485,6 +1495,7 @@
               "bg-clip-text",
               "bg-gradient-to-b",
               "bg-gradient-to-br",
+              "bg-gradient-to-r",
               "bg-red-400",
               "bg-red-500",
               "from-red-50",
@@ -1498,13 +1509,27 @@
               "text-white",
               "to-red-200",
               "to-red-800",
+              "to-rose-600",
               "via-rose-100"
             ],
             "radius": [
               "rounded-full"
             ],
             "shadow": [
-              "drop-shadow-[0_5px_15px_rgba(220,38,38,0.4)]"
+              "hover:shadow-red-600/50",
+              "hover:shadow-xl",
+              "shadow-lg",
+              "shadow-red-500/40"
+            ],
+            "interaction": [
+              "active:translate-y-0",
+              "duration-300",
+              "hover:-translate-y-0.5",
+              "hover:from-red-600",
+              "hover:shadow-red-600/50",
+              "hover:shadow-xl",
+              "hover:to-rose-700",
+              "transition-all"
             ],
             "flex_grid": [
               "flex",
@@ -1519,8 +1544,6 @@
           "classes": [
             "border-b-2",
             "border-red-700",
-            "col-span-1",
-            "col-span-2",
             "font-bold",
             "gap-2",
             "gap-5",
@@ -2301,8 +2324,6 @@
         },
         {
           "classes": [
-            "===",
-            "activeMenu",
             "bg-pink-500",
             "bg-white",
             "border",
@@ -2518,8 +2539,7 @@
             "text-lg",
             "text-sm",
             "text-xs",
-            "w-12",
-            "{"
+            "w-12"
           ],
           "categories": {
             "layout": [
@@ -2902,8 +2922,7 @@
             "flex",
             "flex-1",
             "flex-col",
-            "min-h-full",
-            "{"
+            "min-h-full"
           ],
           "categories": {
             "flex_grid": [
@@ -2951,6 +2970,7 @@
             "-mb-4",
             "-mt-1",
             "-mt-4",
+            "activeTab",
             "bg-[#12141c]",
             "bg-zinc-800",
             "bg-zinc-900",
@@ -3004,8 +3024,7 @@
             "text-zinc-400",
             "w-fit",
             "w-full",
-            "w-px",
-            "{"
+            "w-px"
           ],
           "categories": {
             "spacing": [
@@ -3283,8 +3302,7 @@
             "text-black",
             "text-xs",
             "w-4",
-            "w-full",
-            "{"
+            "w-full"
           ],
           "categories": {
             "spacing": [
@@ -3623,15 +3641,11 @@
           }
         },
         {
-          "classes": [
-            "{"
-          ],
+          "classes": [],
           "categories": {}
         },
         {
-          "classes": [
-            "{"
-          ],
+          "classes": [],
           "categories": {}
         },
         {
@@ -3722,6 +3736,8 @@
             "h-5",
             "hidden",
             "hover:bg-zinc-800",
+            "isMyPlanActive",
+            "isWorkoutsActive",
             "items-center",
             "justify-center",
             "md:flex",
@@ -3760,8 +3776,7 @@
             "w-30",
             "w-4",
             "w-5",
-            "z-1",
-            "{"
+            "z-1"
           ],
           "categories": {
             "layout": [

@@ -23,7 +23,32 @@
         }
       ],
       "effects": [],
-      "contexts": [],
+      "contexts": [
+        {
+          "kind": "context_usage",
+          "context": "BooksContext"
+        },
+        {
+          "kind": "context_usage",
+          "context": "BooksContext"
+        },
+        {
+          "kind": "context_usage",
+          "context": "BooksContext"
+        },
+        {
+          "kind": "context_usage",
+          "context": "BooksContext"
+        },
+        {
+          "kind": "context_definition",
+          "context": "BooksContext"
+        },
+        {
+          "kind": "provider",
+          "context": "BooksContext"
+        }
+      ],
       "routing": [
         {
           "pattern": "dynamic_route",
@@ -469,7 +494,36 @@
         }
       ],
       "effects": [],
-      "contexts": [],
+      "contexts": [
+        {
+          "kind": "context_usage",
+          "context": "WorkoutContext"
+        },
+        {
+          "kind": "context_usage",
+          "context": "WorkoutContext"
+        },
+        {
+          "kind": "context_usage",
+          "context": "WorkoutContext"
+        },
+        {
+          "kind": "context_usage",
+          "context": "WorkoutContext"
+        },
+        {
+          "kind": "context_usage",
+          "context": "WorkoutContext"
+        },
+        {
+          "kind": "context_definition",
+          "context": "WorkoutContext"
+        },
+        {
+          "kind": "provider",
+          "context": "WorkoutContext"
+        }
+      ],
       "routing": [
         {
           "pattern": "dynamic_route",

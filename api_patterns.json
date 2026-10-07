@@ -3,6 +3,38 @@
   "data_fetching": {
     "implementation_observations": [
       {
+        "project": "b14-book-vibe",
+        "file": "src\\app\\books\\[id]\\page.tsx",
+        "url_expression": "${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+        "method": "GET",
+        "code": "fetch( `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`, )",
+        "validation": "source_observed"
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\app\\books\\page.tsx",
+        "url_expression": "${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+        "method": "GET",
+        "code": "fetch( `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`, )",
+        "validation": "source_observed"
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\components\\homepage\\Books.tsx",
+        "url_expression": "${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+        "method": "GET",
+        "code": "fetch( `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`, )",
+        "validation": "source_observed"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "src\\app\\category\\[categoryId]\\page.tsx",
+        "url_expression": "https://news-api-v2.vercel.app/api/category/${categoryId}",
+        "method": "GET",
+        "code": "fetch( `https://news-api-v2.vercel.app/api/category/${categoryId}`, )",
+        "validation": "source_observed"
+      },
+      {
         "project": "bangla-news-24",
         "file": "src\\app\\news\\[newsId]\\page.tsx",
         "url_expression": "https://news-api-v2.vercel.app/api/article/${newsId}",
@@ -67,8 +99,9 @@
         "validation": "source_observed"
       }
     ],
-    "occurrence_count": 8,
+    "occurrence_count": 12,
     "projects_found": [
+      "b14-book-vibe",
       "bangla-news-24",
       "Dev-Stack",
       "Fitlog"
@@ -84,6 +117,99 @@
     }
   ],
   "flows": [
+    {
+      "project": "b14-book-vibe",
+      "file": "src\\app\\books\\[id]\\page.tsx",
+      "type": "api_request",
+      "method": "GET",
+      "url": "${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+      "response_handling": {
+        "json": true,
+        "variable": "response",
+        "state": "",
+        "array_operation": "map"
+      },
+      "flow": [
+        "make GET request",
+        "request ${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+        "wait for response",
+        "parse response using response.json()",
+        "store response in response",
+        "use returned data with map",
+        "use returned data in page/component"
+      ],
+      "pseudocode": [
+        "call GET ${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+        "await response",
+        "parse response with response.json()",
+        "store response in response",
+        "process returned data using map",
+        "use returned data in page/component"
+      ],
+      "evidence": "fetch( `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`, )"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "src\\app\\books\\page.tsx",
+      "type": "api_request",
+      "method": "GET",
+      "url": "${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+      "response_handling": {
+        "json": true,
+        "variable": "response",
+        "state": "",
+        "array_operation": "map"
+      },
+      "flow": [
+        "make GET request",
+        "request ${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+        "wait for response",
+        "parse response using response.json()",
+        "store response in response",
+        "use returned data with map",
+        "use returned data in page/component"
+      ],
+      "pseudocode": [
+        "call GET ${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+        "await response",
+        "parse response with response.json()",
+        "store response in response",
+        "process returned data using map",
+        "use returned data in page/component"
+      ],
+      "evidence": "fetch( `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`, )"
+    },
+    {
+      "project": "b14-book-vibe",
+      "file": "src\\components\\homepage\\Books.tsx",
+      "type": "api_request",
+      "method": "GET",
+      "url": "${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+      "response_handling": {
+        "json": true,
+        "variable": "response",
+        "state": "",
+        "array_operation": "map"
+      },
+      "flow": [
+        "make GET request",
+        "request ${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+        "wait for response",
+        "parse response using response.json()",
+        "store response in response",
+        "use returned data with map",
+        "use returned data in page/component"
+      ],
+      "pseudocode": [
+        "call GET ${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+        "await response",
+        "parse response with response.json()",
+        "store response in response",
+        "process returned data using map",
+        "use returned data in page/component"
+      ],
+      "evidence": "fetch( `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`, )"
+    },
     {
       "project": "bangla-news-24",
       "file": "src\\app\\api\\auth\\[...all]\\route.ts",
@@ -111,6 +237,37 @@
         "return response"
       ],
       "evidence": "import { auth } from \"@/lib/auth\"; // path to your auth file\nimport { toNextJsHandler } from \"better-auth/next-js\";\n\nexport const { POST, GET } = toNextJsHandler(auth);"
+    },
+    {
+      "project": "bangla-news-24",
+      "file": "src\\app\\category\\[categoryId]\\page.tsx",
+      "type": "api_request",
+      "method": "GET",
+      "url": "https://news-api-v2.vercel.app/api/category/${categoryId}",
+      "response_handling": {
+        "json": true,
+        "variable": "res",
+        "state": "",
+        "array_operation": "map"
+      },
+      "flow": [
+        "make GET request",
+        "request https://news-api-v2.vercel.app/api/category/${categoryId}",
+        "wait for response",
+        "parse response using response.json()",
+        "store response in res",
+        "use returned data with map",
+        "use returned data in page/component"
+      ],
+      "pseudocode": [
+        "call GET https://news-api-v2.vercel.app/api/category/${categoryId}",
+        "await response",
+        "parse response with response.json()",
+        "store response in res",
+        "process returned data using map",
+        "use returned data in page/component"
+      ],
+      "evidence": "fetch( `https://news-api-v2.vercel.app/api/category/${categoryId}`, )"
     },
     {
       "project": "bangla-news-24",
@@ -346,7 +503,50 @@
     }
   ],
   "pseudocode": {
-    "b14-book-vibe": [],
+    "b14-book-vibe": [
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\app\\books\\[id]\\page.tsx",
+        "pattern": "api_request",
+        "steps": [
+          "call GET ${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+          "await response",
+          "parse response with response.json()",
+          "store response in response",
+          "process returned data using map",
+          "use returned data in page/component"
+        ],
+        "evidence": "fetch( `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`, )"
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\app\\books\\page.tsx",
+        "pattern": "api_request",
+        "steps": [
+          "call GET ${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+          "await response",
+          "parse response with response.json()",
+          "store response in response",
+          "process returned data using map",
+          "use returned data in page/component"
+        ],
+        "evidence": "fetch( `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`, )"
+      },
+      {
+        "project": "b14-book-vibe",
+        "file": "src\\components\\homepage\\Books.tsx",
+        "pattern": "api_request",
+        "steps": [
+          "call GET ${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json",
+          "await response",
+          "parse response with response.json()",
+          "store response in response",
+          "process returned data using map",
+          "use returned data in page/component"
+        ],
+        "evidence": "fetch( `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`, )"
+      }
+    ],
     "bangla-news-24": [
       {
         "project": "bangla-news-24",
@@ -358,6 +558,20 @@
           "return response"
         ],
         "evidence": "import { auth } from \"@/lib/auth\"; // path to your auth file\nimport { toNextJsHandler } from \"better-auth/next-js\";\n\nexport const { POST, GET } = toNextJsHandler(auth);"
+      },
+      {
+        "project": "bangla-news-24",
+        "file": "src\\app\\category\\[categoryId]\\page.tsx",
+        "pattern": "api_request",
+        "steps": [
+          "call GET https://news-api-v2.vercel.app/api/category/${categoryId}",
+          "await response",
+          "parse response with response.json()",
+          "store response in res",
+          "process returned data using map",
+          "use returned data in page/component"
+        ],
+        "evidence": "fetch( `https://news-api-v2.vercel.app/api/category/${categoryId}`, )"
       },
       {
         "project": "bangla-news-24",

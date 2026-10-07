@@ -15,8 +15,8 @@
       "functions": 26,
       "state_usage": 3,
       "effects": 0,
-      "context_usage": 0,
-      "fetches": 0,
+      "context_usage": 6,
+      "fetches": 3,
       "forms": 0,
       "authentication": 0,
       "local_storage": 0,
@@ -24,10 +24,10 @@
       "array_methods": 9,
       "relationships": {
         "state_flows": 3,
-        "data_flows": 0,
+        "data_flows": 3,
         "functionality_flows": 1,
-        "api_flows": 0,
-        "context_flows": 0,
+        "api_flows": 3,
+        "context_flows": 6,
         "ui_flows": 7
       }
     },
@@ -49,7 +49,7 @@
       "state_usage": 1,
       "effects": 0,
       "context_usage": 0,
-      "fetches": 5,
+      "fetches": 6,
       "forms": 3,
       "authentication": 5,
       "local_storage": 0,
@@ -57,9 +57,9 @@
       "array_methods": 7,
       "relationships": {
         "state_flows": 1,
-        "data_flows": 5,
+        "data_flows": 6,
         "functionality_flows": 4,
-        "api_flows": 6,
+        "api_flows": 7,
         "context_flows": 0,
         "ui_flows": 6
       }
@@ -107,7 +107,7 @@
       "functions": 23,
       "state_usage": 4,
       "effects": 0,
-      "context_usage": 0,
+      "context_usage": 7,
       "fetches": 2,
       "forms": 0,
       "authentication": 0,
@@ -119,7 +119,7 @@
         "data_flows": 2,
         "functionality_flows": 3,
         "api_flows": 2,
-        "context_flows": 0,
+        "context_flows": 7,
         "ui_flows": 4
       }
     }
@@ -157,12 +157,16 @@
       "projects_found": []
     },
     "context_usage": {
-      "occurrence_count": 0,
-      "projects_found": []
+      "occurrence_count": 13,
+      "projects_found": [
+        "b14-book-vibe",
+        "Fitlog"
+      ]
     },
     "fetches": {
-      "occurrence_count": 8,
+      "occurrence_count": 12,
       "projects_found": [
+        "b14-book-vibe",
         "bangla-news-24",
         "Dev-Stack",
         "Fitlog"
@@ -211,15 +215,15 @@
       "consistency": "low"
     },
     "context_usage": {
-      "projects_found": 0,
+      "projects_found": 2,
       "total_projects": 4,
-      "percentage": 0.0,
-      "consistency": "low"
+      "percentage": 50.0,
+      "consistency": "medium"
     },
     "fetches": {
-      "projects_found": 3,
+      "projects_found": 4,
       "total_projects": 4,
-      "percentage": 75.0,
+      "percentage": 100.0,
       "consistency": "high"
     },
     "forms": {
@@ -267,14 +271,14 @@
       "Fitlog": 0
     },
     "context_usage": {
-      "b14-book-vibe": 0,
+      "b14-book-vibe": 6,
       "bangla-news-24": 0,
       "Dev-Stack": 0,
-      "Fitlog": 0
+      "Fitlog": 7
     },
     "fetches": {
-      "b14-book-vibe": 0,
-      "bangla-news-24": 5,
+      "b14-book-vibe": 3,
+      "bangla-news-24": 6,
       "Dev-Stack": 1,
       "Fitlog": 2
     },
