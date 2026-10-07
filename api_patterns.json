@@ -1,35 +1,56 @@
 {
-  "api_route_files": [
+  "purpose": "Observed API routes and data-fetching implementation.",
+  "data_fetching": {
+    "implementation_observations": [],
+    "occurrence_count": 0,
+    "projects_found": [],
+    "confidence": "low"
+  },
+  "api_routes": [
     {
       "project": "bangla-news-24",
-      "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/api/auth/[...all]/route.ts",
+      "file": "src\\app\\api\\auth\\[...all]\\route.ts",
       "methods": [],
-      "fetches": []
+      "evidence": "import { auth } from \"@/lib/auth\"; // path to your auth file\nimport { toNextJsHandler } from \"better-auth/next-js\";\n\nexport const { POST, GET } = toNextJsHandler(auth);"
     }
   ],
-  "api_relationships": {
+  "flows": [
+    {
+      "project": "bangla-news-24",
+      "file": "src\\app\\api\\auth\\[...all]\\route.ts",
+      "type": "api_route",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "flow": [
+        "receive HTTP request",
+        "read request data if required",
+        "perform server-side operation",
+        "return response"
+      ],
+      "pseudocode": [
+        "receive request",
+        "read params/body if needed",
+        "perform operation",
+        "return response"
+      ],
+      "evidence": "import { auth } from \"@/lib/auth\"; // path to your auth file\nimport { toNextJsHandler } from \"better-auth/next-js\";\n\nexport const { POST, GET } = toNextJsHandler(auth);"
+    }
+  ],
+  "pseudocode": {
     "b14-book-vibe": [],
     "bangla-news-24": [
       {
         "project": "bangla-news-24",
-        "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/api/auth/[...all]/route.ts",
-        "methods": [
-          "GET",
-          "POST"
-        ],
-        "flow": [
-          "receive HTTP request",
-          "read request data",
-          "perform server-side operation",
-          "return response"
-        ],
-        "pseudocode": [
+        "file": "src\\app\\api\\auth\\[...all]\\route.ts",
+        "pattern": "api_route",
+        "steps": [
           "receive request",
           "read params/body if needed",
           "perform operation",
-          "return JSON response"
-        ],
-        "evidence": "import { auth } from \"@/lib/auth\"; // path to your auth file import { toNextJsHandler } from \"better-auth/next-js\"; export const { POST, GET } = toNextJsHandler(auth);"
+          "return response"
+        ]
       }
     ],
     "Dev-Stack": [],

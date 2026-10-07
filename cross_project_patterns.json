@@ -15,274 +15,20 @@
       "functions": 26,
       "state_usage": 3,
       "effects": 0,
-      "context_usage": 7,
+      "context_usage": 0,
       "fetches": 0,
       "forms": 0,
-      "authentication_evidence": 0,
+      "authentication": 0,
       "local_storage": 0,
-      "ui_categories": {
-        "details": 7,
-        "loading": 3,
-        "card": 6,
-        "error": 4,
-        "list": 7,
-        "pagination": 10,
-        "footer": 1,
-        "navbar": 2,
-        "hero": 2,
-        "button": 6
-      },
-      "array_methods": {
-        "map": 9,
-        "find": 2,
-        "sort": 3
-      },
+      "ui_categories": 48,
+      "array_methods": 9,
       "relationships": {
-        "state_flows": [
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
-            "state": "sortBy",
-            "setter": "setSortBy",
-            "setter_usage_count": 1,
-            "state_usage_count": 7,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "\"use client\"; import ListedBooksCard from \"@/components/shared/ListedBooksCard\"; import { BooksContext } from \"@/context/BooksContext\"; import { IBook } from \"@/types/books.type\"; import { useContext, useState } from \"react\"; const ListedBooks = () => { const { readBooks, wishlist } = useContext(BooksContext); const [sortBy, setSortBy] = useState<\"rating\" | \"pages\" | \"year\">(\"rating\"); // console.log(readBooks, wishlist, \"readBooks\", \"wishlist\"); // console.log(sortBy, \"sortBy\"); const sortBooks = (books: IBook[]) => { const sortedBooks = [...books]; if (sortBy === \"rating\") { sortedBooks.sort((a, b) => b.rating - a.rating); } else if (sortBy === \"pages\") { sortedBooks.sort((a, b) => b.totalPages - a.totalPages); } else if (sortBy === \"year\") { sortedBooks.sort((a,"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
-            "state": "readBooks",
-            "setter": "setReadBooks",
-            "setter_usage_count": 0,
-            "state_usage_count": 4,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "\"use client\"; import { IBook } from \"@/types/books.type\"; import React, { createContext, ReactNode, useState } from \"react\"; interface IBooksContext { readBooks: IBook[]; setReadBooks: React.Dispatch<React.SetStateAction<IBook[]>>; wishlist: IBook[]; setWishlist: React.Dispatch<React.SetStateAction<IBook[]>>; } export const BooksContext = createContext<IBooksContext>({ readBooks: [], setReadBooks: () => {}, wishlist: [], setWishlist: () => {}, }); const BooksProvider = ({ children }: { children: ReactNode }) => { const [readBooks, setReadBooks] = useState<IBook[]>([]); const [wishlist, setWishlist] = useState<IBook[]>([]);"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
-            "state": "wishlist",
-            "setter": "setWishlist",
-            "setter_usage_count": 0,
-            "state_usage_count": 4,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "\"use client\"; import { IBook } from \"@/types/books.type\"; import React, { createContext, ReactNode, useState } from \"react\"; interface IBooksContext { readBooks: IBook[]; setReadBooks: React.Dispatch<React.SetStateAction<IBook[]>>; wishlist: IBook[]; setWishlist: React.Dispatch<React.SetStateAction<IBook[]>>; } export const BooksContext = createContext<IBooksContext>({ readBooks: [], setReadBooks: () => {}, wishlist: [], setWishlist: () => {}, }); const BooksProvider = ({ children }: { children: ReactNode }) => { const [readBooks, setReadBooks] = useState<IBook[]>([]); const [wishlist, setWishlist] = useState<IBook[]>([]); const sharedData = { readBooks, setReadBooks, wishlist, setWishlis"
-          }
-        ],
-        "data_flows": [],
-        "functionality_flows": [
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
-            "type": "sorting",
-            "flow": [
-              "receive sorting option",
-              "sort collection",
-              "render sorted result"
-            ],
-            "evidence": "\"use client\"; import ListedBooksCard from \"@/components/shared/ListedBooksCard\"; import { BooksContext } from \"@/context/BooksContext\"; import { IBook } from \"@/types/books.type\"; import { useContext, useState } from \"react\"; const ListedBooks = () => { const { readBooks, wishlist } = useContext(BooksContext); const [sortBy, setSortBy] = useState<\"rating\" | \"pages\" | \"year\">(\"rating\"); // console.log(readBooks, wishlist, \"readBooks\", \"wishlist\"); // console.log(sortBy, \"sortBy\"); const sortBooks = (books: IBook[]) => { const sortedBooks = [...books]; if (sortBy === \"rating\") { sortedBooks.sort((a, b) => b.rating - a.rating); } else if (sortBy === \"pages\") { sortedBooks.sort((a, b) => b.totalPages - a.totalPages); } else if (sortBy === \"year\") { sortedBooks.sort((a,"
-          }
-        ],
-        "api_flows": [],
-        "context_flows": [
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
-            "provider_count": 0,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": "\"use client\"; import ListedBooksCard from \"@/components/shared/ListedBooksCard\"; import { BooksContext } from \"@/context/BooksContext\"; import { IBook } from \"@/types/books.type\"; import { useContext, useState } from \"react\"; const ListedBooks = () => { const { readBooks, wishlist } = useContext(BooksContext); const [sortBy, setSortBy] = useState<\"rating\" | \"pages\" | \"year\">(\"rating\"); // console.log(readBooks, wishlist, \"readBooks\", \"wishlist\"); // console.log(sortBy, \"sortBy\"); const sortBooks = (books: IBook[]) => { const sortedBooks = [...books]; if (sortBy === \"rating\") { sortedBooks.sort((a, b) => b.rating - a.rating); } else if (sortBy === \"p"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
-            "provider_count": 0,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": "\"use client\"; import { BooksContext } from \"@/context/BooksContext\"; import { IBook } from \"@/types/books.type\"; import React, { useContext } from \"react\"; import { BarChart, Bar, XAxis, YAxis, CartesianGrid, BarShapeProps, LabelList, Label, LabelProps, Tooltip, } from \"recharts\"; const colors = [ \"#0088FE\", \"#00C49F\", \"#FFBB28\", \"#FF8042\", \"red\", \"pink\", \"black\", ]; const getPath = (x: number, y: number, width: number, height: number) => { return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3} ${x + width / 2}, ${y} C${x + width / 2},${y + h"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
-            "provider_count": 0,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": "\"use client\"; import { BooksContext } from \"@/context/BooksContext\"; import { IBook } from \"@/types/books.type\"; import React, { useContext } from \"react\"; import { toast } from \"react-toastify\"; const ReadButton = ({ book }: { book: IBook }) => { const { readBooks, setReadBooks } = useContext(BooksContext); const handleReadBook = () => { console.log(\"read book btn triggered\", book); // setReadBooks((prevReadBooks) => [...prevReadBooks, book]); setReadBooks([...readBooks, book]); toast.success(`You have read \"${book.bookName}\"`); }; return ( <button className=\"btn btn-primary flex-1\" onClick"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
-            "provider_count": 0,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": "\"use client\"; import { BooksContext } from \"@/context/BooksContext\"; import { IBook } from \"@/types/books.type\"; import React, { useContext } from \"react\"; import { toast } from \"react-toastify\"; const WishListButton = ({ book }: { book: IBook }) => { const { wishlist, setWishlist } = useContext(BooksContext); const handleAddToWishlist = () => { console.log(\"add to wishlist btn triggered\", book); // setWishlist((prevWishlist) => [...prevWishlist, book]); setWishlist([...wishlist, book]); toast.success(`You have added \"${book.bookName}\" to your wishlist`); }; return ( <button className="
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
-            "provider_count": 2,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": ""
-          }
-        ],
-        "ui_flows": [
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/page.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [],
-            "evidence": "ok.bookName} width={500} height={700} className=\"h-full min-h-[400px] w-full object-cover lg:min-h-[550px]\" /> </figure> {/* Book Details */} <div className=\"card-body justify-center lg:w-3/5 lg:p-10\"> {/* Category */} <div className=\"flex flex-wrap items-center gap-2\"> <span className=\"badge badge-primary badge-outline\"> {book.category} </span> {book.tags.map((tag) => ( <span key={tag} className=\"badge badge-ghost\"> #{tag} </span> ))} </div> {/* Title */} <h1 className=\"mt-3 text-3xl font-extrabold leading-tight md:text-4xl lg:text-5xl\"> {book.bookName} </h1> {/* Author */} <p className=\"text-lg text-base-content/60\"> by{\" \"} <span className=\"font-semibold text-base-content\"> {boo"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/page.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [],
-            "evidence": "-widest text-emerald-500\"> Our Collection </p> <h2 className=\"text-3xl font-bold text-slate-800 md:text-4xl\"> Explore All Books </h2> <p className=\"mx-auto mt-3 max-w-2xl text-slate-500\"> Discover amazing stories, timeless classics, and inspiring books from talented authors. </p> </div> {/* Books Grid */} <div className=\"grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4\"> {booksData.map((book: IBook, ind: number) => { return <BookCard key={ind} book={book} />; })} </div> </section> ); }; export default Books;"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "ListedBooks"
-            ],
-            "evidence": "on> <option value={\"year\"}>Published Year</option> </select> </div> {/* name of each tab group should be unique */} <div className=\"tabs tabs-lift\"> <input type=\"radio\" name=\"my_tabs_3\" className=\"tab\" aria-label={`Read Books (${readBooks.length})`} /> <div className=\"tab-content bg-base-100 border-base-300 p-6 space-y-[25px]\"> {sortedReadBooks.length > 0 ? ( sortedReadBooks.map((book: IBook) => { return <ListedBooksCard key={book.bookId} book={book} />; }) ) : ( <p className=\"text-center text-lg font-semibold\"> No read books found </p> )} </div> <input type=\"radio\" name=\"my_tabs_3\" className=\"tab\" aria-label={`Wishlist books (${wishlist.length})`} defaultChecked /> <div className=\"tab-content bg-base"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "TriangleBar",
-              "CustomColorLabel",
-              "ReadBooks"
-            ],
-            "evidence": "strokeWidth={props.isActive ? 5 : 0} d={getPath(Number(x), Number(y), Number(width), Number(height))} stroke={color} fill={color} style={{ transition: \"stroke-width 0.3s ease-out\", }} /> ); }; const CustomColorLabel = (props: LabelProps) => { const fill = colors[(props.index ?? 0) % colors.length]; return <Label {...props} fill={fill} />; }; const ReadBooks = () => { const { readBooks } = useContext(BooksContext); const data = readBooks.map((book: IBook, index: number) => { return { name: book.bookName, uv: book.totalPages, pv: index + 1, amt: index + 1, }; }); return ( <div className=\"container mx-auto my-5 \"> {readBooks.length > 0 ? ( <BarChart style={{ width: \"100%\", maxWidth: \"700px\", maxHeight: \"70vh\", aspectRatio: 1.618, }} responsive data={data} margin={{ to"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Books.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [],
-            "evidence": "widest text-emerald-500\"> Our Collection </p> <h2 className=\"text-3xl font-bold text-slate-800 md:text-4xl\"> Explore Popular Books </h2> <p className=\"mx-auto mt-3 max-w-2xl text-slate-500\"> Discover amazing stories, timeless classics, and inspiring books from talented authors. </p> </div> {/* Books Grid */} <div className=\"grid gap-6 sm:grid-cols-2 lg:grid-cols-3\"> {booksData.slice(0, 9).map((book: IBook, ind: number) => { return <BookCard key={ind} book={book} />; })} </div> </section> ); }; export default Books;"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/BookCard.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "BookCard"
-            ],
-            "evidence": "0 shadow-sm backdrop-blur\"> {book.category} </span> {/* Rating */} <div className=\"absolute right-4 top-4 flex items-center gap-1 rounded-full bg-slate-900/80 px-3 py-1 text-sm font-medium text-white backdrop-blur\"> <span className=\"text-yellow-400\">★</span> {book.rating} </div> </div> {/* Content */} <div className=\"p-5\"> {/* Tags */} <div className=\"mb-3 flex flex-wrap gap-2\"> {book.tags.map((tag) => ( <span key={tag} className=\"rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-600\" > #{tag} </span> ))} </div> {/* Book Name */} <h3 className=\"line-clamp-1 text-xl font-bold text-slate-800 transition-colors group-hover:text-emerald-600\"> {book.bookName} </h3> {/* Author */} <p className=\"mt-1 text-sm text-slate-500"
-          },
-          {
-            "project": "b14-book-vibe",
-            "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/ListedBooksCard.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "ListedBooksCard"
-            ],
-            "evidence": "500 group-hover:scale-105\" />{\" \"} {/* Category */}{\" \"} <span className=\"absolute left-4 top-4 rounded-full bg-base-100/90 px-3 py-1 text-xs font-semibold shadow backdrop-blur\"> {\" \"} {book.category}{\" \"} </span>{\" \"} </div>{\" \"} {/* Details */}{\" \"} <div className=\"flex flex-1 flex-col p-6 md:p-8\"> {\" \"} {/* Tags */}{\" \"} <div className=\"mb-3 flex flex-wrap gap-2\"> {\" \"} {book.tags.map((tag) => ( <span key={tag} className=\"badge badge-primary badge-outline\"> {\" \"} #{tag}{\" \"} </span> ))}{\" \"} </div>{\" \"} {/* Title */}{\" \"} <h2 className=\"text-2xl font-bold transition-colors group-hover:text-primary md:text-3xl\"> {\" \"} {book.bookName}{\" \"} </h2>{\" \"} {/* Author */}{\" \"} <p className=\"mt-1 text-sm text-base-content/60 md:text-base\"> {\""
-          }
-        ],
-        "pseudocode": [
-          {
-            "pattern": "state_management",
-            "steps": [
-              "declare state with useState",
-              "keep state value and setter together",
-              "update state through setter",
-              "use state value in logic or JSX"
-            ]
-          },
-          {
-            "pattern": "interactive_data_operation",
-            "steps": [
-              "receive user input",
-              "store/update relevant state",
-              "apply operation to data",
-              "render updated result"
-            ]
-          },
-          {
-            "pattern": "context_state_sharing",
-            "steps": [
-              "create shared context",
-              "provide context value",
-              "wrap required component tree",
-              "consume value with useContext"
-            ]
-          },
-          {
-            "pattern": "collection_to_ui",
-            "steps": [
-              "prepare collection",
-              "map through collection",
-              "render reusable UI for each item"
-            ]
-          }
-        ]
+        "state_flows": 3,
+        "data_flows": 0,
+        "functionality_flows": 1,
+        "api_flows": 0,
+        "context_flows": 0,
+        "ui_flows": 7
       }
     },
     "bangla-news-24": {
@@ -303,311 +49,19 @@
       "state_usage": 1,
       "effects": 0,
       "context_usage": 0,
-      "fetches": 5,
+      "fetches": 0,
       "forms": 3,
-      "authentication_evidence": 5,
+      "authentication": 2,
       "local_storage": 0,
-      "ui_categories": {
-        "card": 5,
-        "details": 6,
-        "list": 6,
-        "pagination": 8,
-        "footer": 1,
-        "loading": 1,
-        "button": 4,
-        "form": 3,
-        "error": 3,
-        "navbar": 2,
-        "filter": 1
-      },
-      "array_methods": {
-        "map": 7,
-        "filter": 1
-      },
+      "ui_categories": 40,
+      "array_methods": 7,
       "relationships": {
-        "state_flows": [
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/profile/page.tsx",
-            "state": "show",
-            "setter": "setShow",
-            "setter_usage_count": 1,
-            "state_usage_count": 3,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "\"use client\"; import { authClient } from \"@/lib/auth-client\"; import Link from \"next/link\"; import React, { useState } from \"react\"; const ProfilePage = () => { const { data: session } = authClient.useSession(); const user = session?.user; const [show, setShow] = useState(false) const handleUpdateProfile = async (e:React.SubmitEvent<HTMLElement>) => { e.preventDefault() const formData = new FormData(e.target); const newUserData = Object.fromEntries(formData.entries()) as {name: string, image:string } await authClient.updateUser({ ...newUserData }) } const handleShowForm = () => { setShow(!show) } return ( <div className=\"mt-5 \"> <div className=\"flex flex-col items-center gap-2\""
-          }
-        ],
-        "data_flows": [
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/news/[newsId]/page.tsx",
-            "source": "fetch",
-            "url": "https://news-api-v2.vercel.app/api/article/${newsId}",
-            "method": "GET",
-            "flow": [
-              "fetch data",
-              "convert response with json()",
-              "store/process data",
-              "render data"
-            ],
-            "has_error_handling": false,
-            "evidence": "fetch(`https://news-api-v2.vercel.app/api/article/${newsId}`) const data = await res.json()"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/page.tsx",
-            "source": "fetch",
-            "url": "https://news-api-v2.vercel.app/api/news/sections",
-            "method": "GET",
-            "flow": [
-              "fetch data",
-              "convert response with json()",
-              "store/process data",
-              "render data"
-            ],
-            "has_error_handling": false,
-            "evidence": "fetch(\"https://news-api-v2.vercel.app/api/news/sections\"); const data = await res.json()"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/Marquee.tsx",
-            "source": "fetch",
-            "url": "https://news-api-v2.vercel.app/api/news?limit=10",
-            "method": "GET",
-            "flow": [
-              "fetch data",
-              "convert response with json()",
-              "store/process data",
-              "render data"
-            ],
-            "has_error_handling": false,
-            "evidence": "fetch(\"https://news-api-v2.vercel.app/api/news?limit=10\") const data = await res.json()"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/MostRead.tsx",
-            "source": "fetch",
-            "url": "https://news-api-v2.vercel.app/api/news/most-read",
-            "method": "GET",
-            "flow": [
-              "fetch data",
-              "convert response with json()",
-              "store/process data",
-              "render data"
-            ],
-            "has_error_handling": false,
-            "evidence": "fetch(\"https://news-api-v2.vercel.app/api/news/most-read\"); const data = await res.json()"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/NavLinks.tsx",
-            "source": "fetch",
-            "url": "https://news-api-v2.vercel.app/api/categories",
-            "method": "GET",
-            "flow": [
-              "fetch data",
-              "convert response with json()",
-              "store/process data",
-              "render data"
-            ],
-            "has_error_handling": false,
-            "evidence": "fetch(\"https://news-api-v2.vercel.app/api/categories\"); const data = await res.json()"
-          }
-        ],
-        "functionality_flows": [
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/profile/page.tsx",
-            "type": "form_submission",
-            "flow": [
-              "user enters form data",
-              "submit form",
-              "handle submission",
-              "process/send data",
-              "update UI"
-            ],
-            "evidence": "ef={\"/profile\"}> <div className=\"avatar\"> <div className=\"ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2\"> <img alt=\"Tailwind-CSS-Avatar-component\" src={user?.image as string} /> </div> </div> </Link> <h2>{user?.name}</h2> <p>{user?.email}</p> <button onClick={handleShowForm} className=\"btn\">Edit Profile</button> { show && <form onSubmit={handleUpdateProfile}> <fieldset className=\"fieldset rounded-box w-md\"> <label className=\"label\">নাম</label> <input name=\"name\" type=\"text\" className=\"input w-md\" placeholder=\"Name\" /> <label className=\"label\">ImageURL</label> <input name=\"image\" type=\"url\" className=\"input w-md\" placeholder=\"Image\" /> <bu"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/signin/page.tsx",
-            "type": "form_submission",
-            "flow": [
-              "user enters form data",
-              "submit form",
-              "handle submission",
-              "process/send data",
-              "update UI"
-            ],
-            "evidence": "a); } if (error) { toast.error(\"Something went error!\"); console.log(error); } }; const handleGoogleSignIn = async () => { await authClient.signIn.social({ provider: \"google\", }); }; const handleGithubSignIn = async () => { await authClient.signIn.social({ provider: \"github\", }); } return ( <div className=\"flex flex-col items-center justify-center mt-5\"> <h2 className=\"text-2xl font-bold text-red-700\">সাইন ইন</h2> <form onSubmit={onSubmit}> <fieldset className=\"fieldset rounded-box w-md\"> <label className=\"label\">ইমেইল</label> <input name=\"email\" type=\"email\" className=\"input w-md\" placeholder=\"Email\" /> <label className=\"label\">পাসওয়ার্ড</label> <input name=\"password\" type=\"password\" className=\"input w-md\" placeholder=\"Password\" />"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/signup/page.tsx",
-            "type": "form_submission",
-            "flow": [
-              "user enters form data",
-              "submit form",
-              "handle submission",
-              "process/send data",
-              "update UI"
-            ],
-            "evidence": "a) { console.log(data); redirect(\"/\"); } if (error) { console.log(error); } }; const handleGoogleSignIn = async () => { await authClient.signIn.social({ provider: \"google\", }); }; const handleGithubSignIn = async () => { await authClient.signIn.social({ provider: \"github\", }); } return ( <div className=\"flex flex-col items-center justify-center mt-5\"> <h2 className=\"text-2xl font-bold text-red-700\">সাইন আপ</h2> <form onSubmit={onSubmit}> <fieldset className=\"fieldset rounded-box w-md\"> <label className=\"label\">নাম</label> <input name=\"name\" type=\"text\" className=\"input w-md\" placeholder=\"Name\" /> <label className=\"label\">ImageURL</label> <input name=\"image\" type=\"url\" className=\"input w-md\" placeholder=\"Image\" /> <label classNa"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/NavLinks.tsx",
-            "type": "filter",
-            "flow": [
-              "receive filter value",
-              "filter collection",
-              "render filtered result"
-            ],
-            "evidence": "import Link from \"next/link\"; interface Navs { slug: string title: string topicId: string | null url:string scrapable: boolean } const NavLinks = async () => { const res = await fetch(\"https://news-api-v2.vercel.app/api/categories\"); const data = await res.json(); const navs:Navs[] = data.data; const filteredNavs = navs.filter((n) => n.scrapable); return ( <div className=\"flex gap-5 justify-center mt-5\"> <Link href={\"/\"}>হোম</Link> {filteredNavs.map((n, i) => ( <Link key={i} href={`/category/${n.slug}`}> {n.title} </Link> ))} </div> ); }; export default NavLinks;"
-          }
-        ],
-        "api_flows": [
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/api/auth/[...all]/route.ts",
-            "methods": [
-              "GET",
-              "POST"
-            ],
-            "flow": [
-              "receive HTTP request",
-              "read request data",
-              "perform server-side operation",
-              "return response"
-            ],
-            "pseudocode": [
-              "receive request",
-              "read params/body if needed",
-              "perform operation",
-              "return JSON response"
-            ],
-            "evidence": "import { auth } from \"@/lib/auth\"; // path to your auth file import { toNextJsHandler } from \"better-auth/next-js\"; export const { POST, GET } = toNextJsHandler(auth);"
-          }
-        ],
-        "context_flows": [],
-        "ui_flows": [
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/category/[categoryId]/page.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [],
-            "evidence": "ams: { categoryId: string } }) => { const { categoryId } = await params; const res = await fetch( `https://news-api-v2.vercel.app/api/category/${categoryId}`, ); const data = await res.json(); const categoryNews: News[] = data.data; if(!categoryNews) { notFound() } return ( <div> <h1 className=\"text-2xl font-bold border-b-2 border-red-700 mb-5\"> {data.title} </h1> <div className=\"grid grid-cols-3 gap-10\"> {categoryNews.map((news) => ( <NewsCard key={news.id} news={news} /> ))} </div> </div> ); }; export default CategoryNews;"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/page.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "Home"
-            ],
-            "evidence": "/news-api-v2.vercel.app/api/news/sections\"); const data = await res.json(); const sections = data.data; const mainNews = sections[0].articles; const otherSections:IOtherSection[] = sections.slice(1); // console.log(otherSections); return ( <div> <div className=\"grid gap-5 grid-cols-3 mt-5\"> {/* news section */} <div className=\" col-span-2 \"> <MainNews news={mainNews} /> <div className=\" grid gap-5 mt-5\"> {otherSections.map((os) => ( <div className=\"\" key={os.curationId} > <h1 className=\"font-bold border-b-2 pb-1 border-red-700\">{os.title}</h1> <div className=\"grid mt-3 grid-cols-3 gap-2\"> {os.articles.map((news) => ( <NewsCard key={news.id} news={news} /> ))} </div> </div> ))} </div> </div> {/* mos"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/MainNews.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "MainNews"
-            ],
-            "evidence": "<figure> <Image height={600} width={600} src={firstNews.imageUrl} alt={firstNews.imageAlt} /> </figure> <div className=\"card-body\"> <p className=\"text-red-600 font-semibold\">{firstNews.category}</p> <h2 className=\"card-title\">{firstNews.title}</h2> <p>{firstNews.description}</p> </div> </div> </Link> <div className=\"grid gap-2\"> {otherNews.slice(0, 4).map((on) => ( <div className=\"card bg-base-100 border border-gray-300 p-5\" key={on.id} > <p className=\"text-red-600 font-semibold\">{firstNews.category}</p> <div>{on.title}</div> </div> ))} </div> </div> ); }; export default MainNews;"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/Marquee.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [],
-            "evidence": "ing } const Marquee = async () => { const res = await fetch(\"https://news-api-v2.vercel.app/api/news?limit=10\") const data = await res.json() const headlines:Headlines[] = data.data return ( <div className=\"bg-red-700 text-white\"> <div className=\"flex max-w-7xl mx-auto\"> <div className=\"bg-red-800 py-1 px-5 font-bold\">সর্বশেষ</div> <MarqueeText className=\"py-1\" direction=\"right\" duration={10}> {headlines.map(h => <Link className=\"hover:underline\" href={`/news/${h.id}`} key={h.id}> <span>{h.title}</span> <span className=\"mx-5\">•</span> </Link>)} </MarqueeText> </div> </div> ); }; export default Marquee;"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/MostRead.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [],
-            "evidence": "interface MostReadNews { id: string; title: string; } const MostRead = async () => { const res = await fetch(\"https://news-api-v2.vercel.app/api/news/most-read\"); const data = await res.json(); const news: MostReadNews[] = data.data; return ( <div className=\"card p-2 bg-base-100 border border-gray-300\"> <h1 className=\"font-bold text-red-700 mb-3\">সর্বাধিক পঠিত</h1> <div className=\"grid gap-3\"> {news.map((n, i) => ( <div className=\"flex gap-2 items-center\" key={n.id}> <p className=\"text-2xl font-bold text-red-600\">{i + 1}</p>{\" \"} <h2>{n.title}</h2> </div> ))} </div> </div> ); }; export default MostRead;"
-          },
-          {
-            "project": "bangla-news-24",
-            "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/components/NavLinks.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [],
-            "evidence": "import Link from \"next/link\"; interface Navs { slug: string title: string topicId: string | null url:string scrapable: boolean } const NavLinks = async () => { const res = await fetch(\"https://news-api-v2.vercel.app/api/categories\"); const data = await res.json(); const navs:Navs[] = data.data; const filteredNavs = navs.filter((n) => n.scrapable); return ( <div className=\"flex gap-5 justify-center mt-5\"> <Link href={\"/\"}>হোম</Link> {filteredNavs.map((n, i) => ( <Link key={i} href={`/category/${n.slug}`}> {n.title} </Link> ))} </div> ); }; export default NavLinks;"
-          }
-        ],
-        "pseudocode": [
-          {
-            "pattern": "state_management",
-            "steps": [
-              "declare state with useState",
-              "keep state value and setter together",
-              "update state through setter",
-              "use state value in logic or JSX"
-            ]
-          },
-          {
-            "pattern": "client_data_fetching",
-            "steps": [
-              "call API with fetch",
-              "wait for response",
-              "convert response to JSON",
-              "store or process returned data",
-              "render data",
-              "handle errors when try/catch is used"
-            ]
-          },
-          {
-            "pattern": "interactive_data_operation",
-            "steps": [
-              "receive user input",
-              "store/update relevant state",
-              "apply operation to data",
-              "render updated result"
-            ]
-          },
-          {
-            "pattern": "collection_to_ui",
-            "steps": [
-              "prepare collection",
-              "map through collection",
-              "render reusable UI for each item"
-            ]
-          }
-        ]
+        "state_flows": 1,
+        "data_flows": 0,
+        "functionality_flows": 4,
+        "api_flows": 1,
+        "context_flows": 0,
+        "ui_flows": 6
       }
     },
     "Dev-Stack": {
@@ -622,154 +76,19 @@
       "state_usage": 2,
       "effects": 0,
       "context_usage": 0,
-      "fetches": 1,
+      "fetches": 0,
       "forms": 0,
-      "authentication_evidence": 0,
+      "authentication": 0,
       "local_storage": 0,
-      "ui_categories": {
-        "footer": 2,
-        "hero": 2,
-        "navbar": 3,
-        "button": 6,
-        "filter": 1,
-        "card": 2,
-        "details": 2,
-        "error": 1,
-        "list": 2,
-        "loading": 1,
-        "empty_state": 1
-      },
-      "array_methods": {
-        "filter": 1,
-        "some": 1,
-        "map": 2
-      },
+      "ui_categories": 23,
+      "array_methods": 4,
       "relationships": {
-        "state_flows": [
-          {
-            "project": "Dev-Stack",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/Navbar/Navbar.tsx",
-            "state": "activeMenu",
-            "setter": "setActiveMenu",
-            "setter_usage_count": 5,
-            "state_usage_count": 6,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "import logoText from '../../assets/logo-text.png' import hamburger from '../../assets/hamburger.png' import { useState } from 'react' function Navbar() { const [activeMenu, setActiveMenu] = useState(\"Home\") return ( <nav className=\"sticky top-0 z-50 border-b border-[#F1F5F9] bg-white\"> <div className=\"container mx-auto grid grid-cols-3 items-center px-6 py-4\"> {/* Hamburger */} <img src={hamburger} alt=\"Menu\" className=\"w-6 md:hidden justify-self-start\" /> {/* Logo */} <img"
-          },
-          {
-            "project": "Dev-Stack",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologySection.tsx",
-            "state": "selectedTechnologies",
-            "setter": "setSelectedTechnologies",
-            "setter_usage_count": 0,
-            "state_usage_count": 6,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "import TechnologyGrid from './TechnologyGrid' import YourStack from './YourStack' import { Suspense, useState } from 'react' import type { Tech } from '../../types/Tech' const technologyFetch = async (): Promise<Tech[]> => { const res = await fetch(\"/technologies.json\"); const data = await res.json(); return data; }; function TechnologySection() { const [selectedTechnologies, setSelectedTechnologies] = useState<Tech[]>([]) console.log(selectedTechnologies) const [technologyPromise] = useState(() => technologyFetch()) return ( <section className=\"-mt-10 md:py-5\"> <div className=\"container mx-auto px-6\"> <div className=\"mb-2 md:mb-8\"> <h2 className=\"text-[25px] text-center md:text-4xl md:text-start font-extrabold\">Explore the <span className=\"text-pink-500\">Technologies</span>"
-          }
-        ],
-        "data_flows": [
-          {
-            "project": "Dev-Stack",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologySection.tsx",
-            "source": "fetch",
-            "url": "/technologies.json",
-            "method": "GET",
-            "flow": [
-              "fetch data",
-              "convert response with json()",
-              "store/process data",
-              "render data"
-            ],
-            "has_error_handling": false,
-            "evidence": "fetch(\"/technologies.json\"); const data = await res.json()"
-          }
-        ],
-        "functionality_flows": [
-          {
-            "project": "Dev-Stack",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/StackItem.tsx",
-            "type": "filter",
-            "flow": [
-              "receive filter value",
-              "filter collection",
-              "render filtered result"
-            ],
-            "evidence": "import type { Dispatch, SetStateAction } from 'react' import type { Tech } from '../../types/Tech' import { toast } from 'react-toastify' interface StackItemProps { technology: Tech selectedTechnologies: Tech[] setSelectedTechnologies: Dispatch<SetStateAction<Tech[]>> } function StackItem({ technology, selectedTechnologies, setSelectedTechnologies, }: StackItemProps) { const handleRemoveTechnology = () => { const remainingTechnologies = selectedTechnologies.filter( (item) => item.id !== technology.id ) setSelectedTechnologies(remainingTechnologies) toast.success(`${technology.name} is removed successfully`) } return ( <div className=\"flex items-center justify-between gap-3 p-3 rounded-md border border-gray-200 bg-white\"> <div className=\"flex items-center gap-3\"> <div className=\"w-10 h-10 rounded-md bg-gray-50 flex items-center justify-center\"> <im"
-          }
-        ],
-        "api_flows": [],
-        "context_flows": [],
-        "ui_flows": [
-          {
-            "project": "Dev-Stack",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/TechnologyGrid.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "TechnologyGrid"
-            ],
-            "evidence": "rops { technologyPromise: Promise<Tech[]> selectedTechnologies: Tech[] setSelectedTechnologies: Dispatch<SetStateAction<Tech[]>> } function TechnologyGrid({ technologyPromise, selectedTechnologies, setSelectedTechnologies, }: TechnologyGridProps) { const technologies = use(technologyPromise) console.log(technologies) return ( <div className=\"py-2\"> <div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6\"> {technologies.map((technology: Tech, ind: number) => { return ( <TechnologyCard key={ind} technology={technology} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} /> ) })} </div> </div> ) } export default TechnologyGrid"
-          },
-          {
-            "project": "Dev-Stack",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Dev-Stack/src/components/TechnologySection/YourStack.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "YourStack"
-            ],
-            "evidence": "return ( <div className=\"bg-white rounded-2xl shadow-md p-6 border border-gray-100\"> <div className=\"flex items-start justify-between\"> <div> <h3 className=\"font-semibold text-lg\">Your Stack</h3> <p className=\"text-sm text-gray-500 mt-1\">{selectedTechnologies.length} Technology selected</p> </div> </div> <div className=\"mt-4 space-y-3\"> {selectedTechnologies.map((technology: Tech, ind: number) => { return ( <StackItem key={ind} technology={technology} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} /> ) })} </div> <div className=\"mt-4\"> <button type=\"b"
-          }
-        ],
-        "pseudocode": [
-          {
-            "pattern": "state_management",
-            "steps": [
-              "declare state with useState",
-              "keep state value and setter together",
-              "update state through setter",
-              "use state value in logic or JSX"
-            ]
-          },
-          {
-            "pattern": "client_data_fetching",
-            "steps": [
-              "call API with fetch",
-              "wait for response",
-              "convert response to JSON",
-              "store or process returned data",
-              "render data",
-              "handle errors when try/catch is used"
-            ]
-          },
-          {
-            "pattern": "interactive_data_operation",
-            "steps": [
-              "receive user input",
-              "store/update relevant state",
-              "apply operation to data",
-              "render updated result"
-            ]
-          },
-          {
-            "pattern": "collection_to_ui",
-            "steps": [
-              "prepare collection",
-              "map through collection",
-              "render reusable UI for each item"
-            ]
-          }
-        ]
+        "state_flows": 2,
+        "data_flows": 0,
+        "functionality_flows": 1,
+        "api_flows": 0,
+        "context_flows": 0,
+        "ui_flows": 2
       }
     },
     "Fitlog": {
@@ -788,498 +107,190 @@
       "functions": 23,
       "state_usage": 4,
       "effects": 0,
-      "context_usage": 9,
-      "fetches": 2,
+      "context_usage": 0,
+      "fetches": 0,
       "forms": 0,
-      "authentication_evidence": 0,
+      "authentication": 0,
       "local_storage": 0,
-      "ui_categories": {
-        "details": 6,
-        "footer": 2,
-        "navbar": 2,
-        "button": 9,
-        "loading": 1,
-        "card": 4,
-        "list": 4,
-        "pagination": 3,
-        "search": 1,
-        "hero": 2,
-        "error": 1,
-        "filter": 1
-      },
-      "array_methods": {
-        "map": 5,
-        "reduce": 2,
-        "sort": 1,
-        "find": 1,
-        "filter": 3,
-        "some": 2
-      },
+      "ui_categories": 36,
+      "array_methods": 10,
       "relationships": {
-        "state_flows": [
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
-            "state": "activeTab",
-            "setter": "setActiveTab",
-            "setter_usage_count": 2,
-            "state_usage_count": 5,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "tton from \"@/components/shared/Button-1\"; import { useContext, useState } from \"react\"; import { WorkoutContext } from \"@/context/WorkoutContext\"; import PlanWorkoutCard from \"@/components/myPlan/PlanWorkoutCard\"; import { useSearchParams } from \"next/navigation\"; const MyPlan = () => { const searchParams = useSearchParams(); const tab = searchParams.get(\"tab\"); const { planWorkouts } = useContext(WorkoutContext); const { savedWorkouts } = useContext(WorkoutContext); const [activeTab, setActiveTab] = useState( tab === \"saved\" ? \"saved\" : \"plan\" ); const [sortBy, setSortBy] = useState(\"duration\"); const workouts = activeTab === \"plan\" ? planWorkouts : savedWorkouts; const sortedWorkouts = [...workouts].sort((a, b) => { if (sortBy === \"duration\") { return a.duration - b.duration; } if (sortBy === \"calories\") { return a.caloriesBurned - b.caloriesBurned; } return a.rating"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
-            "state": "sortBy",
-            "setter": "setSortBy",
-            "setter_usage_count": 1,
-            "state_usage_count": 4,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "orkoutContext } from \"@/context/WorkoutContext\"; import PlanWorkoutCard from \"@/components/myPlan/PlanWorkoutCard\"; import { useSearchParams } from \"next/navigation\"; const MyPlan = () => { const searchParams = useSearchParams(); const tab = searchParams.get(\"tab\"); const { planWorkouts } = useContext(WorkoutContext); const { savedWorkouts } = useContext(WorkoutContext); const [activeTab, setActiveTab] = useState( tab === \"saved\" ? \"saved\" : \"plan\" ); const [sortBy, setSortBy] = useState(\"duration\"); const workouts = activeTab === \"plan\" ? planWorkouts : savedWorkouts; const sortedWorkouts = [...workouts].sort((a, b) => { if (sortBy === \"duration\") { return a.duration - b.duration; } if (sortBy === \"calories\") { return a.caloriesBurned - b.caloriesBurned; } return a.rating - b.rating; }); const totalMinutes = planWorkouts.reduce( (total, workout) => tot"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx",
-            "state": "planWorkouts",
-            "setter": "setPlanWorkouts",
-            "setter_usage_count": 0,
-            "state_usage_count": 4,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "\"use client\"; import { Workout } from \"@/types/Workout\"; import React, { createContext, ReactNode, useState } from \"react\"; interface IWorkoutContext { planWorkouts: Workout[]; setPlanWorkouts: React.Dispatch<React.SetStateAction<Workout[]>>; savedWorkouts: Workout[]; setSavedWorkouts: React.Dispatch<React.SetStateAction<Workout[]>>; } export const WorkoutContext = createContext<IWorkoutContext>({ planWorkouts: [], setPlanWorkouts: () => { }, savedWorkouts: [], setSavedWorkouts: () => { }, }); const WorkoutProvider = ({ children }: { children: ReactNode }) => { const [planWorkouts, setPlanWorkouts] = useState<W"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx",
-            "state": "savedWorkouts",
-            "setter": "setSavedWorkouts",
-            "setter_usage_count": 0,
-            "state_usage_count": 4,
-            "used_in_ui": true,
-            "pattern": "state is declared with useState and updated through its setter",
-            "evidence": "\"use client\"; import { Workout } from \"@/types/Workout\"; import React, { createContext, ReactNode, useState } from \"react\"; interface IWorkoutContext { planWorkouts: Workout[]; setPlanWorkouts: React.Dispatch<React.SetStateAction<Workout[]>>; savedWorkouts: Workout[]; setSavedWorkouts: React.Dispatch<React.SetStateAction<Workout[]>>; } export const WorkoutContext = createContext<IWorkoutContext>({ planWorkouts: [], setPlanWorkouts: () => { }, savedWorkouts: [], setSavedWorkouts: () => { }, }); const WorkoutProvider = ({ children }: { children: ReactNode }) => { const [planWorkouts, setPlanWorkouts] = useState<Workout[]>([]); const [savedWorkouts, setSavedWorkouts] = useState<Workout[]>([]); const sh"
-          }
-        ],
-        "data_flows": [
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/workout/[id]/page.tsx",
-            "source": "fetch",
-            "url": "https://api.api-store.workers.dev/api/fitlog",
-            "method": "GET",
-            "flow": [
-              "fetch data",
-              "convert response with json()",
-              "store/process data",
-              "render data"
-            ],
-            "has_error_handling": true,
-            "evidence": "fetch( \"https://api.api-store.workers.dev/api/fitlog\" ); const data: Workout[] = await response.json()"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/home/WorkoutLibrary.tsx",
-            "source": "fetch",
-            "url": "https://api.api-store.workers.dev/api/fitlog",
-            "method": "GET",
-            "flow": [
-              "fetch data",
-              "convert response with json()",
-              "store/process data",
-              "render data"
-            ],
-            "has_error_handling": false,
-            "evidence": "fetch( \"https://api.api-store.workers.dev/api/fitlog\" ); const workouts: Workout[] = await response.json()"
-          }
-        ],
-        "functionality_flows": [
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
-            "type": "sorting",
-            "flow": [
-              "receive sorting option",
-              "sort collection",
-              "render sorted result"
-            ],
-            "evidence": "orkoutContext } from \"@/context/WorkoutContext\"; import PlanWorkoutCard from \"@/components/myPlan/PlanWorkoutCard\"; import { useSearchParams } from \"next/navigation\"; const MyPlan = () => { const searchParams = useSearchParams(); const tab = searchParams.get(\"tab\"); const { planWorkouts } = useContext(WorkoutContext); const { savedWorkouts } = useContext(WorkoutContext); const [activeTab, setActiveTab] = useState( tab === \"saved\" ? \"saved\" : \"plan\" ); const [sortBy, setSortBy] = useState(\"duration\"); const workouts = activeTab === \"plan\" ? planWorkouts : savedWorkouts; const sortedWorkouts = [...workouts].sort((a, b) => { if (sortBy === \"duration\") { return a.duration - b.duration; } if (sortBy === \"calories\") { return a.caloriesBurned - b.caloriesBurned; } return a.rating - b.rating; }); const totalMinutes = planWorkouts.reduce( (total, workout) => tot"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/myPlan/PlanWorkoutCard.tsx",
-            "type": "filter",
-            "flow": [
-              "receive filter value",
-              "filter collection",
-              "render filtered result"
-            ],
-            "evidence": "nts/shared/Button-1\"; import Button2 from \"@/components/shared/Button-2\"; import { toast } from \"react-toastify\"; interface PlanWorkoutCardProps { workout: Workout; isSaved: boolean; } const PlanWorkoutCard = ({ workout, isSaved }: PlanWorkoutCardProps) => { const { planWorkouts, setPlanWorkouts, savedWorkouts, setSavedWorkouts } = useContext(WorkoutContext); const handleMarkAsDone = () => { setPlanWorkouts( planWorkouts.filter((item) => item.id !== workout.id) ); toast.success(\"Workout marked as done\"); }; const handleRemove = () => { if (isSaved) { setSavedWorkouts( savedWorkouts.filter((item) => item.id !== workout.id) ); toast.success(\"Removed from saved\"); return; } setPlanWorkouts( planWorkouts.filter((item) => item.id !== workout.id) ); toast.success(\"Removed from"
-          }
-        ],
-        "api_flows": [],
-        "context_flows": [
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
-            "provider_count": 0,
-            "usage_count": 2,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": "\"use client\"; import Link from \"next/link\"; import Button from \"@/components/shared/Button-1\"; import { useContext, useState } from \"react\"; import { WorkoutContext } from \"@/context/WorkoutContext\"; import PlanWorkoutCard from \"@/components/myPlan/PlanWorkoutCard\"; import { useSearchParams } from \"next/navigation\"; const MyPlan = () => { const searchParams = useSearchParams(); const tab = searchParams.get(\"tab\"); const { planWorkouts } = useContext(WorkoutContext); const { savedWorkouts } = useContext(WorkoutContext); const [activeTab, setActiveTab] = useState( tab =="
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/myPlan/PlanWorkoutCard.tsx",
-            "provider_count": 0,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": "\"use client\"; import { useContext } from \"react\"; import { WorkoutContext } from \"@/context/WorkoutContext\"; import { Workout } from \"@/types/Workout\"; import Image from \"next/image\"; import Link from \"next/link\"; import Button1 from \"@/components/shared/Button-1\"; import Button2 from \"@/components/shared/Button-2\"; import { toast } from \"react-toastify\"; interface PlanWorkoutCardProps { workout: Workout; isSaved: boolean; } const PlanWorkoutCard = ({ workout, isSaved }: PlanWorkoutCardProps) => { const"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/shared/Navbar.tsx",
-            "provider_count": 0,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": "\"use client\"; import Link from \"next/link\"; import React from \"react\"; import Image from \"next/image\"; import logo from \"@/assets/logo.png\"; import { useContext } from \"react\"; import { WorkoutContext } from \"@/context/WorkoutContext\"; import { usePathname } from \"next/navigation\"; const Navbar = () => { const pathname = usePathname(); const isWorkoutsActive = pathname === \"/\" || pathname.startsWith(\"/workout\"); const isMyPlanActive = pathname === \"/my-plan\"; const { planWorkouts, savedWorkouts } = useContext(WorkoutContext); return ( <div className=\"navbar relative bg-black text-white px-3 md:px-6 sha"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/workoutDetails/AddToPlanButton.tsx",
-            "provider_count": 0,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": "\"use client\"; import { Workout } from \"@/types/Workout\"; import { useContext } from \"react\"; import { WorkoutContext } from \"@/context/WorkoutContext\"; import Button from \"@/components/shared/Button-1\"; import { toast } from \"react-toastify\"; import Image from \"next/image\"; import addicon from \"@/assets/add-icon.png\" interface AddToPlanButtonProps { workout: Workout; } const AddToPlanButton = ({ workout }: AddToPlanButtonProps) => { const { planWorkouts, setPlanWorkouts } = useContext(WorkoutContext); const handleAddToPlan = () => { const"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/workoutDetails/SaveButton.tsx",
-            "provider_count": 0,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": "\"use client\"; import { Workout } from \"@/types/Workout\"; import { useContext } from \"react\"; import { WorkoutContext } from \"@/context/WorkoutContext\"; import Button2 from \"@/components/shared/Button-2\"; import SaveIcon from \"@/assets/save-icon.png\" import Image from \"next/image\"; import { toast } from \"react-toastify\"; interface SaveButtonProps { workout: Workout; } const SaveButton = ({ workout }: SaveButtonProps) => { const { savedWorkouts, setSavedWorkouts } = useContext(WorkoutContext); const handleSave = () => { const alreadySaved ="
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/context/WorkoutContext.tsx",
-            "provider_count": 2,
-            "usage_count": 1,
-            "flow": [
-              "create/provide shared state",
-              "wrap relevant components with provider",
-              "consume shared state with useContext"
-            ],
-            "evidence": ""
-          }
-        ],
-        "ui_flows": [
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/my-plan/page.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "MyPlan"
-            ],
-            "evidence": "</p> <div className=\"flex justify-center mt-6\"> <Link href=\"/\"> <Button> <div className=\"-mt-1\"> Go to workouts </div> </Button> </Link> </div> </div> ) : ( <div> {sortedWorkouts.map((workout) => ( <PlanWorkoutCard key={workout.id} workout={workout} isSaved={activeTab === \"saved\"} /> ))} </div> )} </main> ); }; export default MyPlan;"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/app/workout/[id]/page.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [],
-            "evidence": "\" /> </div> <div> <h1 className=\"text-white text-5xl font-bold\"> {workout.name} </h1> <p className=\"text-zinc-400 mt-5 leading-relaxed\"> {workout.description} </p> <div className=\"flex flex-wrap gap-2 mt-5\"> {workout.muscleGroups.map((muscle) => ( <Badge key={muscle}>{muscle}</Badge> ))} </div> <div className=\"mt-6 rounded-2xl border border-zinc-800 bg-[#12141c] py-2\"> <div className=\"flex justify-between px-5 py-3 border-b border-zinc-800\"> <span className=\"text-zinc-500 font-bold\"> EQUIPMENT"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/home/WorkoutCard.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [
-              "WorkoutCard"
-            ],
-            "evidence": "c-900\"> <div className=\"relative h-64 overflow-hidden rounded-2xl\"> <Image src={workout.image} alt={workout.name} width={800} height={600} className=\"h-full w-full object-cover object-[center_20%]\" /> </div> <div className=\"p-7\"> <div className=\"flex flex-wrap gap-2 my-3\"> {workout.muscleGroups.map((muscle) => ( <Badge key={muscle}>{muscle}</Badge> ))} </div> <h3 className=\"text-white text-xl font-extrabold uppercase\"> {workout.name} </h3> <p className=\"text-zinc-400 text-sm mt-1\"> {workout.equipment} </p> <div className=\"border-t border-zinc-800 my-4\"></div> <div className=\"flex items-center"
-          },
-          {
-            "project": "Fitlog",
-            "file": "D:/Work/Others/Agents/My-Agent/references/Fitlog/src/components/home/WorkoutLibrary.tsx",
-            "type": "collection_rendering",
-            "flow": [
-              "have collection of data",
-              "map over collection",
-              "render UI for each item"
-            ],
-            "reusable_components_detected": [],
-            "evidence": "api/fitlog\" ); const workouts: Workout[] = await response.json(); return ( <section id=\"library\" className=\"bg-black px-5 py-16\"> <h2 className=\"text-white text-4xl font-bold\"> THE LIBRARY </h2> <p className=\"text-zinc-400 mt-2\"> Twelve lifts covering every major muscle group. </p> <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8\"> {workouts.map((workout) => ( <WorkoutCard key={workout.id} workout={workout} /> ))} </div> </section> ); }; export default WorkoutLibrary;"
-          }
-        ],
-        "pseudocode": [
-          {
-            "pattern": "state_management",
-            "steps": [
-              "declare state with useState",
-              "keep state value and setter together",
-              "update state through setter",
-              "use state value in logic or JSX"
-            ]
-          },
-          {
-            "pattern": "client_data_fetching",
-            "steps": [
-              "call API with fetch",
-              "wait for response",
-              "convert response to JSON",
-              "store or process returned data",
-              "render data",
-              "handle errors when try/catch is used"
-            ]
-          },
-          {
-            "pattern": "interactive_data_operation",
-            "steps": [
-              "receive user input",
-              "store/update relevant state",
-              "apply operation to data",
-              "render updated result"
-            ]
-          },
-          {
-            "pattern": "context_state_sharing",
-            "steps": [
-              "create shared context",
-              "provide context value",
-              "wrap required component tree",
-              "consume value with useContext"
-            ]
-          },
-          {
-            "pattern": "collection_to_ui",
-            "steps": [
-              "prepare collection",
-              "map through collection",
-              "render reusable UI for each item"
-            ]
-          }
-        ]
+        "state_flows": 4,
+        "data_flows": 0,
+        "functionality_flows": 3,
+        "api_flows": 0,
+        "context_flows": 0,
+        "ui_flows": 4
       }
     }
   },
-  "recurring_patterns": [
-    {
-      "pattern": "components",
+  "recurring_patterns": {
+    "components": {
+      "occurrence_count": 51,
       "projects_found": [
         "b14-book-vibe",
         "bangla-news-24",
         "Dev-Stack",
         "Fitlog"
-      ],
-      "project_count": 4,
-      "consistency": "recurring"
+      ]
     },
-    {
-      "pattern": "functions",
+    "functions": {
+      "occurrence_count": 84,
       "projects_found": [
         "b14-book-vibe",
         "bangla-news-24",
         "Dev-Stack",
         "Fitlog"
-      ],
-      "project_count": 4,
-      "consistency": "recurring"
+      ]
     },
-    {
-      "pattern": "state_usage",
-      "projects_found": [
-        "b14-book-vibe",
-        "bangla-news-24",
-        "Dev-Stack",
-        "Fitlog"
-      ],
-      "project_count": 4,
-      "consistency": "recurring"
-    },
-    {
-      "pattern": "context_usage",
-      "projects_found": [
-        "b14-book-vibe",
-        "Fitlog"
-      ],
-      "project_count": 2,
-      "consistency": "partial"
-    },
-    {
-      "pattern": "fetches",
-      "projects_found": [
-        "bangla-news-24",
-        "Dev-Stack",
-        "Fitlog"
-      ],
-      "project_count": 3,
-      "consistency": "partial"
-    }
-  ],
-  "consistency": {
     "state_usage": {
-      "projects": [
+      "occurrence_count": 10,
+      "projects_found": [
         "b14-book-vibe",
         "bangla-news-24",
         "Dev-Stack",
         "Fitlog"
-      ],
-      "values": [
-        3,
-        1,
-        2,
-        4
-      ],
-      "present_in_all": true
+      ]
     },
     "effects": {
-      "projects": [
-        "b14-book-vibe",
-        "bangla-news-24",
-        "Dev-Stack",
-        "Fitlog"
-      ],
-      "values": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "present_in_all": false
+      "occurrence_count": 0,
+      "projects_found": []
     },
     "context_usage": {
-      "projects": [
-        "b14-book-vibe",
-        "bangla-news-24",
-        "Dev-Stack",
-        "Fitlog"
-      ],
-      "values": [
-        7,
-        0,
-        0,
-        9
-      ],
-      "present_in_all": false
+      "occurrence_count": 0,
+      "projects_found": []
     },
     "fetches": {
-      "projects": [
-        "b14-book-vibe",
-        "bangla-news-24",
-        "Dev-Stack",
-        "Fitlog"
-      ],
-      "values": [
-        0,
-        5,
-        1,
-        2
-      ],
-      "present_in_all": false
+      "occurrence_count": 0,
+      "projects_found": []
     },
     "forms": {
-      "projects": [
-        "b14-book-vibe",
-        "bangla-news-24",
-        "Dev-Stack",
-        "Fitlog"
-      ],
-      "values": [
-        0,
-        3,
-        0,
-        0
-      ],
-      "present_in_all": false
+      "occurrence_count": 3,
+      "projects_found": [
+        "bangla-news-24"
+      ]
+    },
+    "authentication": {
+      "occurrence_count": 2,
+      "projects_found": [
+        "bangla-news-24"
+      ]
     },
     "local_storage": {
-      "projects": [
-        "b14-book-vibe",
-        "bangla-news-24",
-        "Dev-Stack",
-        "Fitlog"
-      ],
-      "values": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "present_in_all": false
+      "occurrence_count": 0,
+      "projects_found": []
     }
   },
-  "differences": [
-    {
-      "category": "state_usage",
-      "values": {
-        "b14-book-vibe": 3,
-        "bangla-news-24": 1,
-        "Dev-Stack": 2,
-        "Fitlog": 4
-      }
+  "consistency": {
+    "components": {
+      "projects_found": 4,
+      "total_projects": 4,
+      "percentage": 100.0,
+      "consistency": "high"
     },
-    {
-      "category": "context_usage",
-      "values": {
-        "b14-book-vibe": 7,
-        "bangla-news-24": 0,
-        "Dev-Stack": 0,
-        "Fitlog": 9
-      }
+    "functions": {
+      "projects_found": 4,
+      "total_projects": 4,
+      "percentage": 100.0,
+      "consistency": "high"
     },
-    {
-      "category": "fetches",
-      "values": {
-        "b14-book-vibe": 0,
-        "bangla-news-24": 5,
-        "Dev-Stack": 1,
-        "Fitlog": 2
-      }
+    "state_usage": {
+      "projects_found": 4,
+      "total_projects": 4,
+      "percentage": 100.0,
+      "consistency": "high"
     },
-    {
-      "category": "forms",
-      "values": {
-        "b14-book-vibe": 0,
-        "bangla-news-24": 3,
-        "Dev-Stack": 0,
-        "Fitlog": 0
-      }
+    "effects": {
+      "projects_found": 0,
+      "total_projects": 4,
+      "percentage": 0.0,
+      "consistency": "low"
+    },
+    "context_usage": {
+      "projects_found": 0,
+      "total_projects": 4,
+      "percentage": 0.0,
+      "consistency": "low"
+    },
+    "fetches": {
+      "projects_found": 0,
+      "total_projects": 4,
+      "percentage": 0.0,
+      "consistency": "low"
+    },
+    "forms": {
+      "projects_found": 1,
+      "total_projects": 4,
+      "percentage": 25.0,
+      "consistency": "low"
+    },
+    "authentication": {
+      "projects_found": 1,
+      "total_projects": 4,
+      "percentage": 25.0,
+      "consistency": "low"
+    },
+    "local_storage": {
+      "projects_found": 0,
+      "total_projects": 4,
+      "percentage": 0.0,
+      "consistency": "low"
     }
-  ]
+  },
+  "differences": {
+    "components": {
+      "b14-book-vibe": 15,
+      "bangla-news-24": 11,
+      "Dev-Stack": 9,
+      "Fitlog": 16
+    },
+    "functions": {
+      "b14-book-vibe": 26,
+      "bangla-news-24": 26,
+      "Dev-Stack": 9,
+      "Fitlog": 23
+    },
+    "state_usage": {
+      "b14-book-vibe": 3,
+      "bangla-news-24": 1,
+      "Dev-Stack": 2,
+      "Fitlog": 4
+    },
+    "effects": {
+      "b14-book-vibe": 0,
+      "bangla-news-24": 0,
+      "Dev-Stack": 0,
+      "Fitlog": 0
+    },
+    "context_usage": {
+      "b14-book-vibe": 0,
+      "bangla-news-24": 0,
+      "Dev-Stack": 0,
+      "Fitlog": 0
+    },
+    "fetches": {
+      "b14-book-vibe": 0,
+      "bangla-news-24": 0,
+      "Dev-Stack": 0,
+      "Fitlog": 0
+    },
+    "forms": {
+      "b14-book-vibe": 0,
+      "bangla-news-24": 3,
+      "Dev-Stack": 0,
+      "Fitlog": 0
+    },
+    "authentication": {
+      "b14-book-vibe": 0,
+      "bangla-news-24": 2,
+      "Dev-Stack": 0,
+      "Fitlog": 0
+    },
+    "local_storage": {
+      "b14-book-vibe": 0,
+      "bangla-news-24": 0,
+      "Dev-Stack": 0,
+      "Fitlog": 0
+    }
+  }
 }
