@@ -1,0 +1,18 @@
+{
+  "purpose": "Observed Tailwind and styling patterns.",
+  "projects": {
+    "b14-book-vibe": {
+      "tailwind_classes": []
+    },
+    "bangla-news-24": {
+      "tailwind_classes": []
+    },
+    "Dev-Stack": {
+      "tailwind_classes": []
+    },
+    "Fitlog": {
+      "tailwind_classes": []
+    }
+  },
+  "recurring_classes": {}
+}
