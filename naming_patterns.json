@@ -1,369 +1,655 @@
 {
-  "naming_evidence": {
-    "variables": {},
-    "functions": {
-      "occurrence_count": 84,
-      "projects_found": [
-        "Dev-Stack",
-        "Fitlog",
-        "b14-book-vibe",
-        "bangla-news-24"
+  "purpose": "Observed naming patterns.",
+  "projects": {
+    "b14-book-vibe": {
+      "variables": [],
+      "functions": [
+        {
+          "name": "BookDetailsLoading",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "getBooks",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "BookDetailsPage",
+          "parameters": "{ params }: IBookDetailsPageProps",
+          "async": true
+        },
+        {
+          "name": "BooksLoading",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "getBooks",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "Books",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "RootLayout",
+          "parameters": "{ children }: LayoutProps<\"/\">",
+          "async": false
+        },
+        {
+          "name": "ListedBooks",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "sortBooks",
+          "parameters": "books: IBook[]",
+          "async": false
+        },
+        {
+          "name": "GlobalLoading",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "page",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "getPath",
+          "parameters": "x: number, y: number, width: number, height: number",
+          "async": false
+        },
+        {
+          "name": "TriangleBar",
+          "parameters": "props: BarShapeProps",
+          "async": false
+        },
+        {
+          "name": "CustomColorLabel",
+          "parameters": "props: LabelProps",
+          "async": false
+        },
+        {
+          "name": "ReadBooks",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "ReadButton",
+          "parameters": "{ book }: { book: IBook }",
+          "async": false
+        },
+        {
+          "name": "handleReadBook",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "WishListButton",
+          "parameters": "{ book }: { book: IBook }",
+          "async": false
+        },
+        {
+          "name": "handleAddToWishlist",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "Banner",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "getBooks",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "Books",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "BookCard",
+          "parameters": "{ book }: IBookCardProps",
+          "async": false
+        },
+        {
+          "name": "ListedBooksCard",
+          "parameters": "{ book }: IListedBooksCardProps",
+          "async": false
+        },
+        {
+          "name": "Navbar",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "BooksProvider",
+          "parameters": "{ children }: { children: ReactNode }",
+          "async": false
+        }
       ],
-      "project_count": 4,
-      "confidence": "high",
-      "examples": [
+      "components": [
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/loading.tsx",
-          "evidence": {
-            "name": "BookDetailsLoading",
-            "parameters": "",
-            "async": false
-          }
+          "name": "BookDetailsLoading",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/page.tsx",
-          "evidence": {
-            "name": "getBooks",
-            "parameters": "",
-            "async": true
-          }
+          "name": "BooksLoading",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/page.tsx",
-          "evidence": {
-            "name": "BookDetailsPage",
-            "parameters": "{ params }: IBookDetailsPageProps",
-            "async": true
-          }
+          "name": "RootLayout",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/loading.tsx",
-          "evidence": {
-            "name": "BooksLoading",
-            "parameters": "",
-            "async": false
-          }
+          "name": "ListedBooks",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/page.tsx",
-          "evidence": {
-            "name": "getBooks",
-            "parameters": "",
-            "async": true
-          }
+          "name": "GlobalLoading",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/page.tsx",
-          "evidence": {
-            "name": "Books",
-            "parameters": "",
-            "async": true
-          }
+          "name": "TriangleBar",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/layout.tsx",
-          "evidence": {
-            "name": "RootLayout",
-            "parameters": "{ children }: LayoutProps<\"/\">",
-            "async": false
-          }
+          "name": "CustomColorLabel",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
-          "evidence": {
-            "name": "ListedBooks",
-            "parameters": "",
-            "async": false
-          }
+          "name": "ReadBooks",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
-          "evidence": {
-            "name": "sortBooks",
-            "parameters": "books: IBook[]",
-            "async": false
-          }
+          "name": "ReadButton",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/loading.tsx",
-          "evidence": {
-            "name": "GlobalLoading",
-            "parameters": "",
-            "async": false
-          }
+          "name": "WishListButton",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/page.tsx",
-          "evidence": {
-            "name": "page",
-            "parameters": "",
-            "async": false
-          }
+          "name": "Banner",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
-          "evidence": {
-            "name": "getPath",
-            "parameters": "x: number, y: number, width: number, height: number",
-            "async": false
-          }
+          "name": "BookCard",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
-          "evidence": {
-            "name": "TriangleBar",
-            "parameters": "props: BarShapeProps",
-            "async": false
-          }
+          "name": "ListedBooksCard",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
-          "evidence": {
-            "name": "CustomColorLabel",
-            "parameters": "props: LabelProps",
-            "async": false
-          }
+          "name": "Navbar",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
-          "evidence": {
-            "name": "ReadBooks",
-            "parameters": "",
-            "async": false
-          }
-        },
-        {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
-          "evidence": {
-            "name": "ReadButton",
-            "parameters": "{ book }: { book: IBook }",
-            "async": false
-          }
-        },
-        {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
-          "evidence": {
-            "name": "handleReadBook",
-            "parameters": "",
-            "async": false
-          }
-        },
-        {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
-          "evidence": {
-            "name": "WishListButton",
-            "parameters": "{ book }: { book: IBook }",
-            "async": false
-          }
-        },
-        {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
-          "evidence": {
-            "name": "handleAddToWishlist",
-            "parameters": "",
-            "async": false
-          }
-        },
-        {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Banner.tsx",
-          "evidence": {
-            "name": "Banner",
-            "parameters": "",
-            "async": false
-          }
+          "name": "BooksProvider",
+          "type": "component"
         }
       ]
     },
-    "components": {
-      "occurrence_count": 51,
-      "projects_found": [
-        "Dev-Stack",
-        "Fitlog",
-        "b14-book-vibe",
-        "bangla-news-24"
+    "bangla-news-24": {
+      "variables": [],
+      "functions": [
+        {
+          "name": "CategoryNews",
+          "parameters": "{ params }: { params: { categoryId: string } }",
+          "async": true
+        },
+        {
+          "name": "RootLayout",
+          "parameters": "{ children }: LayoutProps<\"/\">",
+          "async": false
+        },
+        {
+          "name": "LoadingPage",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "NewsDetails",
+          "parameters": "{params}: {params: {newsId:string}}",
+          "async": true
+        },
+        {
+          "name": "NotFound",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "Home",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "ProfilePage",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "handleUpdateProfile",
+          "parameters": "e:React.SubmitEvent<HTMLElement>",
+          "async": true
+        },
+        {
+          "name": "handleShowForm",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "SignInPage",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "onSubmit",
+          "parameters": "e: React.SubmitEvent<HTMLElement>",
+          "async": true
+        },
+        {
+          "name": "handleGoogleSignIn",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "handleGithubSignIn",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "SignUpPage",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "onSubmit",
+          "parameters": "e: React.SubmitEvent<HTMLElement>",
+          "async": true
+        },
+        {
+          "name": "handleGoogleSignIn",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "handleGithubSignIn",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "Header",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "MainNews",
+          "parameters": "{ news }: {news: News[]}",
+          "async": false
+        },
+        {
+          "name": "Marquee",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "MostRead",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "NavLinks",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "NewsCard",
+          "parameters": "{news} : {news:News}",
+          "async": false
+        },
+        {
+          "name": "UserInfo",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "handleSignout",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "proxy",
+          "parameters": "request: NextRequest",
+          "async": true
+        }
       ],
-      "project_count": 4,
-      "confidence": "high",
-      "examples": [
+      "components": [
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/[id]/loading.tsx",
-          "evidence": {
-            "name": "BookDetailsLoading",
-            "type": "component"
-          }
+          "name": "RootLayout",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/books/loading.tsx",
-          "evidence": {
-            "name": "BooksLoading",
-            "type": "component"
-          }
+          "name": "LoadingPage",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/layout.tsx",
-          "evidence": {
-            "name": "RootLayout",
-            "type": "component"
-          }
+          "name": "NotFound",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/listed-books/page.tsx",
-          "evidence": {
-            "name": "ListedBooks",
-            "type": "component"
-          }
+          "name": "Home",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/loading.tsx",
-          "evidence": {
-            "name": "GlobalLoading",
-            "type": "component"
-          }
+          "name": "ProfilePage",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
-          "evidence": {
-            "name": "TriangleBar",
-            "type": "component"
-          }
+          "name": "SignInPage",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
-          "evidence": {
-            "name": "CustomColorLabel",
-            "type": "component"
-          }
+          "name": "SignUpPage",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/app/read-books/page.tsx",
-          "evidence": {
-            "name": "ReadBooks",
-            "type": "component"
-          }
+          "name": "Header",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/ReadButton.tsx",
-          "evidence": {
-            "name": "ReadButton",
-            "type": "component"
-          }
+          "name": "MainNews",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/bookDetails/WishListButton.tsx",
-          "evidence": {
-            "name": "WishListButton",
-            "type": "component"
-          }
+          "name": "NewsCard",
+          "type": "component"
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/homepage/Banner.tsx",
-          "evidence": {
-            "name": "Banner",
-            "type": "component"
-          }
+          "name": "UserInfo",
+          "type": "component"
+        }
+      ]
+    },
+    "Dev-Stack": {
+      "variables": [],
+      "functions": [
+        {
+          "name": "App",
+          "parameters": "",
+          "async": false
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/BookCard.tsx",
-          "evidence": {
-            "name": "BookCard",
-            "type": "component"
-          }
+          "name": "Footer",
+          "parameters": "",
+          "async": false
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/ListedBooksCard.tsx",
-          "evidence": {
-            "name": "ListedBooksCard",
-            "type": "component"
-          }
+          "name": "Hero",
+          "parameters": "",
+          "async": false
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/components/shared/Navbar.tsx",
-          "evidence": {
-            "name": "Navbar",
-            "type": "component"
-          }
+          "name": "Navbar",
+          "parameters": "",
+          "async": false
         },
         {
-          "project": "b14-book-vibe",
-          "file": "D:/Work/Others/Agents/My-Agent/references/b14-book-vibe/src/context/BooksContext.tsx",
-          "evidence": {
-            "name": "BooksProvider",
-            "type": "component"
-          }
+          "name": "handleRemoveTechnology",
+          "parameters": "",
+          "async": false
         },
         {
-          "project": "bangla-news-24",
-          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/layout.tsx",
-          "evidence": {
-            "name": "RootLayout",
-            "type": "component"
-          }
+          "name": "handleSelectTechnology",
+          "parameters": "",
+          "async": false
         },
         {
-          "project": "bangla-news-24",
-          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/loading.tsx",
-          "evidence": {
-            "name": "LoadingPage",
-            "type": "component"
-          }
+          "name": "getBadgeColor",
+          "parameters": "",
+          "async": false
         },
         {
-          "project": "bangla-news-24",
-          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/not-found.tsx",
-          "evidence": {
-            "name": "NotFound",
-            "type": "component"
-          }
+          "name": "TechnologySection",
+          "parameters": "",
+          "async": false
         },
         {
-          "project": "bangla-news-24",
-          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/page.tsx",
-          "evidence": {
-            "name": "Home",
-            "type": "component"
-          }
+          "name": "handleRemoveAll",
+          "parameters": "",
+          "async": false
+        }
+      ],
+      "components": [
+        {
+          "name": "App",
+          "type": "component"
         },
         {
-          "project": "bangla-news-24",
-          "file": "D:/Work/Others/Agents/My-Agent/references/bangla-news-24/src/app/profile/page.tsx",
-          "evidence": {
-            "name": "ProfilePage",
-            "type": "component"
-          }
+          "name": "Footer",
+          "type": "component"
+        },
+        {
+          "name": "Hero",
+          "type": "component"
+        },
+        {
+          "name": "Navbar",
+          "type": "component"
+        },
+        {
+          "name": "StackItem",
+          "type": "component"
+        },
+        {
+          "name": "TechnologyCard",
+          "type": "component"
+        },
+        {
+          "name": "TechnologyGrid",
+          "type": "component"
+        },
+        {
+          "name": "TechnologySection",
+          "type": "component"
+        },
+        {
+          "name": "YourStack",
+          "type": "component"
+        }
+      ]
+    },
+    "Fitlog": {
+      "variables": [],
+      "functions": [
+        {
+          "name": "RootLayout",
+          "parameters": "{ children }: LayoutProps<\"/\">",
+          "async": false
+        },
+        {
+          "name": "Loading",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "MyPlan",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "NotFound",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "Home",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "getWorkouts",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "WorkoutDetails",
+          "parameters": "{ params }: WorkoutDetailsProps",
+          "async": true
+        },
+        {
+          "name": "Hero",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "WorkoutCard",
+          "parameters": "{ workout }: IWorkoutCardProps",
+          "async": false
+        },
+        {
+          "name": "WorkoutLibrary",
+          "parameters": "",
+          "async": true
+        },
+        {
+          "name": "PlanWorkoutCard",
+          "parameters": "{ workout, isSaved }: PlanWorkoutCardProps",
+          "async": false
+        },
+        {
+          "name": "handleMarkAsDone",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "handleRemove",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "Badge",
+          "parameters": "{ children }: BadgeProps",
+          "async": false
+        },
+        {
+          "name": "Button",
+          "parameters": "{ children, onClick, className, disabled = false }: ButtonProps,",
+          "async": false
+        },
+        {
+          "name": "Button2",
+          "parameters": "{ children, onClick, className }: ButtonProps",
+          "async": false
+        },
+        {
+          "name": "Footer",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "Navbar",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "AddToPlanButton",
+          "parameters": "{ workout }: AddToPlanButtonProps",
+          "async": false
+        },
+        {
+          "name": "handleAddToPlan",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "SaveButton",
+          "parameters": "{ workout }: SaveButtonProps",
+          "async": false
+        },
+        {
+          "name": "handleSave",
+          "parameters": "",
+          "async": false
+        },
+        {
+          "name": "WorkoutProvider",
+          "parameters": "{ children }: { children: ReactNode }",
+          "async": false
+        }
+      ],
+      "components": [
+        {
+          "name": "RootLayout",
+          "type": "component"
+        },
+        {
+          "name": "Loading",
+          "type": "component"
+        },
+        {
+          "name": "MyPlan",
+          "type": "component"
+        },
+        {
+          "name": "NotFound",
+          "type": "component"
+        },
+        {
+          "name": "Home",
+          "type": "component"
+        },
+        {
+          "name": "Hero",
+          "type": "component"
+        },
+        {
+          "name": "WorkoutCard",
+          "type": "component"
+        },
+        {
+          "name": "PlanWorkoutCard",
+          "type": "component"
+        },
+        {
+          "name": "Badge",
+          "type": "component"
+        },
+        {
+          "name": "Button",
+          "type": "component"
+        },
+        {
+          "name": "Button2",
+          "type": "component"
+        },
+        {
+          "name": "Footer",
+          "type": "component"
+        },
+        {
+          "name": "Navbar",
+          "type": "component"
+        },
+        {
+          "name": "AddToPlanButton",
+          "type": "component"
+        },
+        {
+          "name": "SaveButton",
+          "type": "component"
+        },
+        {
+          "name": "WorkoutProvider",
+          "type": "component"
         }
       ]
     }
