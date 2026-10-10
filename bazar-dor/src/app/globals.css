@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import "@heroui/styles";
 
 html {
     overflow-y: scroll;

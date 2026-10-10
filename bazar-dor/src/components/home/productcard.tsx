@@ -46,13 +46,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 <div>
                     {product.change.dir === "up" && (
                         <span className="rounded-full bg-error/10 px-2 py-1 text-sm font-medium text-error">
-                            ▲ {toBanglaNumber(product.change.pct)}%
+                            <span className="relative top-px">▲</span> {toBanglaNumber(product.change.pct)}%
                         </span>
                     )}
 
                     {product.change.dir === "down" && (
                         <span className="rounded-full bg-success/10 px-2 py-1 text-sm font-medium text-success">
-                            ▼ {toBanglaNumber(Math.abs(product.change.pct))}%
+                            <span className="relative top-0.5">▼</span> {toBanglaNumber(Math.abs(product.change.pct))}%
                         </span>
                     )}
 

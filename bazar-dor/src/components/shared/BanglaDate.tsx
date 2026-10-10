@@ -1,15 +1,7 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 import { getBanglaDate } from "@/components/shared/utils";
 
 const BanglaDate = () => {
-    const [date, setDate] = useState("");
-
-    useEffect(() => {
-        setDate(getBanglaDate());
-    }, []);
+    const date = getBanglaDate();
 
     return <span>{date}</span>;
 };

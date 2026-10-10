@@ -4,7 +4,7 @@ const Footer = () => {
             <div className="mx-auto flex max-w-7xl flex-col sm:flex-row gap-3 px-4 py-6 text-sm text-base-content items-center justify-between">
 
                 <p>
-                    বাজার দর — প্রয়োজনীয় পণ্যের দাম এক চোখে।
+                    বাজার দর — প্রয়োজনীয় পণ্যের দাম এক নজরে।
                 </p>
 
                 <p>

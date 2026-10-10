@@ -5,25 +5,45 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import profile from "@/assets/profile.jpg";
+import { toast } from "react-toastify";
 
 const UserInfo = () => {
     const router = useRouter();
     const { data: session, isPending } = authClient.useSession();
 
     const handleSignOut = async () => {
-        await authClient.signOut();
-        router.push("/");
+        try {
+            const { error } = await authClient.signOut();
+
+            if (error) {
+                toast.error("সাইন আউট করা যায়নি!");
+                return;
+            }
+
+            toast.success("সফলভাবে সাইন আউট হয়েছে!");
+            router.push("/");
+            router.refresh();
+        } catch {
+            toast.error("সাইন আউট করার সময় সমস্যা হয়েছে!");
+        }
     };
 
-    if (isPending) return null;
+    if (isPending) {
+        return (
+            <div className="flex items-center gap-2">
+                <div className="size-9 animate-pulse rounded-full bg-base-300" />
+                <div className="hidden h-4 w-16 animate-pulse rounded bg-base-300 md:block" />
+            </div>
+        );
+    }
 
     if (!session) {
         return (
             <div className="flex items-center gap-2">
-                <Link href="/signin" className="btn btn-sm">
+                <Link href="/signin" className="btn btn-sm bg-[#05893E] sm:bg-transparent text-white sm:text-black">
                     সাইন ইন
                 </Link>
-                <Link href="/signup" className="btn btn-sm bg-[#05893E] text-white">
+                <Link href="/signup" className="btn btn-sm hidden bg-[#05893E] text-white sm:inline-flex">
                     সাইন আপ
                 </Link>
             </div>
@@ -35,7 +55,7 @@ const UserInfo = () => {
             <button
                 type="button"
                 tabIndex={0}
-                className="btn btn-ghost flex h-auto gap-2 px-2 hover:border-base-300 hover:bg-base-200/50"
+                className="flex h-auto items-center gap-2 rounded-xl border border-transparent px-2 py-1 cursor-pointer"
             >
                 <div className="size-9 overflow-hidden rounded-full">
                     <Image
@@ -45,7 +65,7 @@ const UserInfo = () => {
                     />
                 </div>
 
-                <span className="max-w-32 truncate text-sm font-medium">
+                <span className="hidden md:inline max-w-32 truncate text-sm font-medium">
                     {session.user.name?.split(" ")[0] || session.user.email}
                 </span>
 
@@ -68,7 +88,7 @@ const UserInfo = () => {
                 </li>
 
                 <li>
-                    <Link href="/profile">
+                    <Link href="/profile" onClick={() => document.activeElement instanceof HTMLElement && document.activeElement.blur()} >
                         👤 আমার প্রোফাইল
                     </Link>
                 </li>
@@ -76,14 +96,18 @@ const UserInfo = () => {
                 <li>
                     <button
                         type="button"
-                        onClick={handleSignOut}
-                        className="text-error"
-                    >
+                        onClick={() => {
+                            document.activeElement instanceof HTMLElement &&
+                                document.activeElement.blur();
+                            handleSignOut();
+                        }}
+                        className="text-error">
+
                         ↪ সাইন আউট
                     </button>
                 </li>
             </ul>
-        </div>
+        </div >
     );
 
 };

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getBanglaDate } from "@/components/shared/utils";
 import heroImage from "@/assets/bazar-hero.png";
 import BanglaDate from "@/components/shared/BanglaDate";
 
@@ -31,7 +30,7 @@ const Hero = async () => {
                     </Link>
                 </div>
 
-                <div className="w-full lg:w-auto">
+                <div className="flex w-full justify-center md:w-auto md:justify-end">
                     <Image
                         src={heroImage}
                         alt="বাজারের পণ্য"

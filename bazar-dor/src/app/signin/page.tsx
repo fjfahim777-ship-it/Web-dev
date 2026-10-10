@@ -1,15 +1,27 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import { toast } from "react-toastify";
 import google from "@/assets/google.png"
 import github from "@/assets/github.png"
 import Image from "next/image";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Button } from "@heroui/react";
+import { Eye, EyeSlash } from "@gravity-ui/icons";
 
 const SignInPage = () => {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
+
+    useEffect(() => {
+        if (searchParams.get("message") === "login-required") {
+            toast.info("এই পেজটি দেখতে আগে সাইন ইন করুন!", {
+                toastId: "login-required",
+            });
+        }
+    }, [searchParams]);
     const [isLoading, setIsLoading] = React.useState(false);
     const [isGoogleLoading, setIsGoogleLoading] = React.useState(false);
     const [isGithubLoading, setIsGithubLoading] = React.useState(false);
@@ -23,7 +35,7 @@ const SignInPage = () => {
             });
 
             if (error) {
-                toast.error(error.message || "Google দিয়ে সাইন ইন করা যায়নি!");
+                toast.error("Google দিয়ে সাইন ইন করা যায়নি!");
                 setIsGoogleLoading(false);
             }
         } catch {
@@ -42,7 +54,7 @@ const SignInPage = () => {
             });
 
             if (error) {
-                toast.error(error.message || "GitHub দিয়ে সাইন ইন করা যায়নি!");
+                toast.error("GitHub দিয়ে সাইন ইন করা যায়নি!");
                 setIsGithubLoading(false);
             }
         } catch {
@@ -70,7 +82,7 @@ const SignInPage = () => {
             });
 
             if (error) {
-                toast.error(error.message || "সাইন ইন করা যায়নি!");
+                toast.error("ইমেইল বা পাসওয়ার্ড ভুল!");
                 return;
             }
 
@@ -86,7 +98,7 @@ const SignInPage = () => {
     };
 
     return (
-        <main className="mx-auto max-w-md px-2 py-10">
+        <main className="mx-auto max-w-md px-3 md:px-2 py-10">
             <h1 className="text-center text-2xl font-bold">
                 সাইন ইন
             </h1>
@@ -110,14 +122,31 @@ const SignInPage = () => {
                         />
 
                         <label className="label text-black font-bold">পাসওয়ার্ড</label>
-                        <input
-                            name="password"
-                            type="password"
-                            className="input w-full outline-none"
-                            placeholder="কমপক্ষে ৮ অক্ষর"
-                            required
-                            disabled={isLoading}
-                        />
+                        <div className="relative">
+
+                            <input
+                                name="password"
+                                type={isPasswordVisible ? "text" : "password"}
+                                className="input w-full outline-none"
+                                placeholder="কমপক্ষে ৮ অক্ষর"
+                                required
+                                disabled={isLoading}
+                            />
+                            <Button
+                                isIconOnly
+                                aria-label={isPasswordVisible ? "Hide password" : "Show password"}
+                                size="sm"
+                                variant="ghost"
+                                onPress={() => setIsPasswordVisible(!isPasswordVisible)}
+                                className="absolute right-2 top-1/2 -translate-y-1/2"
+                            >
+                                {isPasswordVisible ? (
+                                    <Eye width={18} height={18} className="sm:h-4 sm:w-4" />
+                                ) : (
+                                    <EyeSlash width={18} height={18} className="sm:h-4 sm:w-4" />
+                                )}
+                            </Button>
+                        </div>
 
                         <button
                             type="submit"
@@ -138,12 +167,12 @@ const SignInPage = () => {
 
                 <div className="divider">অথবা</div>
 
-                <div className="flex w-full min-w-0 gap-2">
+                <div className="flex w-full min-w-0 gap-2 flex-col sm:flex-row">
 
                     <button
                         type="button"
                         onClick={handleGoogleSignIn}
-                        className="btn border border-base-content/20 min-w-0 flex-1 gap-2 px-2"
+                        className="btn border border-base-content/20 min-w-0 flex-1 gap-2 px-2 py-3 md:py-5"
                         disabled={isGoogleLoading || isGithubLoading || isLoading}
                     >
                         {isGoogleLoading ? (
@@ -164,7 +193,7 @@ const SignInPage = () => {
                     <button
                         type="button"
                         onClick={handleGithubSignIn}
-                        className="btn border border-base-content/20 min-w-0 flex-1 gap-2 px-2 sm:text-sm"
+                        className="btn border border-base-content/20 min-w-0 flex-1 gap-2 px-2 py-3 md:py-5"
                         disabled={isGithubLoading || isGoogleLoading || isLoading}
 
                     >

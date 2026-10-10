@@ -21,8 +21,9 @@ const ProductDetails = async ({ params }: ProductDetailsProps) => {
     });
 
     if (!session) {
-        redirect("/signin");
+        redirect("/signin?message=login-required");
     }
+
     const { slug } = await params;
 
     const productsResponse = await fetch(
@@ -148,7 +149,7 @@ const ProductDetails = async ({ params }: ProductDetailsProps) => {
 
                             {details.change.dir === "up" && (
                                 <span className="rounded-full bg-error/10 px-2 py-1 text-sm font-medium text-error">
-                                    ▲{" "}
+                                    ▲
                                     {toBanglaNumber(details.change.pct)}%
                                 </span>
                             )}
@@ -184,7 +185,7 @@ const ProductDetails = async ({ params }: ProductDetailsProps) => {
                             সর্বনিম্ন দাম
                         </p>
 
-                        <p className="mt-2 text-2xl font-bold">
+                        <p className="mt-2 text-2xl font-bold text-green-700">
                             ৳{toBanglaNumber(minPrice)} টাকা
                         </p>
 
@@ -198,7 +199,7 @@ const ProductDetails = async ({ params }: ProductDetailsProps) => {
                             সর্বাধিক দাম
                         </p>
 
-                        <p className="mt-2 text-2xl font-bold">
+                        <p className="mt-2 text-2xl font-bold text-red-700">
                             ৳{toBanglaNumber(maxPrice)} টাকা
                         </p>
 
@@ -212,12 +213,12 @@ const ProductDetails = async ({ params }: ProductDetailsProps) => {
                             গড় দাম
                         </p>
 
-                        <p className="mt-2 text-2xl font-bold">
+                        <p className="mt-2 text-2xl font-bold text-green-700">
                             ৳{toBanglaNumber(Math.round(averagePrice))} টাকা
                         </p>
 
                         <p className="mt-1 text-sm text-base-content/70">
-                            প্রতি {getBanglaUnit(details.unit)}-র হিসেবে
+                            {getBanglaUnit(details.unit)} হিসেবে
                         </p>
                     </div>
                 </div>
@@ -229,7 +230,7 @@ const ProductDetails = async ({ params }: ProductDetailsProps) => {
                 </h2>
 
                 <div className="overflow-x-auto rounded-2xl border border-base-content/15">
-                    <table className="table">
+                    <table className="table table-sm sm:table-md w-full">
                         <thead>
                             <tr>
                                 <th>বাজার</th>
@@ -240,29 +241,34 @@ const ProductDetails = async ({ params }: ProductDetailsProps) => {
                             </tr>
                         </thead>
 
+
                         <tbody>
-                            {details.markets.map((market: Market) => {
-                                const average = Math.round(
-                                    (market.min + market.max) / 2
-                                );
+                            {details.markets.map((market: Market, index: number) => {
+                                const average = Math.round((market.min + market.max) / 2);
+                                const rowBgClass = index % 2 === 0 ? "bg-white" : "bg-[#F1F3EE]";
 
                                 return (
-                                    <tr key={market.market}>
-                                        <td>{market.market}</td>
-                                        <td>{market.division}</td>
-                                        <td>
+                                    <tr key={market.market} className={rowBgClass}>
+                                        <td className="border-b border-black px-2 py-2 text-xs sm:px-4 sm:py-3 sm:text-sm">
+                                            {market.market}
+                                        </td>
+                                        <td className="border-b border-black px-2 py-2 text-xs sm:px-4 sm:py-3 sm:text-sm">
+                                            {market.division}
+                                        </td>
+                                        <td className="border-b border-black px-2 py-2 text-xs sm:px-4 sm:py-3 sm:text-sm">
                                             ৳{toBanglaNumber(market.min)}
                                         </td>
-                                        <td>
+                                        <td className="border-b border-black px-2 py-2 text-xs sm:px-4 sm:py-3 sm:text-sm">
                                             ৳{toBanglaNumber(market.max)}
                                         </td>
-                                        <td>
+                                        <td className="border-b border-black px-2 py-2 text-xs font-bold sm:px-4 sm:py-3 sm:text-sm">
                                             ৳{toBanglaNumber(average)}
                                         </td>
                                     </tr>
                                 );
                             })}
                         </tbody>
+
                     </table>
                 </div>
             </section>
