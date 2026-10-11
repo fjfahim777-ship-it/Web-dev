@@ -1,8 +1,8 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
+import React from "react";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import profile from "@/assets/profile.jpg";
@@ -42,12 +42,6 @@ const UpdateProfilePage = () => {
             setIsLoading(false);
         }
     };
-
-    useEffect(() => {
-        if (!isPending && !session && !isSigningOut) {
-            router.replace("/signin");
-        }
-    }, [isPending, session, isSigningOut, router]);
 
     if (isPending || !session) {
         return <p className="p-6 text-center">লোড হচ্ছে...</p>;
