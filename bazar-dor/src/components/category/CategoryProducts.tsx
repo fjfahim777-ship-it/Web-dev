@@ -39,16 +39,21 @@ const CategoryProducts = ({
                     <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value)}
-                        className="select select-sm w-39 border-none outline-1"
+                        className="product-sort-select"
+
                     >
+
+
                         <option value="default">ডিফল্ট</option>
-                        <option value="low-high">
-                            দাম: কম থেকে বেশি
-                        </option>
-                        <option value="high-low">
-                            দাম: বেশি থেকে কম
-                        </option>
+
+
+
+                        <option value="low-high">দাম: কম থেকে বেশি</option>
+                        <option value="high-low">দাম: বেশি থেকে কম</option>
+
+
                     </select>
+
                 </div>
             </div>
 

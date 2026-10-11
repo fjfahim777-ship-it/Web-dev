@@ -88,7 +88,7 @@ const SignInPage = () => {
 
             if (data) {
                 toast.success("সফলভাবে সাইন ইন হয়েছে!");
-                router.push("/");
+                window.location.assign("/");
             }
         } catch {
             toast.error("কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন!");

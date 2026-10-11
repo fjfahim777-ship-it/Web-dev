@@ -1,2 +1,2 @@
 export const API_BASE_URL =
-    "https://api.api-store.workers.dev/api/bazardor";
+    "https://openapi.programming-hero.com/api/bazardor";

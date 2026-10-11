@@ -19,7 +19,12 @@ const UpdateProfilePage = () => {
 
         try {
             const formData = new FormData(e.currentTarget);
-            const name = formData.get("name") as string;
+            const name = (formData.get("name") as string).trim();
+
+            if (!name) {
+                toast.error("আপনার নাম লিখুন!");
+                return;
+            }
 
             const { error } = await authClient.updateUser({ name });
 
@@ -37,10 +42,6 @@ const UpdateProfilePage = () => {
             setIsLoading(false);
         }
     };
-
-    if (isPending) {
-        return <p className="p-6 text-center">লোড হচ্ছে...</p>;
-    }
 
     useEffect(() => {
         if (!isPending && !session && !isSigningOut) {
@@ -97,7 +98,7 @@ const UpdateProfilePage = () => {
 
                             setIsSigningOut(false);
                             toast.success("সফলভাবে সাইন আউট হয়েছে!");
-                            router.replace("/");
+                            window.location.assign("/");
                         } catch {
                             setIsSigningOut(false);
                             toast.error("সাইন আউট করার সময় সমস্যা হয়েছে!");
@@ -113,7 +114,7 @@ const UpdateProfilePage = () => {
 
                 <h2 className="mb-4 mt-0 text-xl font-bold">তথ্য</h2>
 
-                <form onSubmit={onSubmit} className="flex flex-col gap-4">
+                <form onSubmit={onSubmit} noValidate className="flex flex-col gap-4">
                     <fieldset className="fieldset">
                         <label className="label text-[15px] text-gray-600 font-bold">নাম</label>
 
@@ -121,7 +122,7 @@ const UpdateProfilePage = () => {
                             name="name"
                             type="text"
                             defaultValue={session.user.name}
-                            className="input w-full"
+                            className="input w-full outline-none"
                             placeholder="আপনার নাম"
                             required
                             disabled={isLoading}

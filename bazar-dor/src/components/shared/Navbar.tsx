@@ -21,7 +21,11 @@ const Navbar = async () => {
                 <Link href='/'>
                     <div className="flex items-center gap-3">
 
-                        <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-base-content/20"> <Image src={logoIcon} alt="বাজার দর" width={28} height={28} className="object-contain" /> </div>
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-base-content/20">
+                            <span className="text-2xl leading-none" role="img" aria-label="Shopping cart">
+                                🛒
+                            </span>
+                        </div>
 
 
                         <div>

@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import heroImage from "@/assets/bazar-hero.png";
 import BanglaDate from "@/components/shared/BanglaDate";
+import { connection } from "next/server";
 
 const Hero = async () => {
+    await connection();
     return (
         <section className="w-full px-4 py-8 md:py-10">
             <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 rounded-3xl border border-base-content/10 bg-base-200 p-6 sm:p-10 lg:flex-row lg:p-6">
@@ -24,7 +26,8 @@ const Hero = async () => {
 
                     <Link
                         href="#সব-পণ্য"
-                        className="btn mt-6 self-center rounded-lg border-none bg-[#05893E] text-white hover:bg-[#05893E] lg:self-start"
+                        className="btn mt-6 self-center rounded-lg border-none bg-[#05893E] text-white
+                        lg:self-start"
                     >
                         সব পণ্য দেখুন
                     </Link>
