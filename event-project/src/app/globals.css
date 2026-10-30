@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #F8FAF8;
+    color: #172B24;
+    font-family: Arial, Helvetica, sans-serif;
+}
